@@ -1,2 +1,24 @@
-# Mustafa-Cakmak-254309252
-Dünya Mutfağı 
+# Dünya Mutfağı
+
+Mustafa Çakmak (254309252) – Mesleki Çözümleme I dönem projesi.
+
+10 ülkenin mutfağından hikâyeli tarifler sunan bir tarif sitesi. Site tek bir HTML dosyasından oluşur (`index.html`); kurulum veya derleme gerektirmez.
+
+## Özellikler
+- 32 özel tarif: malzemeler, adım adım yapılış, hikâye, "Nerede yenir?", diyet ve alerji bilgisi
+- TheMealDB entegrasyonu: TheMealDB'deki tüm tarifler sitenin listesine eklenir (süre, zorluk, alerji ve diyet bilgisi otomatik çıkarılır)
+- Pişirme modu, zamanlayıcı, sesli okuma
+- Şef: soru-cevap ve sesli sohbet asistanı (15 dilde ses)
+- İki aşamalı yemek çarkı, arama önerileri, "Elimde ne var?"
+- Hesap sistemi, favoriler, notlar, rozetler
+- 19 tema, Türkçe/İngilizce
+
+## Dosyalar
+- `index.html` – sitenin güncel sürümü (Vercel bu dosyayı yayınlar)
+- `dunya-mutfagi MUSTAFA ÇAKMAK 3 HAFTA.html`, `dunya-mutfagi MUSTAFA ÇAKMAK 4 HAFTA.html` – haftalık teslim sürümleri
+- `4. Hafta Rapor/` – 4. hafta laboratuvar raporu (PDF, Word) ve ER diyagramı
+
+## Yayına alma (Vercel)
+Vercel'de "Add New → Project" ile bu depoyu seç; Framework Preset "Other" kalsın, Build Command ve Output Directory boş bırakılsın. Site kök dizindeki `index.html` olarak yayınlanır.
+
+Tarif verileri: [TheMealDB](https://www.themealdb.com) (ücretsiz test anahtarı, eğitim amaçlı kullanım).
