@@ -2444,6 +2444,15 @@ const EMBED={"tr-2": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAY
 const photoUrl=key=>PHOTOS[key]?"/_blob/"+PHOTOS[key]:(EMBED[key]||null);
 const ICON_CAM='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>';
 function artHTML(r){const u=r.img||photoUrl(r.key);return u?`<img src="${u}" alt="${esc(L(r,"title"))}" loading="lazy">`:r.emoji}
+/* Yüklenemeyen görseller (ör. TheMealDB fotoğrafına ulaşılamazsa) kırık resim yerine tarifin emojisini gösterir; bayraklar gizlenir */
+document.addEventListener("error",e=>{
+  const i=e.target;if(!i||i.tagName!=="IMG")return;
+  if(i.classList.contains("flg")){i.hidden=true;return}
+  const h=i.closest("[data-key]");if(!h&&!i.closest(".art,.cover,.lg-art"))return;
+  const r=RECIPES.find(x=>x.key===(h?h.dataset.key:state.open));
+  const s=document.createElement("span");s.className="img-fb";s.setAttribute("aria-hidden","true");s.textContent=(r&&r.emoji)||"🍽️";
+  i.replaceWith(s);
+},true);
 let PROFILE=(()=>{
   const ok=n=>{try{const u=JSON.parse(localStorage.getItem("bm-auth-users")||"{}");return !!(n&&u[String(n).trim().replace(/\s+/g," ").toLocaleLowerCase("tr")]&&store.get("bm-profiles",{})[n])}catch(e){return false}};
   try{const s=sessionStorage.getItem("bm-session");if(s){const n=JSON.parse(s);if(ok(n))return n}}catch(e){}
