@@ -17,6 +17,8 @@ Mustafa Çakmak (254309252) – Mesleki Çözümleme I dönem projesi.
 - `index.html` – sitenin güncel sürümü (Vercel bu dosyayı yayınlar)
 - `dunya-mutfagi MUSTAFA ÇAKMAK 3 HAFTA.html`, `dunya-mutfagi MUSTAFA ÇAKMAK 4 HAFTA.html` – haftalık teslim sürümleri
 - `4. Hafta Rapor/` – 4. hafta laboratuvar raporu (PDF, Word) ve ER diyagramı
+- `5. Hafta Rapor/` – 5. hafta veri tabanı raporu (PDF, Word)
+- `veritabani/` – SQLite veritabanı: şema, kurulum betiği (`node seed.js`), örnek sorgular ve hazır `dunya_mutfagi.db`
 
 ## Yayına alma (Vercel)
 Vercel'de "Add New → Project" ile bu depoyu seç; Framework Preset "Other" kalsın, Build Command ve Output Directory boş bırakılsın. Site kök dizindeki `index.html` olarak yayınlanır.

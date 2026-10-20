@@ -1,0 +1,3116 @@
+{
+ "countries": [
+  {
+   "id": "tr",
+   "name": "Türkiye",
+   "flag": "🇹🇷",
+   "color": "#A61B29",
+   "intro": "Anadolu mutfağı bakliyat, sebze ve zeytinyağı etrafında döner. Sofranın başı çorbadır."
+  },
+  {
+   "id": "it",
+   "name": "İtalya",
+   "flag": "🇮🇹",
+   "color": "#2E7D4F",
+   "intro": "İtalyan mutfağı az malzemeyi iyi malzemeyle yapar. Tarifler kısa, zamanlama önemlidir."
+  },
+  {
+   "id": "jp",
+   "name": "Japonya",
+   "flag": "🇯🇵",
+   "color": "#0369A1",
+   "intro": "Japon ev yemekleri dashi, soya sosu ve pirinç üzerine kuruludur; sade ama derin tatlıdır."
+  },
+  {
+   "id": "mx",
+   "name": "Meksika",
+   "flag": "🇲🇽",
+   "color": "#C2185B",
+   "intro": "Meksika mutfağı mısır, fasulye, acı biber ve limonla canlı ve renkli tatlar üretir."
+  },
+  {
+   "id": "in",
+   "name": "Hindistan",
+   "flag": "🇮🇳",
+   "color": "#C2410C",
+   "intro": "Hint mutfağında baharatlar yağda uyandırılır; her yemeğin temeli soğan, zencefil ve sarımsaktır."
+  },
+  {
+   "id": "fr",
+   "name": "Fransa",
+   "flag": "🇫🇷",
+   "color": "#6D28D9",
+   "intro": "Fransız mutfağı teknik ve sabır demektir: tereyağı, iyi et suyu ve acele etmeden pişirmek."
+  },
+  {
+   "id": "cn",
+   "name": "Çin",
+   "flag": "🇨🇳",
+   "color": "#C81E1E",
+   "intro": "Çin mutfağı bölgeden bölgeye değişir: Sichuan'ın uyuşturan acısından kuzeyin hamur işlerine kadar."
+  },
+  {
+   "id": "es",
+   "name": "İspanya",
+   "flag": "🇪🇸",
+   "color": "#B45309",
+   "intro": "İspanyol mutfağında zeytinyağı, safran ve paylaşarak yemek öndedir; sofra uzun ve kalabalıktır."
+  },
+  {
+   "id": "th",
+   "name": "Tayland",
+   "flag": "🇹🇭",
+   "color": "#0F766E",
+   "intro": "Tay mutfağı her lokmada dört tadı dengeler: ekşi, tatlı, tuzlu ve acı."
+  },
+  {
+   "id": "kr",
+   "name": "Kore",
+   "flag": "🇰🇷",
+   "color": "#3730A3",
+   "intro": "Kore mutfağı fermantasyon üzerine kuruludur: kimchi, gochujang ve soya ezmesi sofradan eksik olmaz."
+  }
+ ],
+ "recipes": [
+  {
+   "key": "tr-0",
+   "country": "tr",
+   "title": "Mercimek Çorbası",
+   "desc": "Kırmızı mercimekle yapılan, tereyağlı ve pul biberli klasik lokanta çorbası.",
+   "mins": 35,
+   "time": "35 dk",
+   "serves": "4 kişilik",
+   "level": "Kolay",
+   "kcal": 180,
+   "tip": "Pul biberi yağda 10 saniyeden fazla tutmayın; yanarsa acılaşır.",
+   "story": "Mercimek, Bereketli Hilal'de, yani bugünkü Güneydoğu Anadolu ve Mezopotamya'da insanlığın ilk evcilleştirdiği bitkilerden biridir. Tevrat'taki anlatıda Esav, ilk oğul olma hakkını kardeşi Yakup'a bir kase kırmızı mercimek yemeği karşılığında satar. Ucuz, besleyici ve herkesin sofrasına uygun olduğu için Osmanlı'dan bugüne esnaf lokantalarının ve hastane sofralarının vazgeçilmezidir.",
+   "legend": false,
+   "ing": [
+    "1 su bardağı kırmızı mercimek",
+    "1 adet kuru soğan",
+    "1 adet havuç",
+    "1 adet patates",
+    "1 yemek kaşığı un",
+    "1 yemek kaşığı salça",
+    "6 su bardağı sıcak su veya et suyu",
+    "2 yemek kaşığı tereyağı",
+    "1 çay kaşığı pul biber",
+    "Tuz, karabiber, kimyon",
+    "Servis için limon"
+   ],
+   "steps": [
+    "Mercimeği birkaç kez yıkayıp süzün.",
+    "Tencerede 1 kaşık tereyağında doğranmış soğanı 3–4 dakika kavurun, unu ekleyip kokusu çıkana kadar karıştırın.",
+    "Salçayı ekleyin, ardından küp doğranmış havuç ve patatesi ilave edin.",
+    "Mercimek ve sıcak suyu ekleyip kapağı aralık, kısık ateşte 25 dakika pişirin.",
+    "Blenderdan geçirin; kıvamı koyuysa biraz sıcak su ekleyin. Tuz, karabiber ve kimyonla tatlandırın.",
+    "Kalan tereyağını eritip pul biberi çok kısa kızdırın ve çorbanın üzerine gezdirin. Limonla servis edin."
+   ],
+   "diet": {
+    "a": [
+     "gluten",
+     "sut"
+    ],
+    "d": [
+     "veg"
+    ],
+    "p": [
+     "Kırmızı mercimek bitkisel protein ve lif açısından zengin; tok tutar.",
+     "Plant protein and fibre from red lentils; very filling."
+    ],
+    "w": [
+     "Un gluten, tereyağı süt içerir. Et suyu kullanılırsa vejetaryen olmaz.",
+     "Flour adds gluten, butter adds dairy. Not vegetarian if made with meat stock."
+    ],
+    "s": [
+     "Unu atla, tereyağı yerine zeytinyağı ve su kullan: vegan ve glutensiz olur.",
+     "Skip the flour and use olive oil and water: vegan and gluten-free."
+    ]
+   },
+   "where": [
+    {
+     "n": "Kanaat Lokantası",
+     "ptr": "Orta fiyat ($$)",
+     "pen": "Mid-range ($$)",
+     "c": "İstanbul, Üsküdar",
+     "tr": "1933'ten beri Üsküdar'da, hâlâ kurucu aile tarafından işletilen ünlü bir esnaf lokantası. Mercimek çorbası menünün klasiklerinden.",
+     "en": "A famous tradesmen's canteen in Üsküdar since 1933, still run by the founding family. Lentil soup is one of its classics."
+    }
+   ],
+   "whereTr": []
+  },
+  {
+   "key": "tr-1",
+   "country": "tr",
+   "title": "Karnıyarık",
+   "desc": "Kızartılmış patlıcanların içi kıymalı harçla doldurulup fırında pişirilir.",
+   "mins": 70,
+   "time": "70 dk",
+   "serves": "4 kişilik",
+   "level": "Orta",
+   "kcal": 420,
+   "tip": "Yağ çekmesini azaltmak için patlıcanları fırında yağ sürerek de kızartabilirsiniz.",
+   "story": "Osmanlı saray mutfağında patlıcan o kadar sevilirdi ki onu 'sebzelerin sultanı' diye anarlardı; saray kayıtlarında onlarca patlıcan yemeği geçer. Karnıyarık'ın etsiz, zeytinyağlı kardeşi İmam Bayıldı'dır. Adının, yemeği tadan bir imamın lezzetten bayılmasından ya da karısının çeyizindeki zeytinyağının hepsinin bu yemeğe gittiğini öğrenince bayılmasından geldiği anlatılır.",
+   "legend": false,
+   "ing": [
+    "6 adet kemer patlıcan",
+    "300 g dana kıyma",
+    "1 adet kuru soğan",
+    "2 diş sarımsak",
+    "2 adet sivri biber",
+    "2 adet domates",
+    "1 yemek kaşığı salça",
+    "Kızartma için sıvı yağ",
+    "Yarım demet maydanoz",
+    "Tuz, karabiber, pul biber",
+    "1 su bardağı sıcak su"
+   ],
+   "steps": [
+    "Patlıcanları alacalı soyun, tuzlu suda 20 dakika bekletip kurulayın.",
+    "Patlıcanları kızgın yağda her yanı yumuşayana kadar kızartın, kağıt havluya alın.",
+    "Tavada soğanı kavurun, kıymayı ekleyip suyunu çekene kadar pişirin.",
+    "Sarımsak, biber, bir domates ve salçayı ekleyin; baharatlayıp 5 dakika pişirin, maydanozu karıştırın.",
+    "Patlıcanları fırın kabına dizin, ortalarını bıçakla yarıp kaşıkla açın ve harcı doldurun.",
+    "Üzerlerine domates ve biber dilimleri koyun. Salçalı sıcak suyu kabın dibine dökün.",
+    "180°C fırında 25–30 dakika pişirin. Pilav ve yoğurtla servis edin."
+   ],
+   "diet": {
+    "a": [],
+    "d": [
+     "gf",
+     "df"
+    ],
+    "p": [
+     "Patlıcan lif, kıyma protein ve demir sağlar.",
+     "Aubergine gives fibre; the mince adds protein and iron."
+    ],
+    "w": [
+     "Kızartma yüzünden yağ ve kalori yüksek. Yanında verilen yoğurt süt içerir.",
+     "Frying makes it high in fat and calories. The yoghurt served alongside contains dairy."
+    ],
+    "s": [
+     "Patlıcanları yağ sürüp fırında pişirerek yağı büyük ölçüde azaltabilirsin.",
+     "Brush the aubergines with oil and bake them instead of frying to cut the fat."
+    ]
+   },
+   "where": [
+    {
+     "n": "Hacı Abdullah Lokantası",
+     "ptr": "Kişi başı ≈ 30 $ (2026)",
+     "pen": "≈ $30 per person (2026)",
+     "c": "İstanbul, Beyoğlu",
+     "tr": "1888'de Karaköy'de açıldı; ruhsatını Sultan II. Abdülhamid verdi. Türkiye'nin resmi olarak kayıtlı ilk lokantası, Osmanlı saray mutfağının yaşayan adreslerinden.",
+     "en": "Opened in Karaköy in 1888 with a licence from Sultan Abdülhamid II; Türkiye's first officially registered restaurant and a living address of Ottoman palace cooking."
+    }
+   ],
+   "whereTr": []
+  },
+  {
+   "key": "tr-2",
+   "country": "tr",
+   "title": "Aşure",
+   "desc": "Buğday, bakliyat ve kuru meyvelerle yapılan, komşularla paylaşılan tatlı.",
+   "mins": 120,
+   "time": "2 saat + 1 gece ıslatma",
+   "serves": "10 kişilik",
+   "level": "Orta",
+   "kcal": 320,
+   "tip": "Kıvamı sıcakken sulu görünür; soğudukça koyulaşır, fazla pişirmeyin.",
+   "story": "Halk anlatısına göre Nuh Tufanı sona erip gemi Ağrı Dağı'na oturduğunda, geride kalan erzak bir kazanda karıştırılıp pişirildi ve ilk aşure böyle doğdu. Aşure, Hicri takvimin ilk ayı olan Muharrem'de pişirilir; Alevi ve Bektaşi geleneğinde Kerbela yasının ardından yapılır. En önemli kuralı paylaşmaktır: kazan kaynayınca kaseler komşulara, akrabalara ve yoksullara dağıtılır. Bu yüzden bolluk, birlik ve komşuluğun simgesi sayılır.",
+   "legend": true,
+   "ing": [
+    "1 su bardağı aşurelik buğday",
+    "Yarım su bardağı nohut",
+    "Yarım su bardağı kuru fasulye",
+    "2 su bardağı toz şeker",
+    "10 adet kuru kayısı",
+    "6 adet kuru incir",
+    "Yarım su bardağı kuru üzüm",
+    "1 adet portakalın rendelenmiş kabuğu",
+    "Süslemek için ceviz, fındık, nar taneleri, tarçın"
+   ],
+   "steps": [
+    "Buğday, nohut ve fasulyeyi ayrı kaplarda bir gece suda bekletin.",
+    "Buğdayı bol suyla, kapağı kapalı şekilde yumuşayana kadar yaklaşık 1 saat haşlayın.",
+    "Nohut ve fasulyeyi ayrı ayrı haşlayıp süzün.",
+    "Doğranmış kayısı, incir ve üzümü buğdaya ekleyin, 15 dakika pişirin.",
+    "Nohut, fasulye ve şekeri ekleyin; karıştırarak 20 dakika daha kaynatın.",
+    "Portakal kabuğunu ekleyip ocaktan alın, kaselere paylaştırın.",
+    "Soğuyunca ceviz, fındık, nar ve tarçınla süsleyip komşularınıza da götürün."
+   ],
+   "diet": {
+    "a": [
+     "gluten",
+     "kuruyemis"
+    ],
+    "d": [
+     "veg",
+     "vegan",
+     "df"
+    ],
+    "p": [
+     "Buğday ve bakliyattan lif ile protein, kuru meyvelerden potasyum ve demir.",
+     "Fibre and protein from wheat and pulses; potassium and iron from dried fruit."
+    ],
+    "w": [
+     "Şekeri yüksek; kan şekerini hızla yükseltebilir. Ceviz ve fındık süslemede kullanılır.",
+     "High in sugar and can raise blood sugar quickly. Walnuts and hazelnuts are used as topping."
+    ],
+    "s": [
+     "Şekeri yarıya indir; kuruyemiş alerjisi varsa süslemeyi nar ve tarçınla yap.",
+     "Halve the sugar; for nut allergies, top with pomegranate and cinnamon only."
+    ]
+   },
+   "where": [
+    {
+     "n": "Kanaat Lokantası",
+     "ptr": "Orta fiyat ($$)",
+     "pen": "Mid-range ($$)",
+     "c": "İstanbul, Üsküdar",
+     "tr": "1933'ten beri açık. Girişteki Osmanlı tatlıları tezgâhında sütlaçtan aşureye kadar geleneksel tatlılar var; ev yapımı keçi sütlü dondurması da ünlü.",
+     "en": "Open since 1933. The Ottoman pudding counter by the entrance runs from rice pudding to aşure; its homemade goat-milk ice cream is famous too."
+    }
+   ],
+   "whereTr": []
+  },
+  {
+   "key": "tr-3",
+   "country": "tr",
+   "title": "İskender Kebap",
+   "desc": "Pide üzerinde ince kesilmiş et, domates sosu, kızgın tereyağı ve yoğurt.",
+   "mins": 45,
+   "time": "45 dk",
+   "serves": "4 kişilik",
+   "level": "Orta",
+   "kcal": 850,
+   "tip": "Eti yarı dondurulmuş haldeyken keserseniz kâğıt inceliğinde dilimler elde edersiniz.",
+   "story": "İskender kebabın hikâyesi 1867'de Bursa'da başlar. İskender Efendi'nin, kuzuyu yatay şişte değil dikey şişte, közün karşısında pişirme fikriyle bugünkü dönerin atası sayılan yöntemi geliştirdiği anlatılır. Ailesinin işlettiği Kebapçı İskender hâlâ Bursa'da açık ve 'İskender' adı ailenin tescilli markası. Bu yüzden başka yerlerde aynı yemek çoğu zaman 'Bursa kebabı' gibi isimlerle satılır.",
+   "legend": true,
+   "ing": [
+    "500 g dana antrikot veya bonfile (çok ince dilimlenmiş)",
+    "4 adet pide veya tırnaklı ekmek",
+    "2 yemek kaşığı domates salçası",
+    "2 adet rendelenmiş domates",
+    "100 g tereyağı",
+    "2 su bardağı yoğurt",
+    "4 adet sivri biber",
+    "1 adet soğan (marine için rendelenmiş)",
+    "Tuz, karabiber"
+   ],
+   "steps": [
+    "Eti rendelenmiş soğanın suyu, tuz ve karabiberle 30 dakika marine edin.",
+    "Pideleri küp kesip tabakların dibine yayın, fırında hafifçe ısıtın.",
+    "Tavada 1 kaşık tereyağında salça ve rendelenmiş domatesi 5 dakika pişirip su ekleyerek sulu bir sos yapın.",
+    "Eti çok kızgın tavada birkaç parti halinde 1–2 dakika hızlıca soteleyin.",
+    "Sosun yarısını pidelerin üzerine gezdirin, eti dizin, kalan sosu dökün.",
+    "Biberleri közleyip yanına koyun, yoğurdu kenara ekleyin.",
+    "Kalan tereyağını köpürene kadar kızdırıp masada etin üzerine gezdirin."
+   ],
+   "diet": {
+    "a": [
+     "gluten",
+     "sut"
+    ],
+    "d": [],
+    "p": [
+     "Et ve yoğurt sayesinde protein çok yüksek.",
+     "Very high in protein from the meat and yoghurt."
+    ],
+    "w": [
+     "Kızgın tereyağı ve pide nedeniyle yağ, kalori ve tuz yüksek.",
+     "Sizzling butter and bread make it high in fat, calories and salt."
+    ],
+    "s": [
+     "Tereyağını azalt, yoğurdu artır; pideyi küçük tut.",
+     "Use less butter and more yoghurt; keep the bread portion small."
+    ]
+   },
+   "where": [
+    {
+     "n": "Kebapçı İskender",
+     "c": "Bursa",
+     "tr": "İskender kebabın doğduğu yer; 1867'den beri İskender Efendi'nin ailesi tarafından işletiliyor.",
+     "en": "The birthplace of İskender kebab, run by İskender Efendi's family since 1867."
+    }
+   ],
+   "whereTr": []
+  },
+  {
+   "key": "tr-4",
+   "country": "tr",
+   "title": "Mantı",
+   "desc": "Minik kıymalı hamur bohçaları, sarımsaklı yoğurt ve biberli tereyağıyla.",
+   "mins": 90,
+   "time": "90 dk",
+   "serves": "4 kişilik",
+   "level": "Orta",
+   "kcal": 600,
+   "tip": "Bol yapıp tepside kurutursanız aylarca saklayabilirsiniz; kuru mantıyı haşlarken süreyi biraz uzatın.",
+   "story": "Mantının Orta Asya'dan Türklerle birlikte Anadolu'ya geldiği kabul edilir. En ünlüsü Kayseri mantısıdır ve Kayseri geleneğine göre iyi mantı öylesine küçük olmalıdır ki bir kaşığa 40 tane sığsın. Eskiden kız isteme ya da gelin görmeye giden kaynanaların, müstakbel gelinin hünerini mantısının inceliğine bakarak ölçtüğü anlatılır.",
+   "legend": true,
+   "ing": [
+    "3 su bardağı un",
+    "1 adet yumurta",
+    "1 su bardağı ılık su",
+    "250 g kıyma",
+    "1 adet küçük soğan (rendelenmiş)",
+    "2 su bardağı yoğurt",
+    "2 diş sarımsak",
+    "3 yemek kaşığı tereyağı",
+    "1 yemek kaşığı salça (isteğe bağlı)",
+    "Pul biber, kuru nane, tuz, karabiber"
+   ],
+   "steps": [
+    "Un, yumurta, tuz ve suyu sert bir hamur olana kadar yoğurun; üzerini örtüp 30 dakika dinlendirin.",
+    "Kıymayı rendelenmiş soğan, tuz ve karabiberle yoğurun.",
+    "Hamuru ince açıp 2–3 cm'lik kareler kesin.",
+    "Her karenin ortasına nohut büyüklüğünde iç koyup dört köşesini birleştirerek kapatın.",
+    "Mantıları kaynayan tuzlu suda yüzeye çıkıp yumuşayana kadar 10–12 dakika haşlayın.",
+    "Süzüp tabaklara alın, sarımsaklı yoğurdu üzerine dökün.",
+    "Tereyağını pul biber ve istenirse salçayla kızdırıp üzerine gezdirin, nane serpin."
+   ],
+   "diet": {
+    "a": [
+     "gluten",
+     "yumurta",
+     "sut"
+    ],
+    "d": [],
+    "p": [
+     "Yoğurt protein, kalsiyum ve probiyotik sağlar.",
+     "Yoghurt adds protein, calcium and probiotics."
+    ],
+    "w": [
+     "Hamur ve tereyağlı sos nedeniyle karbonhidrat ve yağ yüksek.",
+     "Dough and butter sauce make it high in carbs and fat."
+    ],
+    "s": [
+     "Sosta tereyağını azalt; laktoz hassasiyetinde laktozsuz yoğurt kullan.",
+     "Use less butter in the sauce; choose lactose-free yoghurt if needed."
+    ]
+   },
+   "where": [
+    {
+     "n": "Kaşıkla",
+     "c": "Kayseri",
+     "tr": "Kayseri mantısı için şehir rehberlerinde önerilen bir mantıcı. Kayseri mantısı 2009'da coğrafi işaret aldı.",
+     "en": "A mantı house recommended in Kayseri city guides. Kayseri mantı received a geographical indication in 2009."
+    },
+    {
+     "n": "Gubate",
+     "c": "Kayseri",
+     "tr": "Kayseri mantısı için önerilen yerel bir restoran.",
+     "en": "A local restaurant recommended for Kayseri mantı."
+    },
+    {
+     "n": "Aşkana Mantı",
+     "c": "İstanbul",
+     "tr": "1987'den beri mantı yapan bir İstanbul adresi.",
+     "en": "An Istanbul address making mantı since 1987."
+    }
+   ],
+   "whereTr": []
+  },
+  {
+   "key": "tr-5",
+   "country": "tr",
+   "title": "Hünkâr Beğendi",
+   "desc": "Közlenmiş patlıcanlı, peynirli beğendi üzerinde yumuşacık et yahnisi.",
+   "mins": 100,
+   "time": "100 dk",
+   "serves": "4 kişilik",
+   "level": "Orta",
+   "kcal": 650,
+   "tip": "Patlıcanın dumanlı tadı beğendinin ruhudur; mümkünse ocak ateşinde közleyin.",
+   "story": "Adı 'sultanın beğendiği' anlamına gelir. En bilinen anlatıya göre 1869'da Fransa İmparatoriçesi Eugénie, Sultan Abdülaziz'in konuğu olarak İstanbul'a geldiğinde ziyafette sunulan bu patlıcanlı beğendiyi çok beğenmiş ve yemeğin adı böyle konmuş. Tarifi soran imparatoriçeye aşçıbaşının tarif değil 'imparatoriçenin aşçısının bir sultan mutfağında yetişmesi gerektiğini' söylediği de anlatılır. Bunlar belgeden çok hikâyedir, ama yemek bugün Osmanlı mutfağının simgelerinden biri.",
+   "legend": true,
+   "ing": [
+    "500 g kuşbaşı kuzu veya dana eti",
+    "1 adet soğan",
+    "2 adet domates",
+    "1 yemek kaşığı salça",
+    "4 adet büyük patlıcan",
+    "2 yemek kaşığı tereyağı",
+    "2 yemek kaşığı un",
+    "2 su bardağı süt",
+    "1 avuç rendelenmiş kaşar",
+    "Tuz, karabiber, sıcak su"
+   ],
+   "steps": [
+    "Eti tencerede kendi suyunu salıp çekene kadar kavurun, doğranmış soğanı ekleyip pembeleştirin.",
+    "Salça ve rendelenmiş domatesi ekleyin, üzerini geçecek kadar sıcak su koyup kısık ateşte et yumuşayana kadar 60–70 dakika pişirin.",
+    "Patlıcanları ocak ateşinde ya da fırında her yanı yumuşayana kadar közleyin, kabuklarını soyup limonlu suda bekletin ve ince kıyın.",
+    "Tereyağında unu kokusu çıkana kadar kavurun, sütü azar azar ekleyip koyu bir beşamel yapın.",
+    "Patlıcanları beşamele katıp 5 dakika karıştırarak pişirin; kaşarı ve tuzu ekleyin.",
+    "Beğendiyi tabağa yayın, ortasına eti sosuyla birlikte koyun."
+   ],
+   "diet": {
+    "a": [
+     "gluten",
+     "sut"
+    ],
+    "d": [],
+    "p": [
+     "Et protein, patlıcan lif sağlar; sütten kalsiyum gelir.",
+     "Protein from meat, fibre from aubergine and calcium from milk."
+    ],
+    "w": [
+     "Beşamel (tereyağı, un, süt, kaşar) doymuş yağı artırır.",
+     "The béchamel (butter, flour, milk, cheese) is high in saturated fat."
+    ],
+    "s": [
+     "Un yerine pirinç unu kullanırsan glutensiz olur.",
+     "Use rice flour instead of wheat flour to make it gluten-free."
+    ]
+   },
+   "where": [
+    {
+     "n": "Pandeli",
+     "c": "İstanbul, Eminönü (Mısır Çarşısı)",
+     "tr": "1901'de kuruldu, 1957'den beri Mısır Çarşısı'nın üst katında, turkuaz çinili salonlarda. Michelin Bib Gourmand listesinde; hünkâr beğendisi en ünlü yemeklerinden. Yalnızca 19.00'a kadar açık, pazar kapalı, alkol yok.",
+     "en": "Founded in 1901 and above the Spice Bazaar since 1957, in turquoise-tiled rooms. Michelin Bib Gourmand; its hünkâr beğendi is one of its most famous dishes. Open only until 7 pm, closed Sundays, no alcohol.",
+     "ptr": "Kişi başı ≈ 700 TL",
+     "pen": "≈ 700 TL per person"
+    }
+   ],
+   "whereTr": []
+  },
+  {
+   "key": "tr-6",
+   "country": "tr",
+   "title": "Ezogelin Çorbası",
+   "desc": "Kırmızı mercimek, bulgur ve pirinçle yapılan naneli, pul biberli çorba.",
+   "mins": 40,
+   "time": "40 dk",
+   "serves": "6 kişilik",
+   "level": "Kolay",
+   "kcal": 200,
+   "tip": "Limon sıkıp yanında turp veya taze soğanla servis etmek Antep usulüdür.",
+   "story": "Çorba adını, Gaziantep'in Dokuzyol köyünde yaşamış olan Zöhre'den, yani 'Ezo Gelin'den alır. Güzelliğiyle bölgede ün salan Ezo Gelin'in hayatı talihsiz evliliklerle geçti; hikâyesi türkülere ve filmlere konu oldu. Gurbete gelin gittiğinde kaynanasının gönlünü kazanmak için bu çorbayı pişirdiği anlatılır. Bugün Türkiye'nin her lokantasında bulunan bu çorba, onun adını yaşatıyor.",
+   "legend": true,
+   "ing": [
+    "1 su bardağı kırmızı mercimek",
+    "2 yemek kaşığı pirinç",
+    "2 yemek kaşığı ince bulgur",
+    "1 adet soğan",
+    "1 yemek kaşığı domates salçası",
+    "1 yemek kaşığı biber salçası",
+    "2 yemek kaşığı tereyağı",
+    "7 su bardağı sıcak su veya et suyu",
+    "1 yemek kaşığı kuru nane",
+    "1 çay kaşığı pul biber, tuz"
+   ],
+   "steps": [
+    "Mercimek, pirinç ve bulguru yıkayıp süzün.",
+    "Tereyağında ince doğranmış soğanı pembeleştirin, salçaları ekleyip 2 dakika kavurun.",
+    "Mercimek, pirinç, bulgur ve sıcak suyu ekleyip kısık ateşte 30 dakika pişirin.",
+    "Tuzunu ayarlayın; çorba koyulaşırsa biraz sıcak su ekleyin. Ezogelin blenderdan geçirilmez, taneli kalır.",
+    "Bir kaşık tereyağında naneyi ve pul biberi birkaç saniye kızdırıp çorbanın üzerine gezdirin."
+   ],
+   "diet": {
+    "a": [
+     "gluten",
+     "sut"
+    ],
+    "d": [
+     "veg"
+    ],
+    "p": [
+     "Mercimek ve bulgurdan lif ile bitkisel protein; kalorisi düşük.",
+     "Fibre and plant protein from lentils and bulgur; low in calories."
+    ],
+    "w": [
+     "Bulgur gluten, tereyağı süt içerir.",
+     "Bulgur contains gluten; butter contains dairy."
+    ],
+    "s": [
+     "Tereyağı yerine zeytinyağı kullan: vegan olur. Bulguru atlarsan glutensiz.",
+     "Use olive oil instead of butter for a vegan version; skip bulgur to make it gluten-free."
+    ]
+   },
+   "where": [
+    {
+     "n": "Metanet Lokantası",
+     "c": "Gaziantep, Şahinbey (Kozluca)",
+     "tr": "Antep ev yemekleriyle ünlü, hep kalabalık bir esnaf lokantası; en ünlüsü sabahları biten beyran çorbası. Ezogelin gibi Antep çorbaları için iyi bir durak, ama günün menüsü değişebilir.",
+     "en": "A busy tradesmen's canteen famous for Antep home cooking; its best-known dish is beyran soup, which sells out by late morning. A good stop for Antep soups like ezogelin, though the daily menu varies."
+    }
+   ],
+   "whereTr": []
+  },
+  {
+   "key": "tr-7",
+   "country": "tr",
+   "title": "Baklava",
+   "desc": "İncecik yufka katları, bol Antep fıstığı, tereyağı ve şerbet.",
+   "mins": 90,
+   "time": "90 dk + dinlenme",
+   "serves": "1 tepsi (≈ 30 dilim)",
+   "level": "Orta",
+   "kcal": 230,
+   "tip": "Kural basit: sıcak baklavaya soğuk şerbet. İkisi de sıcak olursa baklava hamurlaşır.",
+   "story": "Osmanlı sarayında Ramazan'ın 15. günü 'Baklava Alayı' düzenlenirdi: Topkapı Sarayı mutfağında pişen baklavalar tepsilere konup yeniçerilere dağıtılır, tepsiler törenle kışlalara taşınırdı. Bugün baklavanın başkenti sayılan Gaziantep'in Antep baklavası, 2013'te Avrupa Birliği'nde coğrafi işaret alan ilk Türk ürünü oldu.",
+   "legend": true,
+   "ing": [
+    "500 g hazır baklava yufkası",
+    "250 g tereyağı (eritilmiş)",
+    "250 g Antep fıstığı (iri çekilmiş)",
+    "3 su bardağı toz şeker",
+    "2,5 su bardağı su",
+    "Birkaç damla limon suyu"
+   ],
+   "steps": [
+    "Şerbet için şeker ve suyu kaynatın, 10 dakika pişirip limon damlatın ve tamamen soğumaya bırakın.",
+    "Tepsiyi yağlayın; yufkaları tek tek, her birinin arasına fırçayla tereyağı sürerek yarısı bitene kadar dizin.",
+    "Fıstığı eşit şekilde serpin, kalan yufkaları aynı şekilde yağlayarak dizin.",
+    "Keskin bir bıçakla baklava dilimi şeklinde kesin, kalan tereyağını üzerine gezdirin.",
+    "170°C fırında üzeri altın rengi olana kadar 45–50 dakika pişirin.",
+    "Sıcak baklavanın üzerine soğuk şerbeti dökün ve en az 3 saat dinlendirin."
+   ],
+   "diet": {
+    "a": [
+     "gluten",
+     "sut",
+     "kuruyemis"
+    ],
+    "d": [
+     "veg"
+    ],
+    "p": [
+     "Antep fıstığı sağlıklı yağ ve biraz protein sağlar.",
+     "Pistachios add healthy fats and some protein."
+    ],
+    "w": [
+     "Şeker ve tereyağı çok yüksek; bir dilim bile kalorili. Fıstık alerjisi ciddi olabilir.",
+     "Very high in sugar and butter, so even one piece is rich. Pistachio allergy can be serious."
+    ],
+    "s": [
+     "Küçük porsiyon tercih et; şerbeti biraz daha az şekerle yapabilirsin.",
+     "Keep portions small; you can make the syrup with a little less sugar."
+    ]
+   },
+   "where": [
+    {
+     "n": "Karaköy Güllüoğlu",
+     "c": "İstanbul, Karaköy",
+     "tr": "Güllü ailesi 1800'lerden beri Gaziantep'te baklava yapıyor; Karaköy'deki dükkânı 1949'da açıldı. İstanbul baklavasının referans adreslerinden.",
+     "en": "The Güllü family has made baklava in Gaziantep since the 1800s; the Karaköy shop opened in 1949 and is one of Istanbul's reference baklava addresses.",
+     "ptr": "Kişi başı ≈ 300 TL",
+     "pen": "≈ 300 TL per person"
+    },
+    {
+     "n": "İmam Çağdaş",
+     "c": "Gaziantep",
+     "tr": "Hem kebapçı hem baklavacı; Gaziantep'in en bilinen baklava adreslerinden. Kuru baklava, şöbiyet ve havuç dilimi öne çıkıyor.",
+     "en": "Both a kebab house and a baklava maker, one of Gaziantep's best-known baklava addresses; known for kuru baklava, şöbiyet and havuç dilimi."
+    },
+    {
+     "n": "Tarihi Elmacı Pazarı Güllüoğlu",
+     "c": "Gaziantep, Şahinbey",
+     "tr": "Tarihi çarşı atmosferinde, klasik tariflere sadık baklavalarıyla bilinen bir baklavacı.",
+     "en": "A baklava shop in the historic bazaar, known for sticking to classic recipes."
+    }
+   ],
+   "whereTr": []
+  },
+  {
+   "key": "tr-8",
+   "country": "tr",
+   "title": "Türk Kahvesi",
+   "desc": "Cezvede, köpüğüyle pişen koyu ve telvesiyle içilen kahve.",
+   "mins": 10,
+   "time": "10 dk",
+   "serves": "2 fincan",
+   "level": "Kolay",
+   "kcal": 25,
+   "tip": "Kahveyi yüksek ateşte pişirirseniz köpüğü kaçar; sabırla, kısık ateşte pişirin.",
+   "story": "Kahve İstanbul'a 16. yüzyılda geldi. Şehrin ilk kahvehanesinin 1555'te Tahtakale'de, Şam ve Halep'ten gelen iki tüccar tarafından açıldığı anlatılır. Cezvede pişirilen, telvesiyle içilen bu kahve 'Bir fincan kahvenin kırk yıl hatırı vardır' sözüyle dostluğun simgesi oldu. Kız isteme geleneğinde gelin adayının damada tuzlu kahve yapması hâlâ sürüyor. Türk kahvesi kültürü ve geleneği 2013'te UNESCO Somut Olmayan Kültürel Miras listesine alındı.",
+   "legend": true,
+   "ing": [
+    "2 tatlı kaşığı (tepeleme) Türk kahvesi",
+    "2 kahve fincanı soğuk su",
+    "Tercihe göre şeker (az, orta veya şekerli)",
+    "Yanına su ve lokum"
+   ],
+   "steps": [
+    "Suyu kahve fincanıyla ölçüp cezveye koyun.",
+    "Kahveyi ve istenirse şekeri ekleyip iyice karıştırın.",
+    "Cezveyi kısık ateşe koyun ve bir daha karıştırmayın.",
+    "Kahve kabarıp köpürmeye başlayınca köpüğü kaşıkla fincanlara paylaştırın.",
+    "Cezveyi tekrar ateşe koyup ikinci kez kabarınca kahveyi fincanlara yavaşça dökün.",
+    "Telvenin dibe çökmesi için bir dakika bekleyin; yanında bir bardak su ve lokumla servis edin."
+   ],
+   "diet": {
+    "a": [],
+    "m": [
+     "kuruyemis"
+    ],
+    "d": [
+     "veg",
+     "vegan",
+     "gf",
+     "df"
+    ],
+    "p": [
+     "Şekersiz içilirse neredeyse hiç kalori yok.",
+     "Almost no calories when taken without sugar."
+    ],
+    "w": [
+     "Kafein içerir; hamilelikte, çarpıntı veya uyku sorununda sınırlı tüket. Yanındaki lokum fındık/fıstık içerebilir.",
+     "Contains caffeine; limit it during pregnancy or if you have palpitations or trouble sleeping. Turkish delight served alongside may contain nuts."
+    ],
+    "s": [
+     "Şekersiz ya da az şekerli tercih et.",
+     "Order it plain or with little sugar."
+    ]
+   },
+   "where": [
+    {
+     "n": "Kurukahveci Mehmet Efendi",
+     "c": "İstanbul, Eminönü (Tahtakale)",
+     "tr": "Türk kahvesinin en tanınmış kavurucusu; Mısır Çarşısı'nın hemen yanındaki tarihi dükkânında önünde her zaman kuyruk olur.",
+     "en": "Turkish coffee's best-known roaster; there's always a queue at its historic shop right by the Spice Bazaar."
+    }
+   ],
+   "whereTr": []
+  },
+  {
+   "key": "tr-9",
+   "country": "tr",
+   "title": "Keşkek",
+   "desc": "Buğday ve etin saatlerce pişip tokmakla dövüldüğü düğün ve bayram yemeği.",
+   "mins": 180,
+   "time": "3 saat + 1 gece ıslatma",
+   "serves": "8 kişilik",
+   "level": "Orta",
+   "kcal": 450,
+   "tip": "Düdüklü tencerede buğdayı pişirme süresini yarıya indirebilirsiniz.",
+   "story": "Keşkek Anadolu'da düğünlerde, bayramlarda, hayır yemeklerinde ve yağmur dualarında pişirilen bir imece yemeğidir. Buğday bir gün önceden köyün kadınları tarafından hazırlanır, kazanlar gece boyunca kaynar ve ertesi gün köyün gençleri tokmaklarla keşkeği döver; bu sırada davul zurna çalınır. Bu tören ve yemek, 2011'de 'Keşkek geleneği' adıyla UNESCO Somut Olmayan Kültürel Miras listesine alındı.",
+   "legend": true,
+   "ing": [
+    "2 su bardağı aşurelik (kabuksuz) buğday",
+    "500 g kemikli kuzu veya tavuk eti",
+    "8 su bardağı su",
+    "100 g tereyağı",
+    "1 tatlı kaşığı pul biber",
+    "Tuz"
+   ],
+   "steps": [
+    "Buğdayı bir gece önceden bol suda ıslatın.",
+    "Eti suyla birlikte haşlayıp köpüğünü alın; yumuşayınca çıkarıp kemiklerinden ayırın ve didin.",
+    "Buğdayı et suyunda kısık ateşte, ara ara karıştırarak iyice yumuşayıp dağılana kadar yaklaşık 2 saat pişirin.",
+    "Didilmiş eti ve tuzu ekleyin.",
+    "Tahta kaşık ya da tokmakla, buğday ve et birbirine karışıp lapa kıvamına gelene kadar dövün.",
+    "Servis tabağına alın, pul biberle kızdırılmış tereyağını üzerine gezdirin."
+   ],
+   "diet": {
+    "a": [
+     "gluten",
+     "sut"
+    ],
+    "d": [],
+    "p": [
+     "Tam buğday lifi ve etten protein.",
+     "Whole-wheat fibre and protein from the meat."
+    ],
+    "w": [
+     "Üzerine dökülen tereyağı yağı artırır.",
+     "The butter poured over it adds a lot of fat."
+    ],
+    "s": [
+     "Tavukla yapıp tereyağını azaltarak hafifletebilirsin.",
+     "Make it with chicken and less butter for a lighter dish."
+    ]
+   },
+   "where": [
+    {
+     "n": "Şişman Börekçi",
+     "c": "Samsun",
+     "tr": "Samsun'da Çarşamba keşkeği ve katık böreği için önerilen yerel bir adres.",
+     "en": "A local spot in Samsun recommended for Çarşamba-style keşkek and katık böreği."
+    }
+   ],
+   "whereTr": []
+  },
+  {
+   "key": "tr-10",
+   "country": "tr",
+   "title": "Menemen",
+   "desc": "Domates, biber ve yumurtanın tavada buluştuğu klasik kahvaltı yemeği.",
+   "mins": 20,
+   "time": "20 dk",
+   "serves": "2 kişilik",
+   "level": "Kolay",
+   "kcal": 260,
+   "tip": "Yumurtayı sona bırakın ve ateşten erken alın; tavanın sıcaklığı pişirmeye devam eder.",
+   "story": "Adının İzmir'in Menemen ilçesinden geldiği yaygın bir görüştür. Ama menemen asıl ünlü tartışmasıyla bilinir: soğanlı mı olur, soğansız mı? Bu soru Türkiye'de sosyal medyada anketlere, televizyon programlarına ve aile sofralarında bitmeyen tartışmalara konu olur. Tarifte soğanı isteğe bağlı bıraktık; karar sizin.",
+   "legend": false,
+   "ing": [
+    "3 adet olgun domates",
+    "3 adet sivri veya çarliston biber",
+    "3 adet yumurta",
+    "1 adet küçük soğan (isteğe bağlı)",
+    "2 yemek kaşığı tereyağı veya zeytinyağı",
+    "Tuz, karabiber, pul biber"
+   ],
+   "steps": [
+    "Biberleri ince doğrayın, domatesleri rendeleyin ya da küp doğrayın.",
+    "Tavada yağı ısıtıp (kullanıyorsanız soğanı ve) biberleri 3–4 dakika soteleyin.",
+    "Domatesleri ekleyip suyunu biraz çekene kadar 5 dakika pişirin; tuz ve baharatları ekleyin.",
+    "Yumurtaları kırın ve çok karıştırmadan, yarı akışkan kalacak şekilde 2 dakika pişirin.",
+    "Tavada, yanında taze ekmekle servis edin."
+   ],
+   "diet": {
+    "a": [
+     "yumurta",
+     "sut"
+    ],
+    "d": [
+     "veg",
+     "gf"
+    ],
+    "p": [
+     "Yumurtadan protein, domates ve biberden C vitamini; karbonhidratı düşük.",
+     "Protein from eggs, vitamin C from tomatoes and peppers; low in carbs."
+    ],
+    "w": [
+     "Tereyağıyla yapılırsa süt içerir.",
+     "Contains dairy when made with butter."
+    ],
+    "s": [
+     "Zeytinyağıyla pişirirsen sütsüz olur.",
+     "Cook it in olive oil to make it dairy-free."
+    ]
+   },
+   "where": [
+    {
+     "n": "Meşhur Menemenci Dayı",
+     "c": "Samsun, Çakallı",
+     "tr": "Samsun'un lezzet simgelerinden sayılan Çakallı menemenini yapan yerlerden biri.",
+     "en": "One of the places making Çakallı menemen, considered one of Samsun's signature tastes."
+    }
+   ],
+   "whereTr": []
+  },
+  {
+   "key": "tr-11",
+   "country": "tr",
+   "title": "Zeytinyağlı Yaprak Sarma",
+   "desc": "Pirinç, soğan ve baharatlı iç harcın asma yaprağına sarıldığı zeytinyağlı.",
+   "mins": 100,
+   "time": "100 dk + soğuma",
+   "serves": "6 kişilik",
+   "level": "Orta",
+   "kcal": 300,
+   "tip": "Zeytinyağlı sarma tencerede soğuyunca demlenir; ertesi gün daha lezzetli olur.",
+   "story": "Dolma 'doldurmak' fiilinden, sarma 'sarmak' fiilinden gelir; Osmanlı saray mutfağında onlarca çeşidi yapılırdı. Etsiz, zeytinyağlı olanlara bu yüzden halk arasında 'yalancı dolma' denir: görünüşü etli dolma gibi, ama içinde et yoktur. Zeytinyağlılar Türk sofrasında soğuk yenen ayrı bir yemek grubu olarak bugün de ayrıcalıklı yerini korur.",
+   "legend": false,
+   "ing": [
+    "250 g salamura asma yaprağı",
+    "1,5 su bardağı pirinç",
+    "3 adet soğan",
+    "1 çay bardağı zeytinyağı",
+    "2 yemek kaşığı dolmalık fıstık",
+    "2 yemek kaşığı kuş üzümü",
+    "1 tatlı kaşığı kuru nane, yarım tatlı kaşığı tarçın, yenibahar",
+    "1 tatlı kaşığı şeker",
+    "1 adet limon",
+    "Tuz, sıcak su"
+   ],
+   "steps": [
+    "Yaprakları sıcak suda 10 dakika bekletip tuzunu alın, saplarını kesin.",
+    "Zeytinyağında ince doğranmış soğanı ve fıstığı kavurun; yıkanmış pirinci ekleyip 3 dakika çevirin.",
+    "Kuş üzümü, baharatlar, şeker, tuz ve yarım bardak sıcak su ekleyip pirinç suyunu çekene kadar pişirin; soğumaya bırakın.",
+    "Yaprağın mat yüzüne bir çay kaşığı iç koyup kenarlarını içe katlayarak sıkıca sarın.",
+    "Tencerenin dibine birkaç yaprak serip sarmaları dizin, üzerine limon dilimleri ve bir tabak kapatın.",
+    "Sarmaların üstünü geçecek kadar sıcak su ekleyip kısık ateşte 45–50 dakika pişirin; tencerede soğumaya bırakın."
+   ],
+   "diet": {
+    "a": [
+     "kuruyemis"
+    ],
+    "d": [
+     "veg",
+     "vegan",
+     "gf",
+     "df"
+    ],
+    "p": [
+     "Zeytinyağı kalp dostu yağ sağlar; et içermez.",
+     "Olive oil provides heart-friendly fats; no meat."
+    ],
+    "w": [
+     "Salamura yaprak nedeniyle tuzu yüksek olabilir. Dolmalık fıstık (çam fıstığı) içerir.",
+     "Brined vine leaves can make it salty. Contains pine nuts."
+    ],
+    "s": [
+     "Yaprakları iyice haşlayıp tuzunu al; fıstık alerjisi varsa fıstığı çıkar.",
+     "Blanch the leaves well to remove salt; leave out the pine nuts for allergies."
+    ]
+   },
+   "where": [
+    {
+     "n": "Kanaat Lokantası",
+     "c": "İstanbul, Üsküdar",
+     "tr": "1933'ten beri açık esnaf lokantası; vitrindeki zeytinyağlılar ve etli-etsiz dolma çeşitleri menünün klasikleri.",
+     "en": "A tradesmen's canteen open since 1933; the olive-oil dishes and stuffed vegetables in its display cases are house classics.",
+     "ptr": "Orta fiyat ($$)",
+     "pen": "Mid-range ($$)"
+    },
+    {
+     "n": "Pandeli",
+     "c": "İstanbul, Eminönü (Mısır Çarşısı)",
+     "tr": "1901'den beri İstanbul mutfağının simgelerinden; dolma çeşitleri öne çıkan yemekleri arasında. Yalnızca 19.00'a kadar açık, pazar kapalı.",
+     "en": "A symbol of Istanbul cooking since 1901; its dolma are among its standout dishes. Open only until 7 pm, closed Sundays.",
+     "ptr": "Kişi başı ≈ 700 TL",
+     "pen": "≈ 700 TL per person"
+    }
+   ],
+   "whereTr": []
+  },
+  {
+   "key": "tr-12",
+   "country": "tr",
+   "title": "Fırın Sütlaç",
+   "desc": "Pirinçli sütlü tatlının üzeri fırında kızartılmış hali.",
+   "mins": 60,
+   "time": "60 dk + soğuma",
+   "serves": "6 kase",
+   "level": "Kolay",
+   "kcal": 290,
+   "tip": "Tepsiye su koymak sütlacın alttan pişip kesilmesini önler, sadece üstü kızarır.",
+   "story": "Sütlaç Osmanlı saray mutfağının sütlü tatlılarındandır ve 'sütlü aş' sözünden türediği düşünülür. İstanbul'da sütlü tatlılar uzun süre muhallebicilerin işiydi; 20. yüzyılın başında şehrin muhallebicilik ve dondurma geleneğinde Balkanlardan, özellikle Arnavutluk ve Makedonya'dan gelen ustaların büyük payı vardı. Üzerini fırında kızartma alışkanlığı sonradan yayıldı ve bugün 'fırın sütlaç' ayrı bir klasik sayılıyor.",
+   "legend": false,
+   "ing": [
+    "1 litre süt",
+    "Yarım su bardağı pirinç",
+    "1 su bardağı su",
+    "1 su bardağı toz şeker",
+    "2 yemek kaşığı pirinç unu veya nişasta",
+    "1 paket vanilin (isteğe bağlı)",
+    "Üzeri için tarçın"
+   ],
+   "steps": [
+    "Pirinci suyla, suyunu çekip yumuşayana kadar 15 dakika haşlayın.",
+    "Sütü ekleyip kaynamaya bırakın, şekeri ilave edin.",
+    "Pirinç ununu yarım bardak soğuk sütle açıp karıştırarak tencereye ekleyin; kıvam alana kadar 10 dakika pişirin.",
+    "Vanilini ekleyip fırına dayanıklı kaselere paylaştırın.",
+    "Kaseleri su dolu bir tepsiye dizin; fırının üst ızgarasında üzeri kızarana kadar 15–20 dakika pişirin.",
+    "Oda sıcaklığında soğuyunca buzdolabına kaldırın, tarçınla servis edin."
+   ],
+   "diet": {
+    "a": [
+     "sut"
+    ],
+    "m": [
+     "gluten"
+    ],
+    "d": [
+     "veg",
+     "gf"
+    ],
+    "p": [
+     "Sütten kalsiyum ve protein.",
+     "Calcium and protein from milk."
+    ],
+    "w": [
+     "Şekeri yüksek. Pirinç unu yerine buğday nişastası kullanılırsa gluten içerebilir.",
+     "High in sugar. May contain gluten if wheat starch is used instead of rice flour."
+    ],
+    "s": [
+     "Laktozsuz süt kullanabilir, şekeri azaltabilirsin.",
+     "Use lactose-free milk and less sugar."
+    ]
+   },
+   "where": [
+    {
+     "n": "Tarihi Sarıyer Muhallebicisi",
+     "c": "İstanbul, Sarıyer",
+     "tr": "1928'den beri açık; sütlü tatlıları ve börekleriyle Sarıyer'in klasik mahalle muhallebicisi.",
+     "en": "Open since 1928; Sarıyer's classic neighbourhood pudding shop, known for its milk puddings and börek."
+    },
+    {
+     "n": "Murat Muhallebicisi",
+     "c": "İstanbul, Kadıköy",
+     "tr": "Kadıköy rıhtımında, fırın sütlaçtan kazandibine ondan fazla sütlü tatlı çeşidi sunan muhallebici.",
+     "en": "A pudding shop on the Kadıköy waterfront with more than ten milk puddings, from baked rice pudding to kazandibi."
+    }
+   ],
+   "whereTr": []
+  },
+  {
+   "key": "it-0",
+   "country": "it",
+   "title": "Spaghetti Carbonara",
+   "desc": "Krema yok: sos yumurta sarısı, peynir ve makarna suyuyla kremsi olur.",
+   "mins": 20,
+   "time": "20 dk",
+   "serves": "2 kişilik",
+   "level": "Orta",
+   "kcal": 650,
+   "tip": "Yumurtayı ocağın üzerinde eklemeyin; ısı fazla olursa omlete döner.",
+   "story": "Carbonara sanıldığı kadar eski değildir; yazılı kaynaklarda ilk kez 1950'lerde görünür. En yaygın açıklamaya göre II. Dünya Savaşı sonunda Roma'daki Amerikan askerlerinin tayınındaki yumurta tozu ve pastırma, İtalyan aşçıların elinde makarnayla buluştu. Adının Apenin dağlarındaki kömür işçilerinden (carbonari) ya da tabağa serpilen bol karabiberin kömür tozuna benzemesinden geldiği de söylenir.",
+   "legend": true,
+   "ing": [
+    "200 g spagetti",
+    "100 g guanciale veya dana pastırma/füme et",
+    "3 adet yumurta sarısı + 1 bütün yumurta",
+    "60 g rendelenmiş pecorino veya parmesan",
+    "Bol taze çekilmiş karabiber",
+    "Tuz (makarna suyu için)"
+   ],
+   "steps": [
+    "Bol tuzlu suda spagettiyi paketteki süreden 1 dakika az haşlayın.",
+    "Guancialeyi şeritler halinde kesip yağsız tavada kıtırlaşana kadar kızartın, ocağı kapatın.",
+    "Kasede yumurta sarıları, bütün yumurta, peynir ve karabiberi çırpın.",
+    "Makarnayı süzüp tavaya alın; yarım kepçe makarna suyu ekleyip karıştırın.",
+    "Tava ocaktan alınmışken yumurtalı karışımı dökün ve hızla karıştırın. Gerekirse makarna suyuyla kıvamı açın.",
+    "Üzerine peynir ve karabiber serpip hemen servis edin."
+   ],
+   "diet": {
+    "a": [
+     "gluten",
+     "yumurta",
+     "sut"
+    ],
+    "d": [],
+    "p": [
+     "Yumurta ve peynirden protein.",
+     "Protein from eggs and cheese."
+    ],
+    "w": [
+     "Yumurta sosu tam pişmez; hamileler, küçük çocuklar ve bağışıklığı zayıf olanlar dikkat etmeli. Geleneksel guanciale domuz etidir.",
+     "The egg sauce is not fully cooked, so pregnant women, young children and people with weak immunity should be careful. Traditional guanciale is pork."
+    ],
+    "s": [
+     "Domuz eti yemiyorsan dana pastırma kullan; glutensiz makarna ile yapılabilir.",
+     "Use beef bacon if you don't eat pork; works with gluten-free pasta."
+    ]
+   },
+   "where": [
+    {
+     "n": "Roscioli",
+     "ptr": "Carbonara ≈ 15 € ve üzeri · şarapla kişi başı ≈ 70 €",
+     "pen": "Carbonara ≈ €15 and up · ≈ €70 per person with wine",
+     "c": "Roma",
+     "tr": "Roma'nın en çok konuşulan carbonarası; şarküteri, restoran ve şarap barı bir arada. Önceden rezervasyon şart.",
+     "en": "Rome's most talked-about carbonara, in a deli, restaurant and wine bar in one. Book ahead."
+    },
+    {
+     "n": "Trattoria da Danilo",
+     "ptr": "Carbonara ≈ 10–14 €",
+     "pen": "Carbonara ≈ €10–14",
+     "c": "Roma, Esquilino",
+     "tr": "Gösterişsiz, geleneksel bir Roma trattoriası; carbonarası ve enginarıyla bilinir. Pazar günleri kapalı.",
+     "en": "An unpretentious, traditional Roman trattoria known for its carbonara and artichokes. Closed on Sundays."
+    },
+    {
+     "n": "Armando al Pantheon",
+     "ptr": "Kişi başı ≈ 50 € (şarap hariç)",
+     "pen": "≈ €50 per person (wine extra)",
+     "c": "Roma, Centro Storico",
+     "tr": "1961'den beri Gargioli ailesinin işlettiği küçük bir Roma trattoriası; Michelin Rehberi'nde. Rezervasyonlar tam iki ay önceden açılıyor.",
+     "en": "A tiny Roman trattoria run by the Gargioli family since 1961 and listed in the Michelin Guide. Bookings open exactly two months ahead."
+    }
+   ],
+   "whereTr": []
+  },
+  {
+   "key": "it-1",
+   "country": "it",
+   "title": "Tiramisu",
+   "desc": "Kahveye batırılmış kedi dili ve mascarpone kreması katları.",
+   "mins": 30,
+   "time": "30 dk + 6 saat dinlenme",
+   "serves": "6 kişilik",
+   "level": "Kolay",
+   "kcal": 450,
+   "tip": "Bisküvileri kahvede uzun tutmayın; yumuşayıp dağılır.",
+   "story": "Adı İtalyanca 'beni canlandır, beni yukarı kaldır' anlamına gelir. Bugünkü haliyle 1960'ların sonu ile 1970'lerde Treviso'daki Le Beccherie restoranında ortaya çıktığı kabul edilir. Komşu Friuli bölgesi de kökeni sahiplenir; iki bölge arasındaki 'tiramisu kimin?' tartışması İtalya'da hâlâ şakayla karışık sürer.",
+   "legend": true,
+   "ing": [
+    "250 g mascarpone",
+    "3 adet yumurta (taze)",
+    "80 g toz şeker",
+    "200 g kedi dili bisküvi",
+    "300 ml soğumuş sert espresso veya filtre kahve",
+    "Üzeri için kakao"
+   ],
+   "steps": [
+    "Yumurtaların sarısını ve beyazını ayırın.",
+    "Sarıları şekerle açık renk alana kadar çırpın, mascarponeyi ekleyip pürüzsüz olana kadar karıştırın.",
+    "Beyazları ayrı kapta sert köpük olana kadar çırpın ve krema karışımına nazikçe katlayın.",
+    "Bisküvileri kahveye bir saniye batırıp servis kabına dizin.",
+    "Üzerine kremanın yarısını yayın, bir kat daha bisküvi ve kalan kremayı ekleyin.",
+    "Buzdolabında en az 6 saat bekletin. Servisten önce kakao eleyin."
+   ],
+   "diet": {
+    "a": [
+     "gluten",
+     "yumurta",
+     "sut"
+    ],
+    "d": [
+     "veg"
+    ],
+    "p": [
+     "Mascarpone ve yumurtadan biraz protein.",
+     "Some protein from mascarpone and eggs."
+    ],
+    "w": [
+     "Çiğ yumurta içerir; hamileler, çocuklar ve yaşlılar için riskli. Kahveden kafein, şeker ve yağ yüksek.",
+     "Contains raw egg, which is risky for pregnant women, children and older people. Caffeine from coffee; high in sugar and fat."
+    ],
+    "s": [
+     "Pastörize yumurta kullan; çocuklar için kafeinsiz kahve tercih et.",
+     "Use pasteurised eggs; choose decaf coffee for children."
+    ]
+   },
+   "where": [
+    {
+     "n": "Le Beccherie",
+     "ptr": "Pahalı kategori (€€€) · tiramisu ≈ 6 €'dan başlar",
+     "pen": "Upscale (€€€) · tiramisu from ≈ €6",
+     "c": "Treviso",
+     "tr": "Tiramisunun doğduğu yer olarak bilinir. 2014'te kapandı, modern bir restoran olarak yeniden açıldı; menüde hâlâ tiramisu var.",
+     "en": "Known as the birthplace of tiramisu. It closed in 2014 and reopened as a modern restaurant; tiramisu is still on the menu."
+    }
+   ],
+   "whereTr": []
+  },
+  {
+   "key": "it-2",
+   "country": "it",
+   "title": "Pizza Margherita",
+   "desc": "Domates, mozzarella ve fesleğen: Napoli'nin en ünlü pizzası.",
+   "mins": 40,
+   "time": "40 dk + 2 saat mayalanma",
+   "serves": "3 pizza",
+   "level": "Orta",
+   "kcal": 850,
+   "tip": "Hamuru merdaneyle açmayın; kenardaki hava kabarcıkları pizzanın kabarık kenarını verir.",
+   "story": "Ünlü hikâyeye göre 1889'da Napoli'yi ziyaret eden Kraliçe Margherita için pizzacı Raffaele Esposito, yeni birleşmiş İtalya'nın bayrak renklerini taşıyan bir pizza hazırladı: kırmızı domates, beyaz mozzarella ve yeşil fesleğen. Pizzaya kraliçenin adı verildi. Tarihçiler benzer pizzaların bundan önce de yapıldığını gösterse de hikâye pizzayı ulusal bir simgeye dönüştürdü. Napoli pizzacılarının sanatı 2017'de UNESCO Somut Olmayan Kültürel Miras listesine girdi.",
+   "legend": true,
+   "ing": [
+    "500 g un (tercihen tip 00)",
+    "325 ml ılık su",
+    "10 g tuz",
+    "5 g kuru maya",
+    "400 g konserve soyulmuş domates",
+    "250 g mozzarella",
+    "Birkaç yaprak taze fesleğen",
+    "Zeytinyağı"
+   ],
+   "steps": [
+    "Mayayı suda eritin, unu ve tuzu ekleyip 10 dakika yoğurun.",
+    "Hamuru örtüp oda sıcaklığında 2 saat, iki katına çıkana kadar mayalandırın.",
+    "Domatesleri elle ezin, biraz tuz ve zeytinyağıyla tatlandırın. Pişirmeyin.",
+    "Fırını tepsisiyle birlikte en yüksek derecede (250–275°C) 30 dakika ısıtın.",
+    "Hamuru üçe bölün, elle ortadan kenara doğru açın; kenarlarda kalın bir çerçeve bırakın.",
+    "Üzerine ince bir kat domates sosu ve parçalanmış mozzarella koyun.",
+    "Kızgın tepsiye aktarıp 7–9 dakika pişirin. Fırından çıkınca fesleğen ve zeytinyağı ekleyin."
+   ],
+   "diet": {
+    "a": [
+     "gluten",
+     "sut"
+    ],
+    "d": [
+     "veg"
+    ],
+    "p": [
+     "Pişmiş domates likopen sağlar; sade içerikli.",
+     "Cooked tomato provides lycopene; simple ingredients."
+    ],
+    "w": [
+     "Beyaz un ve peynir nedeniyle tuz ve kalori yüksek.",
+     "White flour and cheese make it high in salt and calories."
+    ],
+    "s": [
+     "Glutensiz un karışımıyla ya da kısmen tam buğday unuyla yapılabilir.",
+     "Can be made with a gluten-free flour blend or part wholemeal flour."
+    ]
+   },
+   "where": [
+    {
+     "n": "Pizzeria Brandi",
+     "ptr": "Margherita ≈ 7,50 €'dan başlar (Napoli ortalamasının üstünde)",
+     "pen": "Margherita from ≈ €7.50 (above the Naples average)",
+     "c": "Napoli",
+     "tr": "1780'den beri aynı yerde. 1889'da Kraliçe Margherita için ilk margheritanın yapıldığı pizzacı; kraliçenin teşekkür belgesi duvarda asılı.",
+     "en": "On the same spot since 1780: the pizzeria where the first margherita was made for Queen Margherita in 1889. The queen's letter of thanks hangs on the wall."
+    },
+    {
+     "n": "L'Antica Pizzeria da Michele",
+     "ptr": "Margherita ≈ 5,50 € · nakit tercih ediliyor",
+     "pen": "Margherita ≈ €5.50 · cash preferred",
+     "c": "Napoli, Forcella",
+     "tr": "1870'ten beri yalnızca iki çeşit pizza yapıyor: margherita ve marinara. \"Ye, Dua Et, Sev\" filminde Julia Roberts'ın pizza yediği yer. Kapıdan numara alıp sıra bekleniyor.",
+     "en": "Making only two pizzas since 1870: margherita and marinara. It's where Julia Roberts eats pizza in 'Eat Pray Love'. Take a numbered ticket at the door and wait."
+    }
+   ],
+   "whereTr": [
+    {
+     "n": "Filo D'Olio",
+     "c": "İstanbul, Sarıyer",
+     "tr": "İtalyan şef Danilo Zanna'nın pizzacısı; 2026'da Avrupa'nın en iyi pizzacıları listesi 50 Top Pizza Europa'da 36. sıraya girdi.",
+     "en": "Italian chef Danilo Zanna's pizzeria; ranked 36th on the 2026 50 Top Pizza Europa list."
+    },
+    {
+     "n": "Mozz",
+     "c": "Ankara, Beytepe (Çankaya)",
+     "tr": "Şef Güneş Öztürk'ün pizzacısı; 50 Top Pizza Europa 2026 listesine 53. sıradan giren iki Türk pizzacıdan biri.",
+     "en": "Chef Güneş Öztürk's pizzeria; one of two Turkish pizzerias on the 2026 50 Top Pizza Europa list, at number 53."
+    },
+    {
+     "n": "Pizzeria Il Pellicano",
+     "c": "İstanbul, Kadıköy",
+     "tr": "Sahibi ve şefi Napolili; dört kuşaktır pizzacılık yapan bir aileden geliyor. Menüde margherita da var.",
+     "en": "Run by a Neapolitan owner-chef from a family of pizza makers going back four generations. Margherita is on the menu."
+    }
+   ]
+  },
+  {
+   "key": "jp-0",
+   "country": "jp",
+   "title": "Oyakodon",
+   "desc": "Tavuk ve yumuşak yumurtanın tatlı-tuzlu sosla pirinç üzerine döküldüğü kase yemeği.",
+   "mins": 25,
+   "time": "25 dk",
+   "serves": "2 kişilik",
+   "level": "Kolay",
+   "kcal": 650,
+   "tip": "Yumurtayı tamamen pişirmeyin; kasede sıcak pirinçle pişmeye devam eder.",
+   "story": "Adı 'ebeveyn ve çocuk kasesi' demektir, çünkü tavuk ve yumurtası aynı kasede buluşur. Tokyo'da 1760'tan beri açık olan Tamahide restoranı, kendi anlatımına göre yemeğin 1891'de orada, müşterilerin tavuk güveci artıklarını yumurtayla pilavın üzerine dökmesinden doğduğunu söyler. Bugün hâlâ önünde uzun kuyruklar oluşur.",
+   "legend": true,
+   "ing": [
+    "2 adet tavuk but (kemiksiz)",
+    "1 adet kuru soğan",
+    "3 adet yumurta",
+    "150 ml dashi (veya tavuk suyu)",
+    "2 yemek kaşığı soya sosu",
+    "2 yemek kaşığı mirin",
+    "1 yemek kaşığı şeker",
+    "2 porsiyon pişmiş Japon pirinci",
+    "Yeşil soğan"
+   ],
+   "steps": [
+    "Tavuğu lokma büyüklüğünde, soğanı ince yarım ay doğrayın.",
+    "Küçük tavada dashi, soya sosu, mirin ve şekeri kaynatın.",
+    "Soğanı ekleyip 3 dakika, ardından tavuğu ekleyip 6–7 dakika pişirin.",
+    "Yumurtaları hafifçe çırpın (tam karıştırmayın) ve tavaya iki seferde gezdirin.",
+    "Kapağı kapatıp 1 dakika pişirin; yumurta hafif akışkan kalmalı.",
+    "Sıcak pirincin üzerine kaydırın, yeşil soğan serpin."
+   ],
+   "diet": {
+    "a": [
+     "yumurta",
+     "soya",
+     "gluten",
+     "balik"
+    ],
+    "d": [
+     "df"
+    ],
+    "p": [
+     "Tavuk ve yumurtadan dengeli protein.",
+     "Balanced protein from chicken and egg."
+    ],
+    "w": [
+     "Soya sosu buğday içerir ve tuzu yüksektir; dashi balıktan (bonito) yapılır.",
+     "Soy sauce contains wheat and is high in salt; dashi is made from fish (bonito)."
+    ],
+    "s": [
+     "Glutensiz tamari kullan; balık alerjisinde dashi yerine tavuk suyu koy.",
+     "Use gluten-free tamari; swap dashi for chicken stock for fish allergies."
+    ]
+   },
+   "where": [
+    {
+     "n": "Tamahide",
+     "ptr": "Öğlen oyakodon ≈ ¥1.500–2.200 · akşam menüsü ≈ ¥7.000'den başlar",
+     "pen": "Lunch oyakodon ≈ ¥1,500–2,200 · dinner courses from ≈ ¥7,000",
+     "c": "Tokyo, Ningyocho",
+     "tr": "1760'tan beri açık; oyakodon burada 1891'de doğdu. Oyakodon yalnızca öğlen servis ediliyor ve sıra uzun olabiliyor.",
+     "en": "Open since 1760; oyakodon was born here in 1891. It's served at lunch only, and the queue can be long."
+    }
+   ],
+   "whereTr": [
+    {
+     "n": "Sankai by Nagaya",
+     "c": "İstanbul",
+     "tr": "Şef Nagaya ve Şef Shibata'nın Michelin yıldızlı Japon restoranı. Üst düzey bir tadım restoranı olduğu için bu ev yemeği menüde olmayabilir.",
+     "en": "The Michelin-starred Japanese restaurant of chefs Nagaya and Shibata. As a high-end tasting restaurant, this home-style dish may not be on the menu.",
+     "ptr": "Pahalı (Michelin yıldızlı)",
+     "pen": "Expensive (Michelin-starred)"
+    }
+   ]
+  },
+  {
+   "key": "jp-1",
+   "country": "jp",
+   "title": "Miso Çorbası",
+   "desc": "Her Japon öğününe eşlik eden, tofu ve wakame yosunlu hafif çorba.",
+   "mins": 15,
+   "time": "15 dk",
+   "serves": "4 kişilik",
+   "level": "Kolay",
+   "kcal": 80,
+   "tip": "Miso eklendikten sonra kaynatılırsa aroması kaybolur.",
+   "story": "Miso çorbası, Japon öğününün temeli olan 'ichijū sansai' (bir çorba, üç yan yemek) düzeninin çorbasıdır ve yüzyıllardır neredeyse her sofraya gelir. Miso dayanıklı ve besleyici olduğu için samurayların seferlere kurutulmuş miso taşıdığı anlatılır. Japon geleneksel mutfak kültürü washoku, 2013'te UNESCO listesine girdi.",
+   "legend": false,
+   "ing": [
+    "800 ml dashi",
+    "3 yemek kaşığı miso ezmesi",
+    "150 g tofu",
+    "1 yemek kaşığı kuru wakame yosunu",
+    "2 dal yeşil soğan"
+   ],
+   "steps": [
+    "Wakameyi 5 dakika suda bekletip süzün.",
+    "Dashiyi tencerede ısıtın, kaynamaya yakın ocağı kısın.",
+    "Tofuyu küp doğrayıp ekleyin, 2 dakika ısıtın.",
+    "Misoyu bir kepçe sıcak dashide ezerek eritin ve tencereye geri ekleyin.",
+    "Wakameyi ekleyin; çorbayı kaynatmadan ocaktan alın ve yeşil soğanla servis edin."
+   ],
+   "diet": {
+    "a": [
+     "soya",
+     "balik"
+    ],
+    "m": [
+     "gluten"
+    ],
+    "d": [
+     "df"
+    ],
+    "p": [
+     "Fermente miso bağırsak dostudur; kalorisi çok düşük, tofudan protein.",
+     "Fermented miso is gut-friendly; very low in calories with protein from tofu."
+    ],
+    "w": [
+     "Sodyumu yüksek; tansiyon hastaları dikkat etmeli. Bazı misolar arpa içerir.",
+     "High in sodium, so take care with high blood pressure. Some miso contains barley."
+    ],
+    "s": [
+     "Kombu dashi ile vegan olur; pirinç veya soya misosu glutensizdir.",
+     "Use kombu dashi for a vegan soup; rice or soy miso is gluten-free."
+    ]
+   },
+   "where": [
+    {
+     "n": "MISOJYU",
+     "c": "Tokyo, Asakusa",
+     "tr": "Miso çorbasını yan yemek değil ana yemek yapan bir dükkân. Organik sebzelerle yapılan beş çeşit miso çorbası ve onigiri sunuyor; Tokyo Skytree'deki Solamachi'de ikinci şubesi var.",
+     "en": "A shop that makes miso soup the main dish rather than a side. It serves five kinds of miso soup and onigiri made with organic vegetables, with a second branch at Tokyo Skytree's Solamachi.",
+     "ptr": "Kişi başı ≈ ¥1.000–1.999",
+     "pen": "≈ ¥1,000–1,999 per person"
+    }
+   ],
+   "whereTr": [
+    {
+     "n": "Sankai by Nagaya",
+     "c": "İstanbul",
+     "tr": "Şef Nagaya ve Şef Shibata'nın Michelin yıldızlı Japon restoranı. Üst düzey bir tadım restoranı olduğu için bu ev yemeği menüde olmayabilir.",
+     "en": "The Michelin-starred Japanese restaurant of chefs Nagaya and Shibata. As a high-end tasting restaurant, this home-style dish may not be on the menu.",
+     "ptr": "Pahalı (Michelin yıldızlı)",
+     "pen": "Expensive (Michelin-starred)"
+    }
+   ]
+  },
+  {
+   "key": "mx-0",
+   "country": "mx",
+   "title": "Guacamole",
+   "desc": "Olgun avokado, lime ve kişnişle hazırlanan taze sos.",
+   "mins": 10,
+   "time": "10 dk",
+   "serves": "4 kişilik",
+   "level": "Kolay",
+   "kcal": 230,
+   "tip": "Bekleyecekse üstünü streçle temas edecek şekilde kapatın; kararmayı geciktirir.",
+   "story": "Adı Aztek dili Nahuatl'daki ahuacamolli, yani 'avokado sosu' kelimesinden gelir. Aztekler avokadoyu bereket ve güçle ilişkilendirirdi. 16. yüzyılda Meksika'ya gelen İspanyollar bu yeşil sosu şaşkınlıkla kayda geçirdi. Geleneksel Meksika mutfağı, 2010'da UNESCO listesine giren ilk ulusal mutfaklardan biri oldu.",
+   "legend": true,
+   "ing": [
+    "3 adet olgun avokado",
+    "1 adet lime (veya yarım limon)",
+    "Yarım kırmızı soğan",
+    "1 adet domates",
+    "1 adet jalapeño veya acı sivri biber",
+    "Bir avuç taze kişniş",
+    "Tuz",
+    "Yanına mısır cipsi"
+   ],
+   "steps": [
+    "Soğan, domates, biber ve kişnişi çok ince doğrayın.",
+    "Avokadoları ikiye kesip çekirdeğini çıkarın, içini kaseye alın.",
+    "Çatalla iri parçalar kalacak şekilde ezin.",
+    "Lime suyu ve tuzu ekleyin.",
+    "Doğranmış malzemeleri karıştırın, tadını kontrol edin ve hemen servis edin."
+   ],
+   "diet": {
+    "a": [],
+    "m": [
+     "gluten"
+    ],
+    "d": [
+     "veg",
+     "vegan",
+     "gf",
+     "df"
+    ],
+    "p": [
+     "Avokado kalp dostu yağ, lif ve potasyum sağlar.",
+     "Avocado provides heart-healthy fats, fibre and potassium."
+    ],
+    "w": [
+     "Kalorisi yağdan gelir; cipsle birlikte hızla artar. Bazı cipsler gluten içerebilir.",
+     "The calories come from fat and add up fast with chips. Some chips may contain gluten."
+    ],
+    "s": [
+     "Cips yerine havuç ve salatalık çubuklarıyla servis et.",
+     "Serve with carrot and cucumber sticks instead of chips."
+    ]
+   },
+   "where": [
+    {
+     "n": "Restaurante Nicos",
+     "c": "Mexico City",
+     "tr": "60 yılı aşkın geçmişi olan, masada hazırlanan guacamolesiyle ünlü bir Mexico City kurumu; 2016'da Latin Amerika'nın En İyi 50 Restoranı listesinde 37. oldu.",
+     "en": "A Mexico City institution of more than 60 years famous for its tableside guacamole; it ranked 37th on Latin America's 50 Best Restaurants in 2016."
+    }
+   ],
+   "whereTr": [
+    {
+     "n": "Los Altos",
+     "c": "İstanbul, Beyoğlu",
+     "tr": "Boğaz manzaralı çatı katında, Meksikalı şef Felipe Mendez'in dokunduğu menü. Quesadilla ve guacamole menüde.",
+     "en": "A rooftop with Bosphorus views and a menu shaped by Mexican chef Felipe Mendez. Quesadillas and guacamole are on the menu."
+    },
+    {
+     "n": "Ranchero",
+     "ptr": "Kişi başı ≈ 50 $ (2025, ziyaretçi yorumuna göre)",
+     "pen": "≈ $50 per person (2025, per a diner review)",
+     "c": "İstanbul (Suadiye, Nişantaşı, Ataşehir) ve Ankara (Maidan, Armada, One Tower, Atakule)",
+     "tr": "Zonguldaklı Rıza Tanyeri ile Meksikalı eşi Patricia Gonzalez'in kurduğu, aile tarafından işletilen Meksika restoranı. Mutfağın başında aile üyeleri var.",
+     "en": "A Mexican restaurant founded and run by the family of Rıza Tanyeri from Zonguldak and his Mexican wife Patricia Gonzalez."
+    }
+   ]
+  },
+  {
+   "key": "mx-1",
+   "country": "mx",
+   "title": "Tavuklu Quesadilla",
+   "desc": "Tortilla arasında eriyen peynir, baharatlı tavuk ve biber.",
+   "mins": 25,
+   "time": "25 dk",
+   "serves": "2 kişilik",
+   "level": "Kolay",
+   "kcal": 600,
+   "tip": "Tavayı orta ateşte tutun; yüksek ateşte tortilla yanar, peynir erimez.",
+   "story": "Mısır tortillası Mezoamerika'da binlerce yıllıktır, ama peynir Meksika'ya 16. yüzyılda İspanyolların getirdiği inek ve keçilerle geldi. Quesadilla bu iki dünyanın buluşmasıdır; adı İspanyolca 'queso' (peynir) kelimesinden türer. Mexico City'de peynirsiz quesadilla istemenin mümkün olması, Meksikalıların kendi aralarında sevdiği bir şakadır.",
+   "legend": false,
+   "ing": [
+    "4 adet un tortilla (lavaş da olur)",
+    "250 g tavuk göğsü",
+    "1 adet kırmızı biber",
+    "Yarım soğan",
+    "150 g kaşar veya cheddar",
+    "1 çay kaşığı kimyon",
+    "1 çay kaşığı toz kırmızı biber",
+    "Tuz, sıvı yağ",
+    "Servis için ekşi krema ve salsa"
+   ],
+   "steps": [
+    "Tavuğu ince şeritler halinde kesip kimyon, kırmızı biber ve tuzla harmanlayın.",
+    "Tavada az yağla tavuğu pişirin, biber ve soğanı ekleyip 4 dakika daha soteleyin.",
+    "Tortillanın yarısına peynir, harç ve biraz daha peynir koyup ikiye katlayın.",
+    "Yağsız tavada her yüzünü 2–3 dakika, altın rengi olup peynir eriyene kadar pişirin.",
+    "Üçgen dilimleyip ekşi krema ve salsa ile servis edin."
+   ],
+   "diet": {
+    "a": [
+     "gluten",
+     "sut"
+    ],
+    "d": [],
+    "p": [
+     "Tavuk göğsünden yağsız protein.",
+     "Lean protein from chicken breast."
+    ],
+    "w": [
+     "Peynir ve ekşi krema doymuş yağı artırır.",
+     "Cheese and sour cream add saturated fat."
+    ],
+    "s": [
+     "Mısır tortilla ile glutensiz olur; peyniri azalt.",
+     "Use corn tortillas to make it gluten-free; use less cheese."
+    ]
+   },
+   "where": [
+    {
+     "n": "Doña Lucha (Mercado de Coyoacán)",
+     "ptr": "Kişi başı ≈ 100 peso veya daha az",
+     "pen": "≈ 100 pesos or less per person",
+     "c": "Mexico City, Coyoacán",
+     "tr": "Frida Kahlo'nun semti Coyoacán'ın pazarında, kızarmış ya da közlenmiş quesadillalarıyla bilinen gösterişsiz bir tezgâh.",
+     "en": "A no-frills stall in the market of Coyoacán, Frida Kahlo's neighbourhood, known for fried or griddled quesadillas."
+    },
+    {
+     "n": "Quekas (Mercado San Cosme)",
+     "ptr": "Uygun fiyat ($)",
+     "pen": "Budget ($)",
+     "c": "Mexico City, San Rafael",
+     "tr": "Şehrin en iyi quesadillalarından bazılarını yapan pazar lokantası. Alt kattaki tezgâhta ayakta, üst katta masada yenebiliyor.",
+     "en": "A market eatery making some of the city's best quesadillas. Eat standing at the ground-floor stand or sit upstairs."
+    }
+   ],
+   "whereTr": [
+    {
+     "n": "Los Altos",
+     "c": "İstanbul, Beyoğlu",
+     "tr": "Boğaz manzaralı çatı katında, Meksikalı şef Felipe Mendez'in dokunduğu menü. Quesadilla ve guacamole menüde.",
+     "en": "A rooftop with Bosphorus views and a menu shaped by Mexican chef Felipe Mendez. Quesadillas and guacamole are on the menu."
+    },
+    {
+     "n": "Ranchero",
+     "ptr": "Kişi başı ≈ 50 $ (2025, ziyaretçi yorumuna göre)",
+     "pen": "≈ $50 per person (2025, per a diner review)",
+     "c": "İstanbul (Suadiye, Nişantaşı, Ataşehir) ve Ankara (Maidan, Armada, One Tower, Atakule)",
+     "tr": "Zonguldaklı Rıza Tanyeri ile Meksikalı eşi Patricia Gonzalez'in kurduğu, aile tarafından işletilen Meksika restoranı. Mutfağın başında aile üyeleri var.",
+     "en": "A Mexican restaurant founded and run by the family of Rıza Tanyeri from Zonguldak and his Mexican wife Patricia Gonzalez."
+    },
+    {
+     "n": "Taco Hut",
+     "c": "Ankara, Çankaya",
+     "tr": "Meksika yemeklerini Türk damak tadına uyarlayan bir restoran; taco, fajita ve burrito öne çıkıyor.",
+     "en": "A restaurant adapting Mexican food to Turkish tastes; tacos, fajitas and burritos lead the menu."
+    }
+   ]
+  },
+  {
+   "key": "in-0",
+   "country": "in",
+   "title": "Butter Chicken",
+   "desc": "Marine edilip pişirilen tavuk, tereyağlı ve kremalı domates sosunda.",
+   "mins": 50,
+   "time": "50 dk + marine",
+   "serves": "4 kişilik",
+   "level": "Orta",
+   "kcal": 550,
+   "tip": "Marine süresi uzadıkça tavuk yumuşar; bir gece bekletmek idealdir.",
+   "story": "1950'lerde Delhi'deki Moti Mahal restoranında doğduğu kabul edilir. Fikir basitti: tandırda pişip kuruyan tavuk parçalarını tereyağlı, kremalı bir domates sosunda yeniden canlandırmak. Ancak yemeğin gerçek mucidinin kim olduğu o kadar önemli hale geldi ki, 2024'te Moti Mahal'in sahipleri ile rakip bir restoran zinciri arasındaki anlaşmazlık Delhi Yüksek Mahkemesi'ne taşındı.",
+   "legend": true,
+   "ing": [
+    "600 g tavuk but",
+    "1 su bardağı yoğurt",
+    "2 yemek kaşığı garam masala",
+    "1 yemek kaşığı zencefil-sarımsak ezmesi",
+    "1 çay kaşığı zerdeçal",
+    "1 çay kaşığı toz kırmızı biber",
+    "3 yemek kaşığı tereyağı",
+    "1 adet soğan",
+    "400 g domates püresi",
+    "100 ml krema",
+    "1 çay kaşığı şeker",
+    "Tuz, taze kişniş"
+   ],
+   "steps": [
+    "Tavuğu yoğurt, 1 kaşık garam masala, zencefil-sarımsak, zerdeçal, kırmızı biber ve tuzla en az 1 saat marine edin.",
+    "Tavuğu kızgın tavada veya fırın ızgarasında kenarları kızarana kadar pişirin.",
+    "Başka tencerede tereyağında soğanı yumuşatın, kalan garam masalayı ekleyin.",
+    "Domates püresini ekleyip 15 dakika koyulaşana kadar pişirin; isterseniz blenderdan geçirin.",
+    "Krema, şeker ve tavuğu ekleyip 10 dakika kısık ateşte pişirin.",
+    "Kişnişle süsleyip pilav veya naan ile servis edin."
+   ],
+   "diet": {
+    "a": [
+     "sut"
+    ],
+    "d": [
+     "gf"
+    ],
+    "p": [
+     "Tavuk ve yoğurttan bol protein; baharatlar lezzeti tuzsuz artırır.",
+     "Plenty of protein from chicken and yoghurt; spices add flavour without salt."
+    ],
+    "w": [
+     "Tereyağı ve krema doymuş yağ ve kaloriyi yükseltir.",
+     "Butter and cream raise the saturated fat and calories."
+    ],
+    "s": [
+     "Krema yerine yoğurt ya da hindistan cevizi sütü kullan.",
+     "Use yoghurt or coconut milk instead of cream."
+    ]
+   },
+   "where": [
+    {
+     "n": "Moti Mahal",
+     "ptr": "Butter chicken ≈ 8 $ · iki kişi ≈ ₹1.300",
+     "pen": "Butter chicken ≈ $8 · ≈ ₹1,300 for two",
+     "c": "Delhi, Daryaganj",
+     "tr": "Butter chicken'ın 1950'lerde doğduğu restoran. Bugün Moti Mahal Delux adıyla yüzlerce şubesi var.",
+     "en": "The restaurant where butter chicken was born in the 1950s. Today it has hundreds of branches as Moti Mahal Delux."
+    },
+    {
+     "n": "Daryaganj",
+     "ptr": "Butter chicken ≈ 7,5 $",
+     "pen": "Butter chicken ≈ $7.50",
+     "c": "Delhi",
+     "tr": "Ortaklardan birinin torununun 2019'da kurduğu zincir; o da yemeğin mucidi olduğunu söylüyor. İki restoran arasındaki anlaşmazlık mahkemeye taşındı.",
+     "en": "A chain founded in 2019 by the grandson of one of the partners, which also claims to have invented the dish. The dispute between the two went to court."
+    }
+   ],
+   "whereTr": [
+    {
+     "n": "Dubb Indian",
+     "c": "İstanbul, Sultanahmet",
+     "tr": "Sultanahmet'te, Türkiye'ye gelen Hintlilerin de uğradığı bir Hint restoranı. Misafirler en çok butter chicken'ını öneriyor.",
+     "en": "An Indian restaurant in Sultanahmet popular with visiting Indians; guests most often recommend its butter chicken.",
+     "ptr": "Üst fiyat segmenti",
+     "pen": "Upper price range"
+    },
+    {
+     "n": "Tandoori",
+     "c": "İstanbul, Maçka",
+     "tr": "Bir zamanlar İstanbul'un ilk ve tek Hint restoranıydı; şehrin en köklü Hint adresi.",
+     "en": "Once Istanbul's first and only Indian restaurant; the city's longest-standing Indian address."
+    },
+    {
+     "n": "Madhu's",
+     "c": "İstanbul, Swissôtel The Bosphorus",
+     "tr": "İngiliz Kraliyet Sarayı davetlerine yemek hazırlayan Londra'daki ünlü Hint zincirinin yurt dışındaki ilk şubesi.",
+     "en": "The first overseas branch of the famous London Indian chain that caters royal palace receptions.",
+     "ptr": "Pahalı",
+     "pen": "Expensive"
+    }
+   ]
+  },
+  {
+   "key": "in-1",
+   "country": "in",
+   "title": "Dal Tadka",
+   "desc": "Sarı mercimeğin üzerine baharatlı kızgın yağ (tadka) dökülen günlük Hint yemeği.",
+   "mins": 40,
+   "time": "40 dk",
+   "serves": "4 kişilik",
+   "level": "Kolay",
+   "kcal": 280,
+   "tip": "Tadkayı servisten hemen önce yapın; o cızırtı kokunun sırrıdır.",
+   "story": "Dal, yani mercimek ve bakliyat, Hint mutfağının ve özellikle vejetaryen nüfusun temel protein kaynağıdır; Hindistan dünyanın en büyük bakliyat üreticisidir. Mercimekli pilav anlamına gelen 'dal chawal', milyonlarca Hintli için tek kelimeyle ev yemeği demektir. 'Tadka' ise baharatları kızgın yağda uyandırıp yemeğin üstüne dökme tekniğidir.",
+   "legend": false,
+   "ing": [
+    "1 su bardağı sarı mercimek (toor veya mung dal)",
+    "4 su bardağı su",
+    "Yarım çay kaşığı zerdeçal",
+    "1 adet soğan",
+    "1 adet domates",
+    "2 diş sarımsak",
+    "1 parça zencefil",
+    "1 çay kaşığı kimyon tohumu",
+    "2 adet kuru kırmızı biber",
+    "2 yemek kaşığı ghee veya tereyağı",
+    "Tuz, taze kişniş"
+   ],
+   "steps": [
+    "Mercimeği yıkayın; su, zerdeçal ve tuzla yumuşayıp dağılana kadar 25 dakika haşlayın.",
+    "Tavada 1 kaşık ghee ile soğanı pembeleştirin, sarımsak, zencefil ve domatesi ekleyip pişirin.",
+    "Bu karışımı mercimeğe ekleyin ve 5 dakika kaynatın.",
+    "Tadka için kalan ghee'yi kızdırın, kimyon ve kuru biberi atıp çıtırdamaya başlayınca ocaktan alın.",
+    "Kızgın tadkayı mercimeğin üzerine dökün, kişnişle servis edin."
+   ],
+   "diet": {
+    "a": [
+     "sut"
+    ],
+    "d": [
+     "veg",
+     "gf"
+    ],
+    "p": [
+     "Mercimekten lif ve bitkisel protein; yağı düşük.",
+     "Fibre and plant protein from lentils; low in fat."
+    ],
+    "w": [
+     "Ghee süt ürünüdür.",
+     "Ghee is a dairy product."
+    ],
+    "s": [
+     "Ghee yerine sıvı yağ kullanırsan vegan olur.",
+     "Use vegetable oil instead of ghee for a vegan dal."
+    ]
+   },
+   "where": [
+    {
+     "n": "Bukhara (ITC Maurya)",
+     "ptr": "Pahalı (5 yıldızlı otel fiyatları) · rezervasyon alınmıyor",
+     "pen": "Expensive (five-star hotel prices) · no reservations",
+     "c": "Yeni Delhi",
+     "tr": "1978'den beri açık, menüsü neredeyse hiç değişmeyen efsane restoran. Ünlü \"Dal Bukhara\"sı dünyanın en çok taklit edilen restoran dalı sayılıyor. Dal tadka değil, siyah mercimekle yapılan kremalı bir dal, ama Hindistan'ın en ünlü dalı.",
+     "en": "Open since 1978 with an almost unchanged menu. Its famous 'Dal Bukhara' is called the most copied restaurant dal in the world. It's a creamy black-lentil dal rather than dal tadka, but it's India's most famous dal."
+    }
+   ],
+   "whereTr": [
+    {
+     "n": "Tandoori",
+     "c": "İstanbul, Maçka",
+     "tr": "Bir zamanlar İstanbul'un ilk ve tek Hint restoranıydı; şehrin en köklü Hint adresi.",
+     "en": "Once Istanbul's first and only Indian restaurant; the city's longest-standing Indian address."
+    },
+    {
+     "n": "Dubb Indian",
+     "c": "İstanbul, Sultanahmet",
+     "tr": "Sultanahmet'te, Türkiye'ye gelen Hintlilerin de uğradığı bir Hint restoranı. Misafirler en çok butter chicken'ını öneriyor.",
+     "en": "An Indian restaurant in Sultanahmet popular with visiting Indians; guests most often recommend its butter chicken.",
+     "ptr": "Üst fiyat segmenti",
+     "pen": "Upper price range"
+    },
+    {
+     "n": "Madhu's",
+     "c": "İstanbul, Swissôtel The Bosphorus",
+     "tr": "İngiliz Kraliyet Sarayı davetlerine yemek hazırlayan Londra'daki ünlü Hint zincirinin yurt dışındaki ilk şubesi.",
+     "en": "The first overseas branch of the famous London Indian chain that caters royal palace receptions.",
+     "ptr": "Pahalı",
+     "pen": "Expensive"
+    }
+   ]
+  },
+  {
+   "key": "fr-0",
+   "country": "fr",
+   "title": "Krep",
+   "desc": "İncecik Fransız krepi; tatlı ya da tuzlu doldurulabilir.",
+   "mins": 40,
+   "time": "40 dk (30 dk dinlenme dahil)",
+   "serves": "12 adet",
+   "level": "Kolay",
+   "kcal": 110,
+   "tip": "İlk krep genellikle kötü çıkar; tava ısısı ancak onunla oturur, bu normaldir.",
+   "story": "Krep Fransa'da 2 Şubat'taki Chandeleur (Mum Bayramı) ile özdeşleşmiştir. Gelenek şudur: sol elinizde bir madeni para tutarken sağ elinizle tavadaki krepi havaya atıp çevirebilirseniz, yıl boyunca bolluk içinde olacağınıza inanılır. Yuvarlak, altın rengi krepin kış sonunda güneşi ve baharın dönüşünü simgelediği söylenir. Kökeni Bretanya'nın karabuğday galetlerine dayanır.",
+   "legend": true,
+   "ing": [
+    "250 g un",
+    "3 adet yumurta",
+    "500 ml süt",
+    "2 yemek kaşığı eritilmiş tereyağı",
+    "1 yemek kaşığı şeker",
+    "1 tutam tuz",
+    "Servis için reçel, çikolata veya limon ve şeker"
+   ],
+   "steps": [
+    "Un, şeker ve tuzu kaseye alıp ortasını havuz gibi açın.",
+    "Yumurtaları ortaya kırın, sütü yavaş yavaş ekleyerek topaksız çırpın.",
+    "Eritilmiş tereyağını ekleyin ve hamuru 30 dakika dinlendirin.",
+    "Tavayı orta ateşte ısıtıp kağıt havluyla çok az yağlayın.",
+    "Bir kepçe hamur dökün, tavayı döndürerek ince yayın; kenarları kalkınca çevirin.",
+    "Diğer yüzünü 30 saniye pişirip istediğiniz dolguyla servis edin."
+   ],
+   "diet": {
+    "a": [
+     "gluten",
+     "yumurta",
+     "sut"
+    ],
+    "m": [
+     "kuruyemis"
+    ],
+    "d": [
+     "veg"
+    ],
+    "p": [
+     "Sade krep hafiftir; yumurta ve sütten protein.",
+     "A plain crêpe is light, with protein from egg and milk."
+    ],
+    "w": [
+     "Çikolata ve reçel şekeri artırır; fındık kremaları kuruyemiş içerir.",
+     "Chocolate and jam add sugar; hazelnut spreads contain nuts."
+    ],
+    "s": [
+     "Meyve ve yoğurtla servis et; glutensiz un ile de yapılabilir.",
+     "Serve with fruit and yoghurt; can be made with gluten-free flour."
+    ]
+   },
+   "where": [
+    {
+     "n": "Breizh Café",
+     "ptr": "Kişi başı ≈ 20–40 € · galette ≈ 6,50–16,50 €",
+     "pen": "≈ €20–40 per person · galettes ≈ €6.50–16.50",
+     "c": "Paris, Le Marais",
+     "tr": "Tokyo'da Japonya'nın ilk krepçisini açan Bretonyalı Bertrand Larcher'ın Paris'teki ilk adresi (2006). Organik karabuğday, Bordier tereyağı ve 20'yi aşkın elma şarabı.",
+     "en": "The first Paris address (2006) of Breton chef Bertrand Larcher, who opened Japan's first crêperie in Tokyo. Organic buckwheat, Bordier butter and over twenty ciders."
+    }
+   ],
+   "whereTr": []
+  },
+  {
+   "key": "fr-1",
+   "country": "fr",
+   "title": "Fransız Soğan Çorbası",
+   "desc": "Uzun uzun karamelize edilmiş soğan, et suyu ve üzerinde eritilmiş peynirli ekmek.",
+   "mins": 75,
+   "time": "75 dk",
+   "serves": "4 kişilik",
+   "level": "Orta",
+   "kcal": 450,
+   "tip": "Soğanı hızlandırmak için ateşi açmayın; yanan soğan çorbayı acı yapar.",
+   "story": "Soğan çorbası yüzyıllarca yoksulların yemeğiydi; soğan ucuzdu ve her yerde yetişirdi. Bir efsaneye göre Kral XV. Louis, av köşkünde gece acıkınca elde kalan soğan, tereyağı ve şampanyayla bu çorbayı kendi yaptı. Modern hali ise Paris'in ünlü toptancı hali Les Halles'da doğdu: gece boyunca çalışan hamallar ve sabaha karşı eğlenceden dönenler, sıcak soğan çorbası için aynı masalarda buluşurdu.",
+   "legend": true,
+   "ing": [
+    "1 kg kuru soğan",
+    "50 g tereyağı",
+    "1 yemek kaşığı un",
+    "150 ml beyaz şarap (yerine et suyu ve 1 yemek kaşığı limon suyu)",
+    "1,5 l et suyu",
+    "1 defne yaprağı, birkaç dal kekik",
+    "4 dilim baget ekmek",
+    "150 g rendelenmiş gruyère veya kaşar",
+    "Tuz, karabiber"
+   ],
+   "steps": [
+    "Soğanları ince yarım ay doğrayın.",
+    "Tereyağında kısık ateşte, ara ara karıştırarak koyu kahverengi olana kadar 40 dakika karamelize edin.",
+    "Unu serpip 1 dakika kavurun, şarabı ekleyip dibindeki kahverengi tabakayı kazıyın.",
+    "Et suyu, defne ve kekiği ekleyip 20 dakika kaynatın; tuz ve karabiberle tatlandırın.",
+    "Çorbayı fırına dayanıklı kaselere paylaştırın, üzerine kızarmış ekmek ve bolca peynir koyun.",
+    "Fırının ızgara ayarında peynir eriyip kızarana kadar 3–4 dakika tutun."
+   ],
+   "diet": {
+    "a": [
+     "gluten",
+     "sut",
+     "sulfit"
+    ],
+    "d": [],
+    "p": [
+     "Soğan lif ve antioksidan sağlar.",
+     "Onions provide fibre and antioxidants."
+    ],
+    "w": [
+     "Şarap içerir; alkolün tamamı pişerken uçmaz. Peynir ve et suyundan tuz yüksek.",
+     "Contains wine, and not all the alcohol cooks off. Salty from the cheese and stock."
+    ],
+    "s": [
+     "Şarap yerine et suyu ve limon suyu kullan; ekmeği glutensiz seç.",
+     "Swap the wine for stock and lemon juice; use gluten-free bread."
+    ]
+   },
+   "where": [
+    {
+     "n": "Au Pied de Cochon",
+     "ptr": "Kişi başı ≈ 20–26 € (içecek hariç)",
+     "pen": "≈ €20–26 per person (drinks extra)",
+     "c": "Paris, Les Halles",
+     "tr": "1947'den beri açık ve Paris'te günün her saati açık kalan son restoranlardan biri. Eski Les Halles pazarının gece çorbası geleneği burada yaşıyor.",
+     "en": "Open since 1947 and one of the last restaurants in Paris open around the clock, keeping the old Les Halles market's late-night soup tradition alive."
+    }
+   ],
+   "whereTr": []
+  },
+  {
+   "key": "cn-0",
+   "country": "cn",
+   "title": "Kung Pao Tavuk",
+   "desc": "Yer fıstığı, kuru biber ve Sichuan biberiyle yüksek ateşte sotelenmiş tavuk.",
+   "mins": 30,
+   "time": "30 dk",
+   "serves": "3 kişilik",
+   "level": "Orta",
+   "kcal": 450,
+   "tip": "Biberler yanarsa yemek acılaşır; koyu kırmızıya dönünce hemen tavuğu ekleyin.",
+   "story": "Yemek, adını 19. yüzyılda Qing Hanedanı döneminde Sichuan valisi olan Ding Baozhen'den alır. Ding'e 'Gongbao' (saray muhafızı) unvanı verilmişti ve bu yemeği çok sevdiği anlatılır. Kültür Devrimi sırasında imparatorluk unvanını hatırlattığı için yemeğin adı değiştirildi, yıllar sonra eski adına kavuştu. Batı'da en çok bilinen Çin yemeklerinden biri olmasına karşın asıl hali Sichuan biberiyle dili uyuşturan bir acılıktadır.",
+   "legend": true,
+   "ing": [
+    "400 g tavuk göğsü veya but",
+    "1 yemek kaşığı nişasta (marine için)",
+    "Yarım su bardağı kavrulmuş yer fıstığı",
+    "8–10 adet kuru kırmızı biber",
+    "1 çay kaşığı Sichuan biberi (bulamazsanız karabiber)",
+    "3 diş sarımsak, 1 parça zencefil",
+    "3 dal yeşil soğan",
+    "Sos: 2 yk soya sosu, 1 yk siyah pirinç sirkesi (veya elma sirkesi), 1 yk şeker, 1 çk nişasta, 3 yk su",
+    "2 yemek kaşığı sıvı yağ"
+   ],
+   "steps": [
+    "Tavuğu küp doğrayıp 1 kaşık soya ve nişastayla 10 dakika marine edin.",
+    "Sos malzemelerini bir kasede karıştırın.",
+    "Wok'u yüksek ateşte ısıtın, yağda kuru biber ve Sichuan biberini koyulaşana kadar 20 saniye kavurun.",
+    "Tavuğu ekleyip beyazlayana kadar 4–5 dakika çevirin.",
+    "Sarımsak, zencefil ve yeşil soğanın beyazını ekleyin.",
+    "Sosu dökün, parlaklaşıp koyulaşınca fıstık ve yeşil soğanı ekleyip pirinçle servis edin."
+   ],
+   "diet": {
+    "a": [
+     "yerfistigi",
+     "soya",
+     "gluten"
+    ],
+    "d": [
+     "df"
+    ],
+    "p": [
+     "Tavuktan protein, yer fıstığından sağlıklı yağ.",
+     "Protein from chicken, healthy fats from peanuts."
+    ],
+    "w": [
+     "Yer fıstığı ciddi alerji yapabilir. Soya sosu buğday içerir ve tuzludur.",
+     "Peanuts can cause severe allergic reactions. Soy sauce contains wheat and is salty."
+    ],
+    "s": [
+     "Fıstık alerjisinde fıstığı kaju ya da kabak çekirdeğiyle değiştir; glutensiz tamari kullan.",
+     "For peanut allergies swap in cashews or pumpkin seeds; use gluten-free tamari."
+    ]
+   },
+   "where": [
+    {
+     "n": "Chen Mapo Tofu",
+     "c": "Chengdu",
+     "tr": "Mapo tofunun doğduğu yer olarak bilinen Chengdu restoranı; Sichuan klasiklerini sunuyor ve Kung Pao tavuğu da övülüyor.",
+     "en": "The Chengdu restaurant known as the birthplace of mapo tofu; it serves Sichuan classics and its kung pao chicken is praised too."
+    }
+   ],
+   "whereTr": []
+  },
+  {
+   "key": "cn-1",
+   "country": "cn",
+   "title": "Jiaozi (Çin Mantısı)",
+   "desc": "Kıymalı ve lahanalı iç harçla doldurulan, haşlanan ya da tavada kızartılan mantı.",
+   "mins": 90,
+   "time": "90 dk",
+   "serves": "40 adet",
+   "level": "Orta",
+   "kcal": 450,
+   "tip": "Tavada kızartmak için: yağlı tavada altını kızartın, yarım bardak su ekleyip kapağını kapatın ve suyunu çekene kadar pişirin.",
+   "story": "Kuzey Çin'de Yeni Yıl gecesi ailece jiaozi yapılır. Mantıların şekli eski Çin'de para olarak kullanılan gümüş külçelere benzediği için bereket getirdiğine inanılır; bazı aileler içlerinden birine madeni para saklar ve onu bulan yıl boyu şanslı sayılır. Bir halk anlatısına göre mantıyı, kışın soğuktan kulakları donan köylüler için kulak şeklinde yapan kişi Han döneminin ünlü hekimi Zhang Zhongjing'tir.",
+   "legend": true,
+   "ing": [
+    "300 g un",
+    "150 ml ılık su",
+    "300 g kıyma (dana veya tavuk)",
+    "200 g Çin lahanası veya beyaz lahana",
+    "3 dal yeşil soğan",
+    "1 parça zencefil",
+    "2 yemek kaşığı soya sosu",
+    "1 yemek kaşığı susam yağı",
+    "Tuz, karabiber",
+    "Batırma sosu: siyah sirke, soya sosu, pul biber"
+   ],
+   "steps": [
+    "Un ve suyu yoğurup pürüzsüz bir hamur yapın, üzerini örtüp 30 dakika dinlendirin.",
+    "Lahanayı ince kıyıp tuzlayın, 10 dakika sonra suyunu sıkın.",
+    "Kıyma, lahana, yeşil soğan, rendelenmiş zencefil, soya, susam yağı ve baharatları yoğurun.",
+    "Hamuru ceviz büyüklüğünde parçalara bölüp avuç içi kadar ince yuvarlaklar açın.",
+    "Ortaya bir kaşık harç koyun, ikiye katlayıp kenarlarını büzerek kapatın.",
+    "Kaynayan suya atın; su yeniden kaynayınca yarım bardak soğuk su ekleyin. Bunu iki kez tekrarlayın.",
+    "Mantılar yüzeye çıkıp şişince süzün ve sosla servis edin."
+   ],
+   "diet": {
+    "a": [
+     "gluten",
+     "soya",
+     "susam"
+    ],
+    "d": [
+     "df"
+    ],
+    "p": [
+     "Et ve sebzeli dengeli iç; haşlanınca yağı düşük.",
+     "A balanced filling of meat and veg; low in fat when boiled."
+    ],
+    "w": [
+     "Batırma sosu nedeniyle tuz yüksek. Susam yağı içerir.",
+     "The dipping sauce is salty. Contains sesame oil."
+    ],
+    "s": [
+     "Kızartmak yerine haşla ya da buharda pişir; sosu az kullan.",
+     "Boil or steam rather than pan-fry; go easy on the sauce."
+    ]
+   },
+   "where": [
+    {
+     "n": "De Fa Chang",
+     "ptr": "Kişi başı ≈ ¥20–120 · mantı ziyafeti ≈ 20 $",
+     "pen": "≈ ¥20–120 per person · dumpling banquet ≈ $20",
+     "c": "Xi'an",
+     "tr": "1936'da tek çeşit jiaozi satan küçük bir lokanta olarak açıldı. Bugün yüzlerce çeşitle tamamı mantıdan oluşan ziyafet menüsüyle ünlü.",
+     "en": "Opened in 1936 as a small eatery selling one kind of jiaozi; now famous for its all-dumpling banquets with hundreds of varieties."
+    }
+   ],
+   "whereTr": []
+  },
+  {
+   "key": "es-0",
+   "country": "es",
+   "title": "Paella Valenciana",
+   "desc": "Geniş tavada safranla pişen, tavuklu ve fasulyeli Valensiya usulü pilav.",
+   "mins": 60,
+   "time": "60 dk",
+   "serves": "4 kişilik",
+   "level": "Orta",
+   "kcal": 600,
+   "tip": "Dipte oluşan çıtır kabuğa 'socarrat' denir ve paellanın en çok kavga edilen kısmıdır.",
+   "story": "Paella, Valensiya yakınındaki Albufera gölünün pirinç tarlalarında, 19. yüzyılda tarım işçilerinin öğle yemeğiydi: tarlada, portakal ağacı dallarıyla yakılan ateşte, ellerinin altındaki tavuk, tavşan, fasulye ve pirinçle pişirilirdi. Adı, Latince 'patella'dan gelen ve tava anlamına gelen kelimeden türer. Bölgeye pirinci getirenler Endülüs Müslümanlarıdır. Valensiyalılar için gerçek paellada deniz ürünü olmaz.",
+   "legend": true,
+   "ing": [
+    "600 g tavuk but (parçalı)",
+    "200 g taze fasulye",
+    "1 su bardağı haşlanmış iri beyaz fasulye",
+    "1 adet rendelenmiş domates",
+    "1 çay kaşığı tatlı toz kırmızı biber",
+    "Bir tutam safran (yoksa yarım çay kaşığı zerdeçal)",
+    "300 g kısa taneli pirinç (bomba veya baldo)",
+    "1,2 l sıcak tavuk suyu",
+    "6 yemek kaşığı zeytinyağı",
+    "1 dal biberiye, tuz, limon"
+   ],
+   "steps": [
+    "Geniş tavada zeytinyağını ısıtın, tuzlanmış tavukları her tarafı kızarana kadar 10 dakika pişirin.",
+    "Taze fasulyeyi ekleyip 5 dakika çevirin.",
+    "Tavayı ortalayıp domates ve toz biberi ekleyin, 2 dakika kavurun.",
+    "Sıcak suyu, safranı ve beyaz fasulyeyi ekleyip 10 dakika kaynatın; tuzunu ayarlayın.",
+    "Pirinci tavaya eşit dağıtın ve bundan sonra hiç karıştırmayın.",
+    "Yüksek ateşte 10 dakika, sonra orta-kısık ateşte 8 dakika pişirin; son dakikada biberiyeyi üzerine koyun.",
+    "Dipte hafif çıtırtı sesi gelince ocaktan alın, üzerini örtüp 5 dakika dinlendirin ve limonla servis edin."
+   ],
+   "diet": {
+    "a": [],
+    "d": [
+     "gf",
+     "df"
+    ],
+    "p": [
+     "Tavuk, fasulye ve zeytinyağıyla dengeli bir tabak.",
+     "A balanced plate with chicken, beans and olive oil."
+    ],
+    "w": [
+     "Pirinç nedeniyle porsiyon büyüdükçe karbonhidrat artar.",
+     "Rice makes it carb-heavy in large portions."
+    ],
+    "s": [
+     "Sebzeyi artır, pirinci biraz azalt.",
+     "Add more vegetables and a little less rice."
+    ]
+   },
+   "where": [
+    {
+     "n": "Casa Carmela",
+     "ptr": "Kişi başı ≈ 45 € (en az ≈ 49 € harcama istenebilir)",
+     "pen": "≈ €45 per person (a minimum spend of ≈ €49 may apply)",
+     "c": "Valensiya, Malvarrosa",
+     "tr": "1922'den beri paellayı odun ateşinde pişiriyor. Yalnızca öğlen açık; hafta sonu için haftalar önceden yer ayırtın.",
+     "en": "Cooking paella over a wood fire since 1922. Lunch only; book weeks ahead for weekends."
+    },
+    {
+     "n": "La Pepica",
+     "ptr": "Kişi başı ≈ 30–50 €",
+     "pen": "≈ €30–50 per person",
+     "c": "Valensiya, Malvarrosa",
+     "tr": "1898'den beri sahilde paella yapıyor; Hemingway de burada yemiş.",
+     "en": "Serving paella on the beachfront since 1898; Hemingway ate here too."
+    }
+   ],
+   "whereTr": [
+    {
+     "n": "Que Tal Tapas Bar",
+     "c": "İstanbul",
+     "tr": "İspanyol müziği eşliğinde tapas bar; gazpacho ve paella özellikle öneriliyor, fiyatları uygun.",
+     "en": "A tapas bar with Spanish music in the background; gazpacho and paella are especially recommended, at friendly prices.",
+     "ptr": "Uygun fiyat",
+     "pen": "Affordable"
+    }
+   ]
+  },
+  {
+   "key": "es-1",
+   "country": "es",
+   "title": "Gazpacho",
+   "desc": "Yaz sıcağında içilen, pişirilmeyen soğuk domates çorbası.",
+   "mins": 15,
+   "time": "15 dk + 2 saat soğutma",
+   "serves": "4 kişilik",
+   "level": "Kolay",
+   "kcal": 160,
+   "tip": "Lezzet tamamen domatese bağlıdır; mevsiminde, çok olgun domates kullanın.",
+   "story": "Gazpacho, Endülüs'ün kavurucu yazında tarlada çalışanların serinletici yemeğiydi. Kökeni Roma ve Endülüs dönemlerine uzanan, ekmek, zeytinyağı, sarımsak ve sirkeyle yapılan soğuk çorbalara dayanır. Bugün ona rengini veren domates ve biber ise İspanya'ya ancak Kolomb'un seferlerinden sonra, Amerika'dan geldi.",
+   "legend": false,
+   "ing": [
+    "1 kg olgun domates",
+    "1 adet salatalık",
+    "1 adet yeşil biber",
+    "1 diş sarımsak",
+    "50 g bayat ekmek içi",
+    "80 ml sızma zeytinyağı",
+    "2 yemek kaşığı sirke (tercihen şeri sirkesi)",
+    "Tuz",
+    "Servis için küp doğranmış salatalık ve biber"
+   ],
+   "steps": [
+    "Ekmeği biraz suda ıslatıp sıkın.",
+    "Domates, salatalık, biber ve sarımsağı iri doğrayın.",
+    "Sebzeleri, ekmeği, sirkeyi ve tuzu blenderdan geçirin.",
+    "Motor çalışırken zeytinyağını ince ince ekleyin; çorba kremsi bir renk alır.",
+    "İsterseniz süzgeçten geçirin ve buzdolabında en az 2 saat soğutun.",
+    "Küp doğranmış sebzeler ve bir damla zeytinyağıyla soğuk servis edin."
+   ],
+   "diet": {
+    "a": [
+     "gluten",
+     "sulfit"
+    ],
+    "d": [
+     "veg",
+     "vegan",
+     "df"
+    ],
+    "p": [
+     "Çiğ sebzelerden C vitamini ve su; kalorisi düşük.",
+     "Vitamin C and water from raw vegetables; low in calories."
+    ],
+    "w": [
+     "Ekmek gluten, şeri sirkesi sülfit içerir.",
+     "The bread contains gluten; sherry vinegar contains sulphites."
+    ],
+    "s": [
+     "Ekmeği atlarsan glutensiz olur.",
+     "Leave out the bread to make it gluten-free."
+    ]
+   },
+   "where": [
+    {
+     "n": "El Pintón",
+     "ptr": "Orta–üst fiyat ($$–$$$)",
+     "pen": "Mid to upscale ($$–$$$)",
+     "c": "Sevilla",
+     "tr": "Katedralin birkaç adım ötesinde, Endülüs avlulu şık bir restoran; gazpachoyu kendine özgü bir yorumla sunuyor. Sevilla'da gazpachonun 21 Temmuz'da kutlanan bir günü bile var.",
+     "en": "A stylish restaurant with an Andalusian patio steps from the cathedral, serving its own take on gazpacho. Seville even celebrates gazpacho on 21 July."
+    }
+   ],
+   "whereTr": [
+    {
+     "n": "Que Tal Tapas Bar",
+     "c": "İstanbul",
+     "tr": "İspanyol müziği eşliğinde tapas bar; gazpacho ve paella özellikle öneriliyor, fiyatları uygun.",
+     "en": "A tapas bar with Spanish music in the background; gazpacho and paella are especially recommended, at friendly prices.",
+     "ptr": "Uygun fiyat",
+     "pen": "Affordable"
+    }
+   ]
+  },
+  {
+   "key": "th-0",
+   "country": "th",
+   "title": "Pad Thai",
+   "desc": "Demirhindi soslu, karidesli, yumurtalı ve yer fıstıklı sotelenmiş pirinç eriştesi.",
+   "mins": 30,
+   "time": "30 dk",
+   "serves": "2 kişilik",
+   "level": "Orta",
+   "kcal": 650,
+   "tip": "Demirhindi bulamazsanız 2 yk limon suyu ve 1 yk nar ekşisi yakın bir tat verir.",
+   "story": "Pad Thai'nin ünü devlet politikasından gelir. Ülkenin adı 1939'da Siam'dan Tayland'a çevrildiğinde, Başbakan Plaek Phibunsongkhram ulusal kimliği güçlendirmek için pirinç eriştesiyle yapılan bu yemeği yaygınlaştırdı. Hükümet tarifleri dağıttı ve seyyar satıcıları destekledi. Amaç hem Tay kimliğini simgeleyen bir yemek yaratmak hem de pirinç ihracatını korumaktı.",
+   "legend": true,
+   "ing": [
+    "200 g yassı pirinç eriştesi",
+    "200 g karides veya tavuk",
+    "100 g sert tofu",
+    "2 adet yumurta",
+    "1 avuç fasulye filizi",
+    "3 dal yeşil soğan (veya Çin frenk soğanı)",
+    "3 yemek kaşığı ezilmiş yer fıstığı",
+    "Sos: 3 yk demirhindi ezmesi, 2 yk balık sosu, 2 yk esmer şeker",
+    "2 diş sarımsak, 2 yemek kaşığı sıvı yağ",
+    "Servis için lime ve pul biber"
+   ],
+   "steps": [
+    "Erişteyi ılık suda 20 dakika bekletip süzün (haşlamayın).",
+    "Sos malzemelerini şeker eriyene kadar karıştırın.",
+    "Wok'ta yağı ısıtın, sarımsak ve küp tofuyu kızartın, ardından karidesleri 2 dakika pişirin.",
+    "Erişteyi ve sosu ekleyip 2–3 dakika çevirin; kuru gelirse bir kaşık su ekleyin.",
+    "Malzemeleri kenara itin, boş kısma yumurtaları kırıp karıştırın ve pişince erişteye katın.",
+    "Fasulye filizi ve yeşil soğanı ekleyip 30 saniye çevirin. Fıstık, lime ve pul biberle servis edin."
+   ],
+   "diet": {
+    "a": [
+     "yerfistigi",
+     "yumurta",
+     "soya",
+     "balik",
+     "kabuklu"
+    ],
+    "d": [
+     "df",
+     "gf"
+    ],
+    "p": [
+     "Karides/tavuk, tofu ve yumurtadan bol protein; pirinç eriştesi glutensizdir.",
+     "Lots of protein from prawns or chicken, tofu and egg; rice noodles are gluten-free."
+    ],
+    "w": [
+     "Birçok alerjen içerir: yer fıstığı, yumurta, soya, balık sosu ve karides. Şeker ve tuz yüksek.",
+     "Contains many allergens: peanuts, egg, soy, fish sauce and prawns. High in sugar and salt."
+    ],
+    "s": [
+     "Kabuklu alerjisinde tavuk kullan; fıstığı servis sırasında ayrı koy.",
+     "Use chicken for shellfish allergies; serve the peanuts on the side."
+    ]
+   },
+   "where": [
+    {
+     "n": "Thipsamai",
+     "ptr": "Pad thai ≈ 75 ฿'den başlar",
+     "pen": "Pad thai from ≈ ฿75",
+     "c": "Bangkok, Maha Chai Caddesi",
+     "tr": "1950'lerde sokak tezgâhı olarak başladı, 1966'da dükkâna taşındı. Michelin Bib Gourmand listesinde; imza yemeği yumurtaya sarılı pad thai. Nakit ödeme.",
+     "en": "Started as a street stall in the 1950s and moved into a shop in 1966. Michelin Bib Gourmand; the signature is pad thai wrapped in egg. Cash only."
+    }
+   ],
+   "whereTr": [
+    {
+     "n": "Çok Çok Thai",
+     "c": "İstanbul, Asmalı Mescit",
+     "tr": "2006'dan beri açık; Michelin Rehberi'nde yer alıyor. Tom yum kung menünün öne çıkan yemeklerinden.",
+     "en": "Open since 2006 and listed in the Michelin Guide. Tom yum kung is one of its standout dishes.",
+     "ptr": "Orta fiyat (₺₺)",
+     "pen": "Mid-range (₺₺)"
+    },
+    {
+     "n": "Pera Thai",
+     "c": "İstanbul, Şişhane",
+     "tr": "İstanbul'un en eski Tayland restoranı; Tayland Ticaret Bakanlığı'nın 'Thai Select' ödülünü almış. Acı seviyesi isteğe göre ayarlanıyor.",
+     "en": "Istanbul's oldest Thai restaurant, awarded 'Thai Select' by Thailand's Ministry of Commerce. Spice levels can be adjusted."
+    }
+   ]
+  },
+  {
+   "key": "th-1",
+   "country": "th",
+   "title": "Tom Yum Kung",
+   "desc": "Limon otu, galangal ve acı biberle yapılan ekşi-acı karides çorbası.",
+   "mins": 25,
+   "time": "25 dk",
+   "serves": "4 kişilik",
+   "level": "Kolay",
+   "kcal": 150,
+   "tip": "Limon otu ve galangal parçaları tat için oradadır, yenmez; kasede kenara ayırın.",
+   "story": "Tayland'ın belki de en tanınan çorbası olan Tom Yum Kung, Aralık 2024'te UNESCO Somut Olmayan Kültürel Miras listesine alındı. Adı 'kaynatılmış, karıştırılmış karides' anlamına gelir. Nehir kenarındaki toplulukların, bahçede yetişen limon otu, galangal ve kaffir lime ile tatlı su karideslerini buluşturduğu bu çorba, Tay mutfağının dört tadını tek kasede toplar.",
+   "legend": true,
+   "ing": [
+    "300 g iri karides",
+    "1 l su veya tavuk suyu",
+    "2 sap limon otu",
+    "4 dilim galangal (yoksa zencefil)",
+    "5 adet kaffir lime yaprağı",
+    "150 g mantar",
+    "3 yemek kaşığı balık sosu",
+    "3 yemek kaşığı lime suyu",
+    "2–4 adet taze acı biber",
+    "1 yemek kaşığı nam prik pao (Tay biber salçası, isteğe bağlı)",
+    "Bir avuç taze kişniş"
+   ],
+   "steps": [
+    "Limon otunu bıçağın sırtıyla ezip parçalara kesin.",
+    "Suyu kaynatın; limon otu, galangal ve ezilmiş lime yapraklarını ekleyip 5 dakika kaynatın.",
+    "Mantarları ekleyip 2 dakika pişirin.",
+    "Karidesleri ekleyin, pembeleşince (2 dakika) ocağı kapatın.",
+    "Balık sosu, ezilmiş biber ve varsa nam prik paoyu ekleyin.",
+    "Lime suyunu en son, ocak kapalıyken ekleyin; tadını dengeleyip kişnişle servis edin."
+   ],
+   "diet": {
+    "a": [
+     "kabuklu",
+     "balik"
+    ],
+    "m": [
+     "soya"
+    ],
+    "d": [
+     "gf",
+     "df"
+    ],
+    "p": [
+     "Kalorisi düşük, karidesten protein; limon otu ve galangal aromatik.",
+     "Low in calories with protein from prawns; lemongrass and galangal add aroma."
+    ],
+    "w": [
+     "Balık sosu nedeniyle sodyum yüksek; çok acı olabilir. Biber salçası karides ve soya içerebilir.",
+     "High in sodium from fish sauce and can be very spicy. Chilli paste may contain shrimp and soy."
+    ],
+    "s": [
+     "Kabuklu alerjisinde tavuk ya da mantarla yap; acıyı azalt.",
+     "Make it with chicken or mushrooms for shellfish allergies; use less chilli."
+    ]
+   },
+   "where": [
+    {
+     "n": "Raan Jay Fai",
+     "ptr": "Yemek başı ≈ 800–1.200 ฿",
+     "pen": "≈ ฿800–1,200 per dish",
+     "c": "Bangkok, Maha Chai Caddesi",
+     "tr": "Kayak gözlüğüyle yemek pişiren şefiyle ünlü, Michelin yıldızlı sokak restoranı; tom yum da menüde. Sıra numarası sabah dağıtılıyor.",
+     "en": "The Michelin-starred street stall famous for its chef in ski goggles; tom yum is on the menu. Queue numbers are handed out in the morning."
+    },
+    {
+     "n": "P'Aor (Pee Aor)",
+     "ptr": "Istakozlu kâse ≈ 999–1.200 ฿ · daha ucuz seçenekler de var",
+     "pen": "Lobster bowl ≈ ฿999–1,200 · cheaper options too",
+     "c": "Bangkok, Phetchaburi Soi 5",
+     "tr": "Kremalı tom yum eriştesiyle ünlü, hep kalabalık bir lokanta. Istakozlu dev kâsesi iki üç kişiyi doyuruyor. Pazartesi kapalı.",
+     "en": "An always-packed eatery famous for creamy tom yum noodles; the giant lobster bowl feeds two or three. Closed on Mondays."
+    }
+   ],
+   "whereTr": [
+    {
+     "n": "Çok Çok Thai",
+     "c": "İstanbul, Asmalı Mescit",
+     "tr": "2006'dan beri açık; Michelin Rehberi'nde yer alıyor. Tom yum kung menünün öne çıkan yemeklerinden.",
+     "en": "Open since 2006 and listed in the Michelin Guide. Tom yum kung is one of its standout dishes.",
+     "ptr": "Orta fiyat (₺₺)",
+     "pen": "Mid-range (₺₺)"
+    },
+    {
+     "n": "Pera Thai",
+     "c": "İstanbul, Şişhane",
+     "tr": "İstanbul'un en eski Tayland restoranı; Tayland Ticaret Bakanlığı'nın 'Thai Select' ödülünü almış. Acı seviyesi isteğe göre ayarlanıyor.",
+     "en": "Istanbul's oldest Thai restaurant, awarded 'Thai Select' by Thailand's Ministry of Commerce. Spice levels can be adjusted."
+    }
+   ]
+  },
+  {
+   "key": "kr-0",
+   "country": "kr",
+   "title": "Bibimbap",
+   "desc": "Pilavın üzerine dizilen sebzeler, et, yumurta ve gochujang; yemeden önce karıştırılır.",
+   "mins": 45,
+   "time": "45 dk",
+   "serves": "2 kişilik",
+   "level": "Orta",
+   "kcal": 600,
+   "tip": "Taş kasede (dolsot) yaparsanız kaseyi önceden ısıtıp susam yağı sürün; dipteki pirinç çıtırlaşır.",
+   "story": "Bibimbap 'karıştırılmış pilav' demektir. Bir geleneğe göre Kore yeni yılı öncesinde, eski yıldan kalan yiyecekleri bitirmek için artık sebzeler pilavla karıştırılırdı. Jeonju kenti bibimbabıyla ünlüdür. Tabağa dizilen beş renk, Doğu Asya'daki beş element anlayışını ve dengeyi temsil eder.",
+   "legend": false,
+   "ing": [
+    "2 porsiyon pişmiş pirinç",
+    "150 g ince dilim dana eti veya kıyma",
+    "1 demet ıspanak",
+    "1 adet havuç",
+    "1 adet kabak",
+    "1 avuç fasulye filizi",
+    "4 adet mantar (tercihen shiitake)",
+    "2 adet yumurta",
+    "2 yemek kaşığı gochujang",
+    "2 yemek kaşığı susam yağı, 2 yemek kaşığı soya sosu",
+    "2 diş sarımsak, kavrulmuş susam"
+   ],
+   "steps": [
+    "Eti 1 kaşık soya, sarımsak ve susam yağıyla marine edin.",
+    "Ispanak ve fasulye filizini ayrı ayrı 1 dakika haşlayıp sıkın; biraz tuz ve susam yağıyla harmanlayın.",
+    "Havuç, kabak ve mantarı jülyen doğrayıp her birini ayrı ayrı az yağda 2 dakika soteleyin.",
+    "Eti yüksek ateşte suyunu çekene kadar pişirin.",
+    "Yumurtaları sarısı akışkan kalacak şekilde göz pişirin.",
+    "Kaselere pirinci koyun, üstüne malzemeleri renk renk dizin, ortaya yumurtayı ve gochujangı koyun.",
+    "Susam serpin, masada hepsini iyice karıştırarak yiyin."
+   ],
+   "diet": {
+    "a": [
+     "yumurta",
+     "soya",
+     "gluten",
+     "susam"
+    ],
+    "d": [
+     "df"
+    ],
+    "p": [
+     "Bol sebze, et, yumurta ve pirinçle çok dengeli bir kase.",
+     "A very balanced bowl with plenty of veg, meat, egg and rice."
+    ],
+    "w": [
+     "Gochujang ve soya sosu buğday içerebilir; tuz ve şeker ekler.",
+     "Gochujang and soy sauce may contain wheat and add salt and sugar."
+    ],
+    "s": [
+     "Eti tofu ile değiştirirsen vejetaryen olur; glutensiz gochujang ve tamari kullan.",
+     "Swap the meat for tofu to make it vegetarian; use gluten-free gochujang and tamari."
+    ]
+   },
+   "where": [
+    {
+     "n": "Gajok Hoegwan",
+     "ptr": "Bibimbap ≈ ₩15.000",
+     "pen": "Bibimbap ≈ ₩15,000",
+     "c": "Jeonju",
+     "tr": "1973'ten beri açık; kurucusu geleneksel Kore mutfağı ustası unvanı aldı. Bibimbap onlarca yan yemekle birlikte geliyor.",
+     "en": "Open since 1973; its founder was named a master of traditional Korean food. The bibimbap comes with a spread of side dishes."
+    },
+    {
+     "n": "Hangukjip",
+     "c": "Jeonju",
+     "tr": "1952'den beri bibimbap yapıyor ve üçüncü kuşak tarafından işletiliyor; bibimbabı pirinç kasede servis ediliyor.",
+     "en": "Making bibimbap since 1952, now run by the third generation; it's served in a heavy brass bowl."
+    }
+   ],
+   "whereTr": [
+    {
+     "n": "Seorabeol Korean Restaurant",
+     "c": "İstanbul, Şişli (Esentepe)",
+     "tr": "İstanbul'da yaşayan Korelilerin akşamları gittiği bir restoran. Bulgogi bibimbap menünün gözdelerinden; fiyatları da uygun.",
+     "en": "A restaurant where Istanbul's Korean community goes in the evenings. Bulgogi bibimbap is a favourite, and prices are friendly.",
+     "ptr": "Uygun fiyat",
+     "pen": "Affordable"
+    },
+    {
+     "n": "Sopung",
+     "c": "İstanbul, Bakırköy",
+     "tr": "Bakırköy'de renkli Kore yemekleri sunan bir restoran; gimbap özellikle öneriliyor.",
+     "en": "A Bakırköy restaurant serving colourful Korean food; the gimbap is especially recommended."
+    }
+   ]
+  },
+  {
+   "key": "kr-1",
+   "country": "kr",
+   "title": "Tteokguk",
+   "desc": "Dilimlenmiş pirinç keki, et suyu ve yumurtayla yapılan Kore yeni yıl çorbası.",
+   "mins": 40,
+   "time": "40 dk",
+   "serves": "4 kişilik",
+   "level": "Kolay",
+   "kcal": 450,
+   "tip": "Kurumuş pirinç keki kullanıyorsanız ıslatma süresini bir saate çıkarın.",
+   "story": "Tteokguk, Kore yeni yılı Seollal'in sabahında yenir. Beyaz pirinç kekleri temizliği ve yeni bir başlangıcı simgeler; eski paralara benzeyen yuvarlak dilimlerin bereket getirdiğine inanılır. En sevilen inanışa göre bir kase tteokguk yiyen bir yaş büyür. Bu yüzden Korelilerin yaş sormanın şakacı bir yolu vardır: 'Kaç kase tteokguk yedin?'",
+   "legend": true,
+   "ing": [
+    "400 g dilimlenmiş pirinç keki (tteok)",
+    "200 g dana eti (döş veya kontrfile)",
+    "1,5 l su",
+    "2 adet yumurta",
+    "2 dal yeşil soğan",
+    "2 diş sarımsak",
+    "1 yemek kaşığı soya sosu",
+    "1 yaprak kurutulmuş yosun (gim), ufalanmış",
+    "Tuz, karabiber, susam yağı"
+   ],
+   "steps": [
+    "Pirinç keklerini 20 dakika soğuk suda bekletin.",
+    "Eti suyla birlikte kaynatıp köpüğünü alın, 20 dakika pişirin; eti çıkarıp ince didin.",
+    "Et suyuna sarımsak ve soya ekleyin, tuzla tatlandırın.",
+    "Pirinç keklerini ekleyip yüzeye çıkana ve yumuşayana kadar 5 dakika pişirin.",
+    "Çırpılmış yumurtayı ince bir iplik gibi gezdirin ve karıştırmadan 1 dakika bekleyin.",
+    "Kaselere alın; didilmiş et, yeşil soğan, yosun ve bir damla susam yağıyla servis edin."
+   ],
+   "diet": {
+    "a": [
+     "yumurta",
+     "soya",
+     "gluten",
+     "susam"
+    ],
+    "d": [
+     "df"
+    ],
+    "p": [
+     "Et suyu ve yumurtadan protein; sindirimi kolay.",
+     "Protein from broth and egg; easy to digest."
+    ],
+    "w": [
+     "Pirinç keki yüksek karbonhidratlıdır. Soya sosu buğday içerir.",
+     "Rice cakes are high in carbs. Soy sauce contains wheat."
+    ],
+    "s": [
+     "Glutensiz tamari kullan; pirinç kekini azaltıp sebze ekle.",
+     "Use gluten-free tamari; use fewer rice cakes and add vegetables."
+    ]
+   },
+   "where": [
+    {
+     "n": "Gohyang Kalguksu",
+     "c": "Seul, Gwangjang Pazarı",
+     "tr": "Netflix'in 'Street Food Asia' belgeselinde yer alan bıçakla kesilmiş erişte tezgâhı; menüde sade ve mantılı tteokguk da var.",
+     "en": "The knife-cut noodle stall featured in Netflix's 'Street Food Asia'; plain and dumpling tteokguk are on the menu too.",
+     "ptr": "Tteokguk ≈ ₩5.000",
+     "pen": "Tteokguk ≈ ₩5,000"
+    },
+    {
+     "n": "Saebom Tteokguk",
+     "c": "Seul, Seodaemun",
+     "tr": "Seul'de tteokguk konusunda uzmanlaşmış az sayıdaki restorandan biri; en sevilen çeşidi deniz yosunlu istiridyeli tteokguk.",
+     "en": "One of the few Seoul restaurants specialising in tteokguk; the favourite is the seaweed and oyster version.",
+     "ptr": "≈ ₩10.000–23.000",
+     "pen": "≈ ₩10,000–23,000"
+    }
+   ],
+   "whereTr": [
+    {
+     "n": "Seorabeol Korean Restaurant",
+     "c": "İstanbul, Şişli (Esentepe)",
+     "tr": "İstanbul'da yaşayan Korelilerin akşamları gittiği bir restoran. Bulgogi bibimbap menünün gözdelerinden; fiyatları da uygun.",
+     "en": "A restaurant where Istanbul's Korean community goes in the evenings. Bulgogi bibimbap is a favourite, and prices are friendly.",
+     "ptr": "Uygun fiyat",
+     "pen": "Affordable"
+    },
+    {
+     "n": "Sopung",
+     "c": "İstanbul, Bakırköy",
+     "tr": "Bakırköy'de renkli Kore yemekleri sunan bir restoran; gimbap özellikle öneriliyor.",
+     "en": "A Bakırköy restaurant serving colourful Korean food; the gimbap is especially recommended."
+    }
+   ]
+  }
+ ],
+ "alg": {
+  "gluten": [
+   "🌾",
+   "Gluten",
+   "Gluten"
+  ],
+  "sut": [
+   "🥛",
+   "Süt",
+   "Milk"
+  ],
+  "yumurta": [
+   "🥚",
+   "Yumurta",
+   "Egg"
+  ],
+  "kuruyemis": [
+   "🌰",
+   "Kuruyemiş",
+   "Tree nuts"
+  ],
+  "yerfistigi": [
+   "🥜",
+   "Yer fıstığı",
+   "Peanuts"
+  ],
+  "soya": [
+   "🫘",
+   "Soya",
+   "Soy"
+  ],
+  "balik": [
+   "🐟",
+   "Balık",
+   "Fish"
+  ],
+  "kabuklu": [
+   "🦐",
+   "Kabuklu deniz ürünü",
+   "Shellfish"
+  ],
+  "susam": [
+   "⚪",
+   "Susam",
+   "Sesame"
+  ],
+  "sulfit": [
+   "🍷",
+   "Sülfit",
+   "Sulphites"
+  ]
+ },
+ "pantry": [
+  {
+   "id": "sogan",
+   "cat": "veg",
+   "e": "🧅",
+   "tr": "Soğan",
+   "en": "Onion"
+  },
+  {
+   "id": "sarimsak",
+   "cat": "veg",
+   "e": "🧄",
+   "tr": "Sarımsak",
+   "en": "Garlic"
+  },
+  {
+   "id": "domates",
+   "cat": "veg",
+   "e": "🍅",
+   "tr": "Domates",
+   "en": "Tomato"
+  },
+  {
+   "id": "patates",
+   "cat": "veg",
+   "e": "🥔",
+   "tr": "Patates",
+   "en": "Potato"
+  },
+  {
+   "id": "havuc",
+   "cat": "veg",
+   "e": "🥕",
+   "tr": "Havuç",
+   "en": "Carrot"
+  },
+  {
+   "id": "patlican",
+   "cat": "veg",
+   "e": "🍆",
+   "tr": "Patlıcan",
+   "en": "Aubergine"
+  },
+  {
+   "id": "biber",
+   "cat": "veg",
+   "e": "🫑",
+   "tr": "Dolmalık / sivri biber",
+   "en": "Sweet / green pepper"
+  },
+  {
+   "id": "aci_biber",
+   "cat": "veg",
+   "e": "🌶️",
+   "tr": "Acı biber (taze veya kuru)",
+   "en": "Chilli (fresh or dried)"
+  },
+  {
+   "id": "salatalik",
+   "cat": "veg",
+   "e": "🥒",
+   "tr": "Salatalık",
+   "en": "Cucumber"
+  },
+  {
+   "id": "ispanak",
+   "cat": "veg",
+   "e": "🥬",
+   "tr": "Ispanak",
+   "en": "Spinach"
+  },
+  {
+   "id": "lahana",
+   "cat": "veg",
+   "e": "🥬",
+   "tr": "Lahana",
+   "en": "Cabbage"
+  },
+  {
+   "id": "kabak",
+   "cat": "veg",
+   "e": "🥒",
+   "tr": "Kabak",
+   "en": "Courgette"
+  },
+  {
+   "id": "mantar",
+   "cat": "veg",
+   "e": "🍄",
+   "tr": "Mantar",
+   "en": "Mushrooms"
+  },
+  {
+   "id": "avokado",
+   "cat": "veg",
+   "e": "🥑",
+   "tr": "Avokado",
+   "en": "Avocado"
+  },
+  {
+   "id": "fasulye_filizi",
+   "cat": "veg",
+   "e": "🌱",
+   "tr": "Fasulye filizi",
+   "en": "Bean sprouts"
+  },
+  {
+   "id": "taze_fasulye",
+   "cat": "veg",
+   "e": "🫛",
+   "tr": "Taze fasulye",
+   "en": "Green beans"
+  },
+  {
+   "id": "yesil_sogan",
+   "cat": "veg",
+   "e": "🌿",
+   "tr": "Yeşil soğan",
+   "en": "Spring onion"
+  },
+  {
+   "id": "maydanoz",
+   "cat": "veg",
+   "e": "🌿",
+   "tr": "Maydanoz",
+   "en": "Parsley"
+  },
+  {
+   "id": "kisnis",
+   "cat": "veg",
+   "e": "🌿",
+   "tr": "Kişniş",
+   "en": "Coriander"
+  },
+  {
+   "id": "feslegen",
+   "cat": "veg",
+   "e": "🌿",
+   "tr": "Fesleğen",
+   "en": "Basil"
+  },
+  {
+   "id": "otlar",
+   "cat": "veg",
+   "e": "🌿",
+   "tr": "Kekik, defne veya biberiye",
+   "en": "Thyme, bay or rosemary"
+  },
+  {
+   "id": "limon",
+   "cat": "veg",
+   "e": "🍋",
+   "tr": "Limon veya lime",
+   "en": "Lemon or lime"
+  },
+  {
+   "id": "portakal",
+   "cat": "veg",
+   "e": "🍊",
+   "tr": "Portakal",
+   "en": "Orange"
+  },
+  {
+   "id": "nar",
+   "cat": "veg",
+   "e": "🔴",
+   "tr": "Nar",
+   "en": "Pomegranate"
+  },
+  {
+   "id": "zencefil",
+   "cat": "veg",
+   "e": "🫚",
+   "tr": "Zencefil (veya galangal)",
+   "en": "Ginger (or galangal)"
+  },
+  {
+   "id": "limon_otu",
+   "cat": "veg",
+   "e": "🌾",
+   "tr": "Limon otu",
+   "en": "Lemongrass"
+  },
+  {
+   "id": "tavuk",
+   "cat": "meat",
+   "e": "🍗",
+   "tr": "Tavuk",
+   "en": "Chicken"
+  },
+  {
+   "id": "kiyma",
+   "cat": "meat",
+   "e": "🥩",
+   "tr": "Kıyma",
+   "en": "Minced meat"
+  },
+  {
+   "id": "dana_eti",
+   "cat": "meat",
+   "e": "🥩",
+   "tr": "Dana eti",
+   "en": "Beef"
+  },
+  {
+   "id": "pastirma",
+   "cat": "meat",
+   "e": "🥓",
+   "tr": "Pastırma, guanciale veya füme et",
+   "en": "Guanciale, pancetta or smoked meat"
+  },
+  {
+   "id": "karides",
+   "cat": "meat",
+   "e": "🦐",
+   "tr": "Karides",
+   "en": "Prawns"
+  },
+  {
+   "id": "yumurta",
+   "cat": "dairy",
+   "e": "🥚",
+   "tr": "Yumurta",
+   "en": "Eggs"
+  },
+  {
+   "id": "sut",
+   "cat": "dairy",
+   "e": "🥛",
+   "tr": "Süt",
+   "en": "Milk"
+  },
+  {
+   "id": "tereyagi",
+   "cat": "dairy",
+   "e": "🧈",
+   "tr": "Tereyağı veya ghee",
+   "en": "Butter or ghee"
+  },
+  {
+   "id": "yogurt",
+   "cat": "dairy",
+   "e": "🥣",
+   "tr": "Yoğurt",
+   "en": "Yoghurt"
+  },
+  {
+   "id": "krema",
+   "cat": "dairy",
+   "e": "🥛",
+   "tr": "Krema",
+   "en": "Cream"
+  },
+  {
+   "id": "peynir_sert",
+   "cat": "dairy",
+   "e": "🧀",
+   "tr": "Parmesan veya pecorino",
+   "en": "Parmesan or pecorino"
+  },
+  {
+   "id": "kasar",
+   "cat": "dairy",
+   "e": "🧀",
+   "tr": "Kaşar, cheddar veya gruyère",
+   "en": "Cheddar, Gruyère or melting cheese"
+  },
+  {
+   "id": "mozzarella",
+   "cat": "dairy",
+   "e": "🧀",
+   "tr": "Mozzarella",
+   "en": "Mozzarella"
+  },
+  {
+   "id": "mascarpone",
+   "cat": "dairy",
+   "e": "🧀",
+   "tr": "Mascarpone",
+   "en": "Mascarpone"
+  },
+  {
+   "id": "un",
+   "cat": "grain",
+   "e": "🌾",
+   "tr": "Un",
+   "en": "Flour"
+  },
+  {
+   "id": "maya",
+   "cat": "grain",
+   "e": "🫧",
+   "tr": "Maya",
+   "en": "Yeast"
+  },
+  {
+   "id": "pirinc",
+   "cat": "grain",
+   "e": "🍚",
+   "tr": "Pirinç",
+   "en": "Rice"
+  },
+  {
+   "id": "makarna",
+   "cat": "grain",
+   "e": "🍝",
+   "tr": "Spagetti / makarna",
+   "en": "Spaghetti / pasta"
+  },
+  {
+   "id": "ekmek",
+   "cat": "grain",
+   "e": "🥖",
+   "tr": "Ekmek",
+   "en": "Bread"
+  },
+  {
+   "id": "tortilla",
+   "cat": "grain",
+   "e": "🫓",
+   "tr": "Tortilla veya lavaş",
+   "en": "Tortillas or lavash"
+  },
+  {
+   "id": "kirmizi_mercimek",
+   "cat": "grain",
+   "e": "🟠",
+   "tr": "Kırmızı mercimek",
+   "en": "Red lentils"
+  },
+  {
+   "id": "sari_mercimek",
+   "cat": "grain",
+   "e": "🟡",
+   "tr": "Sarı mercimek",
+   "en": "Yellow lentils"
+  },
+  {
+   "id": "nohut",
+   "cat": "grain",
+   "e": "🫘",
+   "tr": "Nohut",
+   "en": "Chickpeas"
+  },
+  {
+   "id": "kuru_fasulye",
+   "cat": "grain",
+   "e": "🫘",
+   "tr": "Kuru beyaz fasulye",
+   "en": "Dried white beans"
+  },
+  {
+   "id": "bugday",
+   "cat": "grain",
+   "e": "🌾",
+   "tr": "Aşurelik buğday",
+   "en": "Hulled wheat"
+  },
+  {
+   "id": "pirinc_eristesi",
+   "cat": "grain",
+   "e": "🍜",
+   "tr": "Pirinç eriştesi",
+   "en": "Rice noodles"
+  },
+  {
+   "id": "pirinc_keki",
+   "cat": "grain",
+   "e": "⚪",
+   "tr": "Pirinç keki (tteok)",
+   "en": "Rice cakes (tteok)"
+  },
+  {
+   "id": "kedi_dili",
+   "cat": "grain",
+   "e": "🍪",
+   "tr": "Kedi dili bisküvi",
+   "en": "Ladyfingers"
+  },
+  {
+   "id": "tofu",
+   "cat": "grain",
+   "e": "⬜",
+   "tr": "Tofu",
+   "en": "Tofu"
+  },
+  {
+   "id": "yer_fistigi",
+   "cat": "sweet",
+   "e": "🥜",
+   "tr": "Yer fıstığı",
+   "en": "Peanuts"
+  },
+  {
+   "id": "ceviz",
+   "cat": "sweet",
+   "e": "🌰",
+   "tr": "Ceviz veya fındık",
+   "en": "Walnuts or hazelnuts"
+  },
+  {
+   "id": "kuru_meyve",
+   "cat": "sweet",
+   "e": "🍇",
+   "tr": "Kuru kayısı, incir veya üzüm",
+   "en": "Dried apricots, figs or raisins"
+  },
+  {
+   "id": "seker",
+   "cat": "sweet",
+   "e": "🍬",
+   "tr": "Şeker",
+   "en": "Sugar"
+  },
+  {
+   "id": "kakao",
+   "cat": "sweet",
+   "e": "🍫",
+   "tr": "Kakao",
+   "en": "Cocoa"
+  },
+  {
+   "id": "kahve",
+   "cat": "sweet",
+   "e": "☕",
+   "tr": "Kahve / espresso",
+   "en": "Coffee / espresso"
+  },
+  {
+   "id": "salca",
+   "cat": "sauce",
+   "e": "🥫",
+   "tr": "Domates salçası",
+   "en": "Tomato paste"
+  },
+  {
+   "id": "pul_biber",
+   "cat": "sauce",
+   "e": "🌶️",
+   "tr": "Pul biber",
+   "en": "Chilli flakes"
+  },
+  {
+   "id": "toz_biber",
+   "cat": "sauce",
+   "e": "🌶️",
+   "tr": "Toz kırmızı biber",
+   "en": "Paprika / chilli powder"
+  },
+  {
+   "id": "kimyon",
+   "cat": "sauce",
+   "e": "🟤",
+   "tr": "Kimyon",
+   "en": "Cumin"
+  },
+  {
+   "id": "zerdecal",
+   "cat": "sauce",
+   "e": "🟡",
+   "tr": "Zerdeçal",
+   "en": "Turmeric"
+  },
+  {
+   "id": "garam_masala",
+   "cat": "sauce",
+   "e": "🟤",
+   "tr": "Garam masala",
+   "en": "Garam masala"
+  },
+  {
+   "id": "safran",
+   "cat": "sauce",
+   "e": "🟠",
+   "tr": "Safran",
+   "en": "Saffron"
+  },
+  {
+   "id": "soya",
+   "cat": "sauce",
+   "e": "🫙",
+   "tr": "Soya sosu",
+   "en": "Soy sauce"
+  },
+  {
+   "id": "mirin",
+   "cat": "sauce",
+   "e": "🍶",
+   "tr": "Mirin",
+   "en": "Mirin"
+  },
+  {
+   "id": "dashi",
+   "cat": "sauce",
+   "e": "🍲",
+   "tr": "Dashi",
+   "en": "Dashi"
+  },
+  {
+   "id": "miso",
+   "cat": "sauce",
+   "e": "🟫",
+   "tr": "Miso",
+   "en": "Miso"
+  },
+  {
+   "id": "yosun",
+   "cat": "sauce",
+   "e": "🟩",
+   "tr": "Kuru yosun (wakame, gim)",
+   "en": "Dried seaweed (wakame, gim)"
+  },
+  {
+   "id": "balik_sosu",
+   "cat": "sauce",
+   "e": "🐟",
+   "tr": "Balık sosu",
+   "en": "Fish sauce"
+  },
+  {
+   "id": "demirhindi",
+   "cat": "sauce",
+   "e": "🟤",
+   "tr": "Demirhindi",
+   "en": "Tamarind"
+  },
+  {
+   "id": "gochujang",
+   "cat": "sauce",
+   "e": "🌶️",
+   "tr": "Gochujang",
+   "en": "Gochujang"
+  },
+  {
+   "id": "susam_yagi",
+   "cat": "sauce",
+   "e": "🟤",
+   "tr": "Susam yağı",
+   "en": "Sesame oil"
+  },
+  {
+   "id": "zeytinyagi",
+   "cat": "sauce",
+   "e": "🫒",
+   "tr": "Zeytinyağı",
+   "en": "Olive oil"
+  },
+  {
+   "id": "sirke",
+   "cat": "sauce",
+   "e": "🍶",
+   "tr": "Sirke",
+   "en": "Vinegar"
+  },
+  {
+   "id": "nisasta",
+   "cat": "sauce",
+   "e": "⚪",
+   "tr": "Nişasta",
+   "en": "Cornflour"
+  },
+  {
+   "id": "et_suyu",
+   "cat": "sauce",
+   "e": "🍲",
+   "tr": "Et veya tavuk suyu",
+   "en": "Stock (beef or chicken)"
+  },
+  {
+   "id": "asma_yapragi",
+   "cat": "veg",
+   "e": "🍃",
+   "tr": "Asma yaprağı",
+   "en": "Vine leaves"
+  },
+  {
+   "id": "nane",
+   "cat": "sauce",
+   "e": "🌿",
+   "tr": "Kuru nane",
+   "en": "Dried mint"
+  },
+  {
+   "id": "bulgur",
+   "cat": "grain",
+   "e": "🌾",
+   "tr": "Bulgur",
+   "en": "Bulgur"
+  },
+  {
+   "id": "yufka",
+   "cat": "grain",
+   "e": "🫓",
+   "tr": "Baklava yufkası",
+   "en": "Filo pastry"
+  },
+  {
+   "id": "antep_fistigi",
+   "cat": "sweet",
+   "e": "🟢",
+   "tr": "Antep fıstığı",
+   "en": "Pistachios"
+  }
+ ]
+}
