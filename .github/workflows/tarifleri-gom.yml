@@ -1,0 +1,33 @@
+name: TheMealDB tariflerini siteye göm
+
+# TheMealDB'deki tüm tarifleri çekip sitenin içine gömer ve
+# "dunya-mutfagi-tum-tarifler.html" olarak depoya kaydeder.
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/tarifleri-gom.yml", "build.js"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  gom:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Tarifleri çek ve göm
+        run: node build.js
+      - name: Gömülü siteyi kaydet
+        run: |
+          grep -q "const MDB_EMBED=\[" dist/index.html || { echo "Tarifler gömülemedi"; exit 1; }
+          cp dist/index.html dunya-mutfagi-tum-tarifler.html
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dunya-mutfagi-tum-tarifler.html
+          git diff --cached --quiet && { echo "Değişiklik yok"; exit 0; }
+          git commit -m "TheMealDB tarifleri gömülü site güncellendi"
+          git push
