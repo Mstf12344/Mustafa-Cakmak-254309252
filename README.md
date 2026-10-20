@@ -21,6 +21,8 @@ Mustafa Çakmak (254309252) – Mesleki Çözümleme I dönem projesi.
 - `veritabani/` – SQLite veritabanı: şema, kurulum betiği (`node seed.js`), örnek sorgular ve hazır `dunya_mutfagi.db`
 
 ## Yayına alma (Vercel)
-Vercel'de "Add New → Project" ile bu depoyu seç; Framework Preset "Other" kalsın, Build Command ve Output Directory boş bırakılsın. Site kök dizindeki `index.html` olarak yayınlanır.
+Depo Vercel'deki **dunya-mutfagi** projesine bağlıdır; `main` dalına yapılan her gönderim siteyi otomatik günceller: https://dunya-mutfagi.vercel.app
+
+Yayın sırasında `build.js` çalışır (`vercel.json`): TheMealDB'deki tüm tarifleri çekip `index.html`'in içine gömer ve sonucu `dist/` klasörüne yazar. Böylece yayındaki sitede bütün tarifler, diğer tarifler gibi sayfanın içinde hazır gelir. TheMealDB'ye ulaşılamazsa site eski davranışla tarifleri tarayıcıda canlı çeker. Yerelde denemek için: `node build.js`.
 
 Tarif verileri: [TheMealDB](https://www.themealdb.com) (ücretsiz test anahtarı, eğitim amaçlı kullanım).
