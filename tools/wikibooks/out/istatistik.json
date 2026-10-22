@@ -1,0 +1,947 @@
+{
+ "kategori": [
+  [
+   "Category:Recipes by origin",
+   0,
+   ""
+  ],
+  [
+   "Category:African recipes",
+   1,
+   "Category:Recipes by origin"
+  ],
+  [
+   "Category:American recipes",
+   1,
+   "Category:Recipes by origin"
+  ],
+  [
+   "Category:Asian recipes",
+   1,
+   "Category:Recipes by origin"
+  ],
+  [
+   "Category:European recipes",
+   1,
+   "Category:Recipes by origin"
+  ],
+  [
+   "Category:Family heritage recipes",
+   1,
+   "Category:Recipes by origin"
+  ],
+  [
+   "Category:Jewish recipes",
+   1,
+   "Category:Recipes by origin"
+  ],
+  [
+   "Category:Mediterranean recipes",
+   1,
+   "Category:Recipes by origin"
+  ],
+  [
+   "Category:Middle Eastern recipes",
+   1,
+   "Category:Recipes by origin"
+  ],
+  [
+   "Category:Pacific recipes",
+   1,
+   "Category:Recipes by origin"
+  ],
+  [
+   "Category:West Asian recipes",
+   1,
+   "Category:Recipes by origin"
+  ],
+  [
+   "Category:Algerian recipes",
+   2,
+   "Category:African recipes"
+  ],
+  [
+   "Category:Angolan recipes",
+   2,
+   "Category:African recipes"
+  ],
+  [
+   "Category:Cameroonian recipes",
+   2,
+   "Category:African recipes"
+  ],
+  [
+   "Category:Chadian recipes",
+   2,
+   "Category:African recipes"
+  ],
+  [
+   "Category:Egyptian recipes",
+   2,
+   "Category:African recipes"
+  ],
+  [
+   "Category:Ethiopian recipes",
+   2,
+   "Category:African recipes"
+  ],
+  [
+   "Category:Gambian recipes",
+   2,
+   "Category:African recipes"
+  ],
+  [
+   "Category:Ghanaian recipes",
+   2,
+   "Category:African recipes"
+  ],
+  [
+   "Category:Ghanian recipes",
+   2,
+   "Category:African recipes"
+  ],
+  [
+   "Category:Kenyan recipes",
+   2,
+   "Category:African recipes"
+  ],
+  [
+   "Category:Liberian recipes",
+   2,
+   "Category:African recipes"
+  ],
+  [
+   "Category:Libyan recipes",
+   2,
+   "Category:African recipes"
+  ],
+  [
+   "Category:Malawian recipes",
+   2,
+   "Category:African recipes"
+  ],
+  [
+   "Category:Moroccan recipes",
+   2,
+   "Category:African recipes"
+  ],
+  [
+   "Category:Nigerian recipes",
+   2,
+   "Category:African recipes"
+  ],
+  [
+   "Category:North African recipes",
+   2,
+   "Category:African recipes"
+  ],
+  [
+   "Category:Rwandan recipes",
+   2,
+   "Category:African recipes"
+  ],
+  [
+   "Category:Senegalese recipes",
+   2,
+   "Category:African recipes"
+  ],
+  [
+   "Category:Somali recipes",
+   2,
+   "Category:African recipes"
+  ],
+  [
+   "Category:South African recipes",
+   2,
+   "Category:African recipes"
+  ],
+  [
+   "Category:Sudanese recipes",
+   2,
+   "Category:African recipes"
+  ],
+  [
+   "Category:Tanzanian recipes",
+   2,
+   "Category:African recipes"
+  ],
+  [
+   "Category:Togolese recipes",
+   2,
+   "Category:African recipes"
+  ],
+  [
+   "Category:Ugandan recipes",
+   2,
+   "Category:African recipes"
+  ],
+  [
+   "Category:Zambian recipes",
+   2,
+   "Category:African recipes"
+  ],
+  [
+   "Category:Zimbabwean recipes",
+   2,
+   "Category:African recipes"
+  ],
+  [
+   "Category:Caribbean recipes",
+   2,
+   "Category:American recipes"
+  ],
+  [
+   "Category:Central American recipes",
+   2,
+   "Category:American recipes"
+  ],
+  [
+   "Category:Native American recipes",
+   2,
+   "Category:American recipes"
+  ],
+  [
+   "Category:North American recipes",
+   2,
+   "Category:American recipes"
+  ],
+  [
+   "Category:South American recipes",
+   2,
+   "Category:American recipes"
+  ],
+  [
+   "Category:East Asian recipes",
+   2,
+   "Category:Asian recipes"
+  ],
+  [
+   "Category:Mongolian recipes",
+   2,
+   "Category:Asian recipes"
+  ],
+  [
+   "Category:South Asian recipes",
+   2,
+   "Category:Asian recipes"
+  ],
+  [
+   "Category:Southeast Asian recipes",
+   2,
+   "Category:Asian recipes"
+  ],
+  [
+   "Category:Albanian recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Austrian recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Belgian recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:British recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Bulgarian recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Croatian recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Cypriot recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Czech recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Danish recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Dutch recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:English recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Estonian recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Finnish recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:French recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:German recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Gibraltarian recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Greek recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Hungarian recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Icelandic recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Irish recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Italian recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Lithuanian recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Manx recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Northern Irish recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Norwegian recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Polish recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Portuguese recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Romanian recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Russian recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Scandinavian recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Scottish recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Serbian recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Slovenian recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Spanish recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Swedish recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Swiss recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Turkish recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Ukrainian recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Welsh recipes",
+   2,
+   "Category:European recipes"
+  ],
+  [
+   "Category:Jewish Yemenite recipes",
+   2,
+   "Category:Jewish recipes"
+  ],
+  [
+   "Category:Recipes for kugel",
+   2,
+   "Category:Jewish recipes"
+  ],
+  [
+   "Category:Sabbath recipes",
+   2,
+   "Category:Jewish recipes"
+  ],
+  [
+   "Category:Maltese recipes",
+   2,
+   "Category:Mediterranean recipes"
+  ],
+  [
+   "Category:Afghan recipes",
+   2,
+   "Category:Middle Eastern recipes"
+  ],
+  [
+   "Category:Iranian recipes",
+   2,
+   "Category:Middle Eastern recipes"
+  ],
+  [
+   "Category:Iraqi recipes",
+   2,
+   "Category:Middle Eastern recipes"
+  ],
+  [
+   "Category:Israeli recipes",
+   2,
+   "Category:Middle Eastern recipes"
+  ],
+  [
+   "Category:Jordanian recipes",
+   2,
+   "Category:Middle Eastern recipes"
+  ],
+  [
+   "Category:Lebanese recipes",
+   2,
+   "Category:Middle Eastern recipes"
+  ],
+  [
+   "Category:Palestinian recipes",
+   2,
+   "Category:Middle Eastern recipes"
+  ],
+  [
+   "Category:Australian recipes",
+   2,
+   "Category:Pacific recipes"
+  ],
+  [
+   "Category:Hawaiian recipes",
+   2,
+   "Category:Pacific recipes"
+  ],
+  [
+   "Category:New Zealand recipes",
+   2,
+   "Category:Pacific recipes"
+  ],
+  [
+   "Category:Armenian recipes",
+   2,
+   "Category:West Asian recipes"
+  ],
+  [
+   "Category:Azerbaijani recipes",
+   2,
+   "Category:West Asian recipes"
+  ],
+  [
+   "Category:Georgian recipes",
+   2,
+   "Category:West Asian recipes"
+  ],
+  [
+   "Category:Efik recipes",
+   3,
+   "Category:Nigerian recipes"
+  ],
+  [
+   "Category:Hausa recipes",
+   3,
+   "Category:Nigerian recipes"
+  ],
+  [
+   "Category:Igbo recipes",
+   3,
+   "Category:Nigerian recipes"
+  ],
+  [
+   "Category:National Nigerian recipes",
+   3,
+   "Category:Nigerian recipes"
+  ],
+  [
+   "Category:Tiv recipes",
+   3,
+   "Category:Nigerian recipes"
+  ],
+  [
+   "Category:Yoruba recipes",
+   3,
+   "Category:Nigerian recipes"
+  ],
+  [
+   "Category:Cuban recipes",
+   3,
+   "Category:Caribbean recipes"
+  ],
+  [
+   "Category:Dominican recipes",
+   3,
+   "Category:Caribbean recipes"
+  ],
+  [
+   "Category:Jamaican recipes",
+   3,
+   "Category:Caribbean recipes"
+  ],
+  [
+   "Category:Puerto Rican recipes",
+   3,
+   "Category:Caribbean recipes"
+  ],
+  [
+   "Category:Surinamese recipes",
+   3,
+   "Category:Caribbean recipes"
+  ],
+  [
+   "Category:Trinidadian and Tobagonian recipes",
+   3,
+   "Category:Caribbean recipes"
+  ],
+  [
+   "Category:Costa Rican recipes",
+   3,
+   "Category:Central American recipes"
+  ],
+  [
+   "Category:Panamanian recipes",
+   3,
+   "Category:Central American recipes"
+  ],
+  [
+   "Category:Salvadoran recipes",
+   3,
+   "Category:Central American recipes"
+  ],
+  [
+   "Category:Canadian recipes",
+   3,
+   "Category:North American recipes"
+  ],
+  [
+   "Category:Mexican recipes",
+   3,
+   "Category:North American recipes"
+  ],
+  [
+   "Category:Southwestern recipes",
+   3,
+   "Category:North American recipes"
+  ],
+  [
+   "Category:United States recipes",
+   3,
+   "Category:North American recipes"
+  ],
+  [
+   "Category:Argentine recipes",
+   3,
+   "Category:South American recipes"
+  ],
+  [
+   "Category:Brazilian recipes",
+   3,
+   "Category:South American recipes"
+  ],
+  [
+   "Category:Chilean recipes",
+   3,
+   "Category:South American recipes"
+  ],
+  [
+   "Category:Colombian recipes",
+   3,
+   "Category:South American recipes"
+  ],
+  [
+   "Category:Peruvian recipes",
+   3,
+   "Category:South American recipes"
+  ],
+  [
+   "Category:Venezuelan recipes",
+   3,
+   "Category:South American recipes"
+  ],
+  [
+   "Category:Chinese recipes",
+   3,
+   "Category:East Asian recipes"
+  ],
+  [
+   "Category:Japanese recipes",
+   3,
+   "Category:East Asian recipes"
+  ],
+  [
+   "Category:Korean recipes",
+   3,
+   "Category:East Asian recipes"
+  ],
+  [
+   "Category:Taiwanese recipes",
+   3,
+   "Category:East Asian recipes"
+  ],
+  [
+   "Category:Bengali recipes",
+   3,
+   "Category:South Asian recipes"
+  ],
+  [
+   "Category:Indian recipes",
+   3,
+   "Category:South Asian recipes"
+  ],
+  [
+   "Category:Nepali recipes",
+   3,
+   "Category:South Asian recipes"
+  ],
+  [
+   "Category:Pakistani recipes",
+   3,
+   "Category:South Asian recipes"
+  ],
+  [
+   "Category:Sylheti recipes",
+   3,
+   "Category:South Asian recipes"
+  ],
+  [
+   "Category:Tibetan recipes",
+   3,
+   "Category:South Asian recipes"
+  ],
+  [
+   "Category:Burmese recipes",
+   3,
+   "Category:Southeast Asian recipes"
+  ],
+  [
+   "Category:Filipino recipes",
+   3,
+   "Category:Southeast Asian recipes"
+  ],
+  [
+   "Category:Indonesian recipes",
+   3,
+   "Category:Southeast Asian recipes"
+  ],
+  [
+   "Category:Malaysian recipes",
+   3,
+   "Category:Southeast Asian recipes"
+  ],
+  [
+   "Category:Thai recipes",
+   3,
+   "Category:Southeast Asian recipes"
+  ],
+  [
+   "Category:Vietnamese recipes",
+   3,
+   "Category:Southeast Asian recipes"
+  ],
+  [
+   "Category:Cornish recipes",
+   3,
+   "Category:British recipes"
+  ],
+  [
+   "Category:Alsatian recipes",
+   3,
+   "Category:French recipes"
+  ],
+  [
+   "Category:Pashtun recipes",
+   3,
+   "Category:Afghan recipes"
+  ],
+  [
+   "Category:Californian recipes",
+   4,
+   "Category:United States recipes"
+  ],
+  [
+   "Category:Italian-American recipes",
+   4,
+   "Category:United States recipes"
+  ],
+  [
+   "Category:Louisiana recipes",
+   4,
+   "Category:United States recipes"
+  ],
+  [
+   "Category:Midwestern U.S. recipes",
+   4,
+   "Category:United States recipes"
+  ],
+  [
+   "Category:Southern U.S. recipes",
+   4,
+   "Category:United States recipes"
+  ],
+  [
+   "Category:Texas recipes",
+   4,
+   "Category:United States recipes"
+  ],
+  [
+   "Category:Punjabi recipes",
+   4,
+   "Category:Indian recipes"
+  ],
+  [
+   "Category:South Indian recipes",
+   4,
+   "Category:Indian recipes"
+  ],
+  [
+   "Category:Sindhi recipes",
+   4,
+   "Category:Pakistani recipes"
+  ],
+  [
+   "Category:Sundanese recipes",
+   4,
+   "Category:Indonesian recipes"
+  ],
+  [
+   "Category:Tex-Mex recipes",
+   5,
+   "Category:Southern U.S. recipes"
+  ]
+ ],
+ "tarif": 2015,
+ "gorselli": 578,
+ "malzemeli": 1946,
+ "koken": {
+  "English recipes": 45,
+  "Irish recipes": 13,
+  "Yoruba recipes": 23,
+  "African recipes": 82,
+  "Igbo recipes": 13,
+  "Nigerian recipes": 68,
+  "Efik recipes": 6,
+  "Malaysian recipes": 14,
+  "Cameroonian recipes": 10,
+  "Peruvian recipes": 10,
+  "North American recipes": 10,
+  "Filipino recipes": 22,
+  "Mexican recipes": 50,
+  "Southwestern recipes": 51,
+  "Tex-Mex recipes": 41,
+  "United States recipes": 130,
+  "Danish recipes": 8,
+  "Italian recipes": 121,
+  "Afghan recipes": 3,
+  "Pashtun recipes": 2,
+  "Japanese recipes": 38,
+  "Tiv recipes": 7,
+  "Rwandan recipes": 20,
+  "Albanian recipes": 14,
+  "Argentine recipes": 5,
+  "Algerian recipes": 19,
+  "Ethiopian recipes": 37,
+  "Hausa recipes": 33,
+  "Sindhi recipes": 16,
+  "French recipes": 67,
+  "Alsatian recipes": 6,
+  "Italian-American recipes": 7,
+  "Australian recipes": 15,
+  "New Zealand recipes": 9,
+  "South Indian recipes": 10,
+  "Austrian recipes": 30,
+  "Croatian recipes": 1,
+  "Bengali recipes": 7,
+  "Mediterranean recipes": 16,
+  "Caribbean recipes": 17,
+  "Puerto Rican recipes": 13,
+  "Cuban recipes": 6,
+  "Spanish recipes": 23,
+  "Asian recipes": 28,
+  "Sudanese recipes": 3,
+  "Libyan recipes": 14,
+  "Californian recipes": 15,
+  "Indonesian recipes": 31,
+  "Middle Eastern recipes": 33,
+  "Turkish recipes": 18,
+  "Southern U.S. recipes": 66,
+  "Israeli recipes": 9,
+  "Indian recipes": 152,
+  "Jordanian recipes": 1,
+  "Palestinian recipes": 4,
+  "Sabbath recipes": 4,
+  "Greek recipes": 17,
+  "Vietnamese recipes": 15,
+  "Chinese recipes": 29,
+  "Texas recipes": 32,
+  "Midwestern U.S. recipes": 21,
+  "Egyptian recipes": 27,
+  "Senegalese recipes": 8,
+  "Louisiana recipes": 17,
+  "Ugandan recipes": 13,
+  "Cornish recipes": 10,
+  "Venezuelan recipes": 8,
+  "Gambian recipes": 16,
+  "Korean recipes": 8,
+  "Polish recipes": 13,
+  "Zambian recipes": 16,
+  "Jewish Yemenite recipes": 8,
+  "German recipes": 23,
+  "Russian recipes": 12,
+  "Norwegian recipes": 5,
+  "South African recipes": 11,
+  "National Nigerian recipes": 38,
+  "Belgian recipes": 5,
+  "Jewish recipes": 10,
+  "Brazilian recipes": 11,
+  "Recipes for kugel": 2,
+  "Taiwanese recipes": 2,
+  "Bulgarian recipes": 13,
+  "Canadian recipes": 17,
+  "Tibetan recipes": 2,
+  "Mongolian recipes": 1,
+  "Ukrainian recipes": 4,
+  "Scottish recipes": 12,
+  "Gibraltarian recipes": 8,
+  "Swedish recipes": 12,
+  "Somali recipes": 3,
+  "Colombian recipes": 10,
+  "Chadian recipes": 5,
+  "Northern Irish recipes": 3,
+  "Pakistani recipes": 16,
+  "Tanzanian recipes": 4,
+  "Southeast Asian recipes": 5,
+  "Iraqi recipes": 1,
+  "South American recipes": 3,
+  "Kenyan recipes": 8,
+  "Hungarian recipes": 12,
+  "Punjabi recipes": 6,
+  "Manx recipes": 3,
+  "Finnish recipes": 7,
+  "British recipes": 6,
+  "Nepali recipes": 4,
+  "Thai recipes": 37,
+  "European recipes": 7,
+  "Family heritage recipes": 6,
+  "Chilean recipes": 2,
+  "Native American recipes": 21,
+  "South Asian recipes": 25,
+  "East Asian recipes": 4,
+  "Costa Rican recipes": 1,
+  "Hawaiian recipes": 3,
+  "Cypriot recipes": 1,
+  "Ghanian recipes": 2,
+  "Dominican recipes": 3,
+  "Azerbaijani recipes": 1,
+  "Liberian recipes": 18,
+  "Lithuanian recipes": 2,
+  "Dutch recipes": 7,
+  "Estonian recipes": 1,
+  "Togolese recipes": 3,
+  "Swiss recipes": 3,
+  "Angolan recipes": 1,
+  "Lebanese recipes": 4,
+  "Ghanaian recipes": 5,
+  "Iranian recipes": 7,
+  "American recipes": 2,
+  "Jamaican recipes": 10,
+  "Armenian recipes": 2,
+  "Maltese recipes": 2,
+  "Georgian recipes": 1,
+  "Surinamese recipes": 3,
+  "Malawian recipes": 6,
+  "Trinidadian and Tobagonian recipes": 6,
+  "Czech recipes": 3,
+  "Moroccan recipes": 5,
+  "North African recipes": 2,
+  "Portuguese recipes": 4,
+  "Burmese recipes": 1,
+  "Zimbabwean recipes": 3,
+  "Panamanian recipes": 1,
+  "Slovenian recipes": 2,
+  "Serbian recipes": 2,
+  "Salvadoran recipes": 1,
+  "Welsh recipes": 6,
+  "Romanian recipes": 6,
+  "Icelandic recipes": 1,
+  "Sundanese recipes": 2,
+  "Sylheti recipes": 8,
+  "Central American recipes": 1
+ }
+}
