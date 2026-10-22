@@ -1,0 +1,30 @@
+name: Wikibooks tariflerini güncelle
+
+# Elle çalıştırılır (Actions → "Wikibooks tariflerini güncelle" → Run workflow).
+# Wikibooks Cookbook'tan tarifleri çeker, index.html içine gömer ve depoya kaydeder.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  guncelle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Wikibooks'tan tarifleri çek
+        run: node tools/wikibooks/cek.js
+      - name: index.html içine göm
+        run: node tools/wikibooks/donustur.js
+      - name: Kaydet
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && { echo "Değişiklik yok"; exit 0; }
+          git commit -m "Wikibooks tarifleri güncellendi"
+          git push
