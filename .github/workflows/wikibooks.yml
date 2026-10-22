@@ -1,0 +1,26 @@
+name: Wikibooks verisi
+on:
+  push:
+    branches: [wikibooks-veri]
+    paths: ["tools/wikibooks/*.js", ".github/workflows/wikibooks.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  cek:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Çalıştır
+        run: node tools/wikibooks/$(cat tools/wikibooks/CALISTIR)
+      - name: Kaydet
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tools/wikibooks/out
+          git diff --cached --quiet && exit 0
+          git commit -m "Wikibooks verisi"
+          git push
