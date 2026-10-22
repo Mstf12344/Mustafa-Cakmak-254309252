@@ -255,6 +255,7 @@ select{height:38px;border-radius:999px;border:1px solid var(--line);background:v
 .voice-btn .vi{font-size:17px}
 .cook-main .again{font-family:var(--sans);font-size:14px;margin-left:10px;vertical-align:middle}
 @media (max-width:520px){#voiceLbl{display:none}.voice-btn{padding:0 12px}}
+#legends[hidden]{display:none!important}
 /* Pantry (şimdilik kapalı) */
 .pantry[hidden],#pantryBtn[hidden]{display:none!important}
 .pantry{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:26px 26px 22px;margin:0 0 34px;box-shadow:var(--shadow);scroll-margin-top:90px}
@@ -1069,7 +1070,7 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px;paddin
     </div>
   </section>
 
-  <section class="legends" id="legends">
+  <section class="legends" id="legends" hidden>
     <h2>Tarihe geçmiş yemekler</h2>
     <p>Bir kraliçenin adını taşıyan pizzadan mahkemelik olan tavuk yemeğine kadar, tabağın arkasındaki hikâyeler.</p>
     <div class="lg-track" id="lgTrack"></div>
@@ -2699,7 +2700,7 @@ function renderGrid(){
   const list=filtered();
   $("count").textContent=list.length?t("count",list.length,state.onlyFav):"";
   const plain=state.country==="all"&&!state.q&&!state.level&&!state.onlyFav&&!state.legendOnly;
-  $("legends").hidden=!plain;
+  $("legends").hidden=true;
   if(!list.length){
     $("grid").innerHTML=`<div class="empty"><b>${state.onlyFav&&!favs.size?t("noFavT"):t("noResT")}</b>${state.onlyFav&&!favs.size?t("noFavD"):t("noResD")}<br><button class="btn" id="reset">${t("clearFilters")}</button></div>`;
     $("reset").onclick=resetFilters;return;
