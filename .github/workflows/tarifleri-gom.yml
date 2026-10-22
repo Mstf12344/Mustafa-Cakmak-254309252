@@ -5,7 +5,7 @@ name: TheMealDB tariflerini siteye göm
 on:
   push:
     branches: [main]
-    paths: [".github/workflows/tarifleri-gom.yml", "build.js"]
+    paths: [".github/workflows/tarifleri-gom.yml", "build.js", "index.html"]
   workflow_dispatch:
 
 permissions:
