@@ -2440,6 +2440,60 @@ function wbMins(t){
   return m>0&&m<=4320?Math.round(m):0;
 }
 const wbFmt=(m,en)=>m<60?`${m} ${en?"min":"dk"}`:m>=1440?`${Math.round(m/1440*10)/10} ${en?"days":"gün"}`:`${Math.floor(m/60)} ${en?"h":"sa"}${m%60?` ${m%60} ${en?"min":"dk"}`:""}`;
+/* ---------- Fotoğrafı olmayan Wikibooks tarifleri için sitenin kendi çizimi ----------
+   Yemeğin türüne (çorba, tatlı, ekmek…) ve ülkesinin rengine göre SVG çizer; dosyaya eklenmez, tarayıcıda üretilir. */
+const WB_ART_TYPES=[
+ ["drink",/\b(drink|tea|coffee|chai|juice|punch|smoothie|lemonade|cocktail|lassi|milkshake|shake|cider|wine|beer|liqueur|cordial|soda|eggnog|horchata|beverage)\b/],
+ ["sauce",/\b(sauce|dressing|chutney|salsa|dip|relish|paste|spice|seasoning|marinade|jam|jelly|pickle|pickled|ketchup|mayonnaise|gravy|syrup|butter|masala|rub|pesto|hummus|preserve|marmalade|condiment)\b/],
+ ["dessert",/\b(cake|cookies?|biscuits?|pie|pudding|dessert|sweet|candy|tart|ice cream|brownies?|fudge|custard|toffee|halwa|halva|baklava|doughnuts?|donuts?|cheesecake|mousse|trifle|truffles?|crumble|cobbler|meringue|pastry|pastries|kheer|flan|sorbet|chocolate|caramel|cupcakes?|muffins?|scones?|shortbread|strudel|torte|fritters?)\b/],
+ ["bread",/\b(bread|buns?|rolls?|loaf|bagels?|pancakes?|crepes?|waffles?|flatbread|tortillas?|naan|chapati|roti|paratha|pita|focaccia|pretzels?|cornbread|injera|biscuit|dumplings?|pizza|sandwich|toast)\b/],
+ ["soup",/\b(soup|stew|chowder|curry|dal|dhal|broth|bisque|gumbo|chili|chilli|goulash|pottage|porridge|congee|ragout|tagine|borscht|ramen|pho|egusi)\b/],
+ ["salad",/\b(salad|slaw|coleslaw|ceviche|tabbouleh|raita)\b/],
+ ["pasta",/\b(pasta|noodles?|spaghetti|macaroni|lasagn[ae]|ravioli|fettuccine|linguine|penne|gnocchi|vermicelli|udon|soba|lo mein|chow mein)\b/],
+ ["rice",/\b(rice|jollof|pilaf|pilau|pulao|biryani|risotto|paella|jambalaya|couscous|grits|polenta|fufu|ugali|nshima|sadza|quinoa)\b/],
+ ["fish",/\b(fish|salmon|tuna|cod|shrimp|prawns?|crab|lobster|mussels?|clams?|oysters?|squid|seafood|sardines?|mackerel|trout|tilapia|catfish|anchov\w*|herring|scallops?)\b/],
+ ["egg",/\b(eggs?|omelet+e?|frittata|quiche|shakshuka)\b/],
+ ["meat",/\b(chicken|beef|pork|lamb|mutton|goat|meat|kebabs?|steak|sausages?|ribs?|ham|bacon|turkey|duck|meatballs?|burgers?|brisket|roast|chops?|wings|suya|jerky|veal|liver)\b/],
+ ["veg",/\b(vegetables?|potato(es)?|beans?|lentils?|chickpeas?|spinach|cabbage|eggplant|aubergine|okra|plantains?|yams?|cassava|mushrooms?|tofu|pumpkin|squash|carrots?|peas|corn|greens|cauliflower|broccoli|zucchini|peppers?|tomato(es)?)\b/]
+];
+function wbArtType(r){
+  const t=(r.title+" "+(r.wbCourse||"")).toLowerCase();
+  const c=r.wbCourse||"";
+  if(c==="Beverage")return"drink";if(c==="Sauce")return"sauce";if(c==="Dessert")return"dessert";if(c==="Bread")return"bread";if(c==="Soup")return"soup";if(c==="Salad")return"salad";
+  const hit=WB_ART_TYPES.find(([,re])=>re.test(t));return hit?hit[0]:"plate";
+}
+function wbArt(r){
+  let h=0;for(const ch of r.title)h=(h*131+ch.charCodeAt(0))>>>0;
+  const rnd=n=>{h=(h*1103515245+12345)>>>0;return (h>>>8)%n};
+  const base=(r.country&&r.country.color)||"#8a3b2e";
+  const type=wbArtType(r);
+  const C={cream:"#FFF4E2",ink:"#2B1A14",plate:"#FBF7F1",rim:"#E9DFD2"};
+  const pal={soup:["#E8892B","#C9561A","#F6C66B"],dessert:["#F2A7B8","#8A4B2D","#FFE3A3"],bread:["#D9A05B","#B87532","#F3D29A"],salad:["#6DB65B","#3E8E3A","#E94B3C"],
+    pasta:["#F2C14E","#D9441F","#6DB65B"],rice:["#FFFFFF","#F2C14E","#6DB65B"],fish:["#F08A5D","#7FB3D5","#FFD27F"],egg:["#FFFFFF","#F7B32B","#6DB65B"],
+    meat:["#9C4A2F","#6B2E1C","#6DB65B"],veg:["#6DB65B","#F08A2C","#C23B3B"],drink:["#F2A65A","#7FC8A9","#FFFFFF"],sauce:["#C8382B","#7A3B2E","#F2C14E"],plate:["#E07A3F","#6DB65B","#F2C14E"]}[type];
+  const dots=Array.from({length:9},()=>`<circle cx="${rnd(400)}" cy="${rnd(400)}" r="${6+rnd(26)}" fill="#fff" opacity=".07"/>`).join("");
+  const sprinkle=(cx,cy,R,n,cols)=>Array.from({length:n},()=>{const a=rnd(360)*Math.PI/180,d=rnd(R);return `<circle cx="${(cx+Math.cos(a)*d).toFixed(1)}" cy="${(cy+Math.sin(a)*d).toFixed(1)}" r="${3+rnd(5)}" fill="${cols[rnd(cols.length)]}"/>`}).join("");
+  const shadow=`<ellipse cx="200" cy="300" rx="130" ry="22" fill="#000" opacity=".18"/>`;
+  const plate=`${shadow}<ellipse cx="200" cy="250" rx="138" ry="62" fill="${C.rim}"/><ellipse cx="200" cy="244" rx="138" ry="60" fill="${C.plate}"/><ellipse cx="200" cy="244" rx="100" ry="42" fill="#F1E8DC"/>`;
+  const bowl=(fill,top)=>`${shadow}<path d="M80 205 Q86 300 200 306 Q314 300 320 205 Z" fill="${C.plate}"/><path d="M80 205 Q86 300 200 306 Q314 300 320 205" fill="none" stroke="${C.rim}" stroke-width="6"/><ellipse cx="200" cy="205" rx="120" ry="30" fill="${C.rim}"/><ellipse cx="200" cy="205" rx="110" ry="24" fill="${fill}"/>${top||""}`;
+  const art={
+    soup:()=>bowl(pal[0],sprinkle(200,203,80,10,[pal[2],"#6DB65B","#fff"])+`<path d="M170 160 q-12 -22 0 -42 q12 -20 0 -40 M205 160 q-12 -22 0 -42 q12 -20 0 -40 M240 160 q-12 -22 0 -42" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".55"/>`),
+    rice:()=>bowl("#FFFDF7",`<path d="M95 205 Q200 120 305 205 Z" fill="#FFFDF7"/>`+sprinkle(200,185,70,14,[pal[1],pal[2],"#E8892B"])),
+    salad:()=>bowl("#3E8E3A",Array.from({length:7},(_,i)=>`<ellipse cx="${120+i*27}" cy="${195-rnd(30)}" rx="34" ry="18" transform="rotate(${rnd(80)-40} ${120+i*27} ${195})" fill="${["#6DB65B","#8BC34A","#4CAF50"][i%3]}"/>`).join("")+sprinkle(200,185,75,8,[pal[2],"#F2C14E","#fff"])),
+    pasta:()=>plate+Array.from({length:9},(_,i)=>`<path d="M${130+rnd(40)} ${225+rnd(30)} q${30+rnd(30)} -${20+rnd(25)} ${60+rnd(40)} 0 t${50+rnd(30)} 0" fill="none" stroke="${pal[0]}" stroke-width="9" stroke-linecap="round"/>`).join("")+`<ellipse cx="200" cy="238" rx="48" ry="20" fill="${pal[1]}" opacity=".9"/>`+sprinkle(200,236,40,6,[pal[2],"#fff"]),
+    meat:()=>plate+`<path d="M135 255 Q130 200 200 196 Q280 194 268 245 Q262 275 200 274 Q140 276 135 255 Z" fill="${pal[0]}"/><path d="M150 240 Q200 215 250 236" fill="none" stroke="${pal[1]}" stroke-width="7" stroke-linecap="round"/><path d="M160 256 Q205 238 245 252" fill="none" stroke="${pal[1]}" stroke-width="6" stroke-linecap="round" opacity=".7"/>`+sprinkle(270,262,22,5,[pal[2],"#8BC34A"]),
+    fish:()=>plate+`<path d="M120 245 Q190 190 265 240 L305 212 L298 245 L305 278 L265 250 Q190 300 120 245 Z" fill="${pal[0]}"/><circle cx="148" cy="238" r="6" fill="${C.ink}"/><path d="M190 222 q8 23 0 46 M215 222 q8 23 0 46" fill="none" stroke="#fff" stroke-width="4" opacity=".5"/>`+`<circle cx="292" cy="285" r="14" fill="${pal[2]}"/>`,
+    egg:()=>plate+`<path d="M145 250 Q140 205 195 210 Q260 200 255 248 Q250 280 200 276 Q150 282 145 250 Z" fill="#fff"/><circle cx="200" cy="240" r="24" fill="${pal[1]}"/><circle cx="192" cy="232" r="7" fill="#fff" opacity=".5"/>`+sprinkle(200,244,70,5,[pal[2]]),
+    veg:()=>plate+Array.from({length:6},()=>`<circle cx="${140+rnd(120)}" cy="${222+rnd(40)}" r="${14+rnd(14)}" fill="${pal[rnd(3)]}"/>`).join("")+sprinkle(200,244,80,6,["#fff","#3E8E3A"]),
+    plate:()=>plate+`<path d="M140 252 Q150 200 200 205 Q258 205 262 250 Z" fill="${pal[0]}"/>`+sprinkle(200,232,45,9,[pal[1],pal[2],"#fff"]),
+    bread:()=>`${shadow}<path d="M90 280 Q80 175 200 165 Q320 175 310 280 Z" fill="${pal[0]}"/><path d="M90 280 Q80 175 200 165 Q320 175 310 280" fill="none" stroke="${pal[1]}" stroke-width="8"/>${[150,200,250].map(x=>`<path d="M${x-22} 205 Q${x} 185 ${x+22} 205" fill="none" stroke="${pal[2]}" stroke-width="9" stroke-linecap="round"/>`).join("")}`,
+    dessert:()=>`${shadow}<ellipse cx="200" cy="292" rx="140" ry="20" fill="${C.plate}"/><path d="M95 285 L95 205 L305 175 L305 255 Z" fill="${pal[2]}"/><path d="M95 205 L305 175 L305 192 L95 222 Z" fill="${pal[0]}"/><path d="M95 245 L305 215 L305 228 L95 258 Z" fill="${pal[1]}"/><path d="M95 205 Q140 160 200 150 Q270 145 305 175 Z" fill="${pal[0]}"/><circle cx="215" cy="140" r="16" fill="#D7263D"/><path d="M215 125 q6 -18 20 -22" fill="none" stroke="#3E8E3A" stroke-width="5" stroke-linecap="round"/>`,
+    drink:()=>`${shadow}<path d="M135 110 L265 110 L245 300 Q200 312 155 300 Z" fill="#fff" opacity=".9"/><path d="M142 150 L258 150 L245 296 Q200 306 155 296 Z" fill="${pal[0]}"/><rect x="236" y="70" width="10" height="120" rx="5" transform="rotate(18 241 130)" fill="${pal[1]}"/><circle cx="170" cy="140" r="20" fill="${pal[1]}" opacity=".9"/>`+sprinkle(200,230,40,6,["#fff"]),
+    sauce:()=>`${shadow}<rect x="130" y="130" width="140" height="170" rx="26" fill="${pal[0]}"/><rect x="138" y="138" width="20" height="150" rx="10" fill="#fff" opacity=".25"/><rect x="122" y="110" width="156" height="34" rx="10" fill="${pal[1]}"/><rect x="150" y="190" width="100" height="60" rx="10" fill="${C.cream}"/><circle cx="200" cy="220" r="14" fill="${pal[2]}"/>`
+  };
+  const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${base}"/><stop offset="1" stop-color="${base}" stop-opacity=".72"/></linearGradient></defs><rect width="400" height="400" fill="#1d1210"/><rect width="400" height="400" fill="url(#g)"/>${dots}<g>${(art[type]||art.plate)()}</g></svg>`;
+  return "data:image/svg+xml;charset=utf-8,"+encodeURIComponent(svg);
+}
 function mdbToRecipe(o){
   const c=mdbCountry(o.a),key="wb-"+o.i;
   const ing=o.L.filter(x=>!x.startsWith("§ ")),steps=o.s.filter(x=>!x.startsWith("§ "));
@@ -2457,8 +2511,8 @@ function mdbToRecipe(o){
   return {title:o.n,emoji:"🍽️",mins,time:wm?wbFmt(wm,false):E.time,serves:o.sv?o.sv+" kişilik":"—",level,diet:E.diet,
     desc:`${c.name} · ${course[0]} · Wikibooks`,yt:o.n+" recipe",ing,steps,
     tip:(o.nt&&o.nt[0])||"Wikibooks tarifi; içerik İngilizcedir.",story:credit+(o.in?" Wikibooks’taki açıklama: “"+o.in+"”":""),
-    legend:false,img:o.p||"",src:"wb",wbId:o.i,ytUrl:"",key,country:c,order:RECIPES.length,
-    wb:{url,img:o.p?{a:o.pa||"",l:o.pl||"",u:o.pu||""}:null},
+    legend:false,img:o.p||wbArt({title:o.n,wbCourse:o.c,country:c}),src:"wb",wbId:o.i,wbCourse:o.c||"",ytUrl:"",key,country:c,order:RECIPES.length,
+    wb:{url,drawn:!o.p,img:o.p?{a:o.pa||"",l:o.pl||"",u:o.pu||""}:null},
     en:{time:wm?wbFmt(wm,true):E.timeEn,serves:o.sv?"Serves "+o.sv:"—",desc:`${o.a==="Unknown"?"World":o.a} · ${course[1]} · Wikibooks`,
       story:creditEn+(o.in?" "+o.in:""),tip:(o.nt&&o.nt[0])||"Recipe from the Wikibooks Cookbook."}};
 }
@@ -2477,7 +2531,7 @@ function wbCredit(r){
   return `<div class="wb-credit"><b>📖 ${en?"Source":"Kaynak"}:</b> <a href="${r.wb.url}" target="_blank" rel="noopener">Wikibooks Cookbook – ${esc(r.title)}</a>
     · ${en?"Licence":"Lisans"}: <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.${en?"en":"tr"}" target="_blank" rel="noopener">CC BY-SA 4.0</a>
     · ${en?"Adapted for this site’s layout.":"Sitenin düzenine uyarlanmıştır."}
-    ${im?`<br><b>📷 ${en?"Photo":"Fotoğraf"}:</b> ${esc(im.a||"Wikimedia Commons")}${im.l?` · ${esc(im.l)}`:""}${im.u?` · <a href="${im.u}" target="_blank" rel="noopener">Wikimedia Commons</a>`:""}`:""}</div>`;
+    ${r.wb.drawn?`<br><b>🎨 ${en?"Image":"Görsel"}:</b> ${en?"Illustration drawn by Dünya Mutfağı (Wikibooks has no photo of this dish); not a photo of the actual recipe.":"Wikibooks’ta bu yemeğin fotoğrafı olmadığı için Dünya Mutfağı’nın kendi çizimidir; tarifin gerçek fotoğrafı değildir."}`:""}${im?`<br><b>📷 ${en?"Photo":"Fotoğraf"}:</b> ${esc(im.a||"Wikimedia Commons")}${im.l?` · ${esc(im.l)}`:""}${im.u?` · <a href="${im.u}" target="_blank" rel="noopener">Wikimedia Commons</a>`:""}`:""}</div>`;
 }
 
 /* ---------- Diyet etkileri ve alerjenler ----------
@@ -2712,8 +2766,9 @@ function renderChips(){
   $("chips").querySelectorAll(".chip").forEach(b=>b.onclick=()=>{state.country=b.dataset.id;renderChips();renderGrid()});
 }
 
-function renderGrid(){
-  const list=filtered();
+let gridShow=48;
+function renderGrid(keep){
+  const list=filtered();if(!keep)gridShow=48;
   $("count").textContent=list.length?t("count",list.length,state.onlyFav):"";
   const plain=state.country==="all"&&!state.q&&!state.level&&!state.onlyFav&&!state.legendOnly;
   $("legends").hidden=true;
@@ -2721,7 +2776,8 @@ function renderGrid(){
     $("grid").innerHTML=`<div class="empty"><b>${state.onlyFav&&!favs.size?t("noFavT"):t("noResT")}</b>${state.onlyFav&&!favs.size?t("noFavD"):t("noResD")}<br><button class="btn" id="reset">${t("clearFilters")}</button></div>`;
     $("reset").onclick=resetFilters;return;
   }
-  $("grid").innerHTML=list.map(r=>`
+  const shown=list.slice(0,gridShow),rest=list.length-shown.length;
+  $("grid").innerHTML=shown.map(r=>`
     <article class="card" style="--c:${col(r.country)}" data-key="${r.key}" tabindex="0" role="button" aria-label="${esc(t("openRecipe",L(r,"title")))}">
       <div class="art"><span class="fl">${FL(r.country)} ${CN(r.country)}</span>${artHTML(r)}</div>
       <button class="fav" data-fav="${r.key}" aria-pressed="${favs.has(r.key)}" aria-label="${t("addFav")}">${ICON_HEART}</button>
@@ -2732,7 +2788,8 @@ function renderGrid(){
         ${dietBadges(r)}
         <div class="meta"><span>${ICON_CLOCK}${esc(L(r,"time"))}</span><span>${ICON_BAR}${esc(LV(r.level))}</span>${r.kcal?`<span title="${esc(KU(r))}">🔥 ${r.kcal} kcal</span>`:""}</div>
       </div>
-    </article>`).join("");
+    </article>`).join("")+(rest>0?`<div style="grid-column:1/-1;text-align:center;margin-top:6px"><button class="btn" id="gridMore">${LANG==="en"?`Show more (${rest} more recipes)`:`Daha fazla göster (${rest} tarif daha)`}</button></div>`:"");
+  {const gm=$("gridMore");if(gm)gm.onclick=()=>{gridShow+=48;renderGrid(true)}}
   $("grid").querySelectorAll(".card").forEach(c=>{
     c.onclick=e=>{if(e.target.closest(".fav"))return;openSheet(c.dataset.key)};
     c.onkeydown=e=>{if((e.key==="Enter"||e.key===" ")&&e.target===c){e.preventDefault();openSheet(c.dataset.key)}};
@@ -2752,7 +2809,7 @@ function renderLegends(){
 function renderHero(){
   $("heroFlags").innerHTML=DATA.filter(c=>!c.mdb).map(c=>`<span title="${CN(c)}">${FL(c)}</span>`).join("");
   {const hd=$("heroDishes");if(hd){const item=(r,dup)=>`<button type="button" class="hd-item" data-key="${r.key}"${dup?' tabindex="-1" aria-hidden="true"':""}><span class="hd-img">${artHTML(r)}</span><span class="hd-txt"><b>${esc(L(r,"title"))}</b><small>${FL(r.country)} ${esc(CN(r.country))}</small></span></button>`;
-    const HR=RECIPES.filter(r=>r.src!=="wb").concat(RECIPES.filter(r=>r.src==="wb"&&r.img).slice(0,16));hd.innerHTML=`<div class="hd-track">${HR.map(r=>item(r)).join("")}${HR.map(r=>item(r,1)).join("")}</div>`;
+    const HR=RECIPES.filter(r=>r.src!=="wb").concat(RECIPES.filter(r=>r.src==="wb"&&r.wb&&!r.wb.drawn).slice(0,16));hd.innerHTML=`<div class="hd-track">${HR.map(r=>item(r)).join("")}${HR.map(r=>item(r,1)).join("")}</div>`;
     hd.querySelectorAll(".hd-item").forEach(b=>b.onclick=()=>openSheet(b.dataset.key))}}
   $("heroText").textContent=t("heroText",DATA.length,RECIPES.length);
 }
@@ -4863,7 +4920,7 @@ function whDishStage(c){
   let ds=whDishes(c).slice();const mixH=(h,t,w)=>{const p=x=>parseInt(h.slice(x,x+2),16),q=x=>parseInt(t.slice(x,x+2),16);return "#"+[1,3,5].map(i=>Math.round(p(i)*(1-w)+q(i)*w).toString(16).padStart(2,"0")).join("")};
   const shades=[c.color,mixH(c.color,"#000000",.32),mixH(c.color,"#ffffff",.22)];
   if(ds.length>12){for(let i=ds.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[ds[i],ds[j]]=[ds[j],ds[i]]}ds.length=12}
-  WH.items=ds.map((r,i)=>({ref:r,label:L(r,"title"),color:shades[ds.length%3===1&&i===ds.length-1&&i>0?1:i%(ds.length===2?2:3)],img:photoUrl(r.key),emoji:r.emoji||"🍽️"}));
+  WH.items=ds.map((r,i)=>({ref:r,label:L(r,"title"),color:shades[ds.length%3===1&&i===ds.length-1&&i>0?1:i%(ds.length===2?2:3)],img:r.img||photoUrl(r.key),emoji:r.emoji||"🍽️"}));
   whSteps();
   if(ds.length===1){whDraw(WH.items.concat(WH.items));$("whSpin").disabled=true;$("whMsg").textContent=whT("only");whShowDish(ds[0]);return}
   whDraw(WH.items);$("whSpin").disabled=false;$("whMsg").textContent=whT("hintD")(CN(c),ds.length);
