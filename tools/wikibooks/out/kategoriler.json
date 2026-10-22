@@ -1,0 +1,324 @@
+{
+ "Category:Recipes by origin": {
+  "n": 10,
+  "info": {
+   "Category:African recipes": {
+    "size": 130,
+    "pages": 104,
+    "files": 0,
+    "subcats": 26,
+    "hidden": false
+   },
+   "Category:Asian recipes": {
+    "size": 33,
+    "pages": 28,
+    "files": 0,
+    "subcats": 5,
+    "hidden": false
+   },
+   "Category:European recipes": {
+    "size": 46,
+    "pages": 7,
+    "files": 0,
+    "subcats": 39,
+    "hidden": false
+   },
+   "Category:Middle Eastern recipes": {
+    "size": 44,
+    "pages": 33,
+    "files": 0,
+    "subcats": 11,
+    "hidden": false
+   },
+   "Category:Pacific recipes": {
+    "size": 3,
+    "pages": 0,
+    "files": 0,
+    "subcats": 3,
+    "hidden": false
+   },
+   "Category:American recipes": {
+    "size": 7,
+    "pages": 2,
+    "files": 0,
+    "subcats": 5,
+    "hidden": false
+   },
+   "Category:Jewish recipes": {
+    "size": 13,
+    "pages": 10,
+    "files": 0,
+    "subcats": 3,
+    "hidden": false
+   },
+   "Category:Mediterranean recipes": {
+    "size": 20,
+    "pages": 16,
+    "files": 0,
+    "subcats": 4,
+    "hidden": false
+   },
+   "Category:Family heritage recipes": {
+    "size": 6,
+    "pages": 6,
+    "files": 0,
+    "subcats": 0,
+    "hidden": false
+   },
+   "Category:West Asian recipes": {
+    "size": 13,
+    "pages": 0,
+    "files": 0,
+    "subcats": 13,
+    "hidden": false
+   }
+  }
+ },
+ "Category:Recipes by cuisine": {
+  "n": 0,
+  "info": {}
+ },
+ "Category:Cuisines": {
+  "n": 2,
+  "info": {
+   "Category:Cuisines by country": {
+    "size": 2,
+    "pages": 2,
+    "files": 0,
+    "subcats": 0,
+    "hidden": false
+   },
+   "Category:Cuisines by region": {
+    "size": 21,
+    "pages": 13,
+    "files": 0,
+    "subcats": 8,
+    "hidden": false
+   }
+  }
+ },
+ "Category:Recipes": {
+  "n": 15,
+  "info": {
+   "Category:Recipes by diet": {
+    "size": 11,
+    "pages": 1,
+    "files": 0,
+    "subcats": 10,
+    "hidden": false
+   },
+   "Category:Recipes by origin": {
+    "size": 14,
+    "pages": 4,
+    "files": 0,
+    "subcats": 10,
+    "hidden": false
+   },
+   "Category:Recipes by ingredient": {
+    "size": 62,
+    "pages": 3,
+    "files": 0,
+    "subcats": 59,
+    "hidden": false
+   },
+   "Category:Featured recipes": {
+    "size": 40,
+    "pages": 40,
+    "files": 0,
+    "subcats": 0,
+    "hidden": true
+   },
+   "Category:Featured recipe candidates": {
+    "size": 2,
+    "pages": 2,
+    "files": 0,
+    "subcats": 0,
+    "hidden": true
+   },
+   "Category:Recipes by preparation technique": {
+    "size": 24,
+    "pages": 2,
+    "files": 0,
+    "subcats": 22,
+    "hidden": false
+   },
+   "Category:Recipes with images": {
+    "size": 837,
+    "pages": 837,
+    "files": 0,
+    "subcats": 0,
+    "hidden": true
+   },
+   "Category:Recipes by difficulty": {
+    "size": 5,
+    "pages": 0,
+    "files": 0,
+    "subcats": 5,
+    "hidden": false
+   },
+   "Category:Recipes by expense": {
+    "size": 3,
+    "pages": 0,
+    "files": 0,
+    "subcats": 3,
+    "hidden": false
+   },
+   "Category:Recipes by type": {
+    "size": 78,
+    "pages": 0,
+    "files": 0,
+    "subcats": 78,
+    "hidden": false
+   },
+   "Category:Recipes with metric units": {
+    "size": 895,
+    "pages": 895,
+    "files": 0,
+    "subcats": 0,
+    "hidden": false
+   },
+   "Category:Recipes by source": {
+    "size": 3,
+    "pages": 0,
+    "files": 0,
+    "subcats": 3,
+    "hidden": false
+   },
+   "Category:Recipes by occasion": {
+    "size": 2,
+    "pages": 0,
+    "files": 0,
+    "subcats": 2,
+    "hidden": false
+   },
+   "Category:Recipes by meal or course": {
+    "size": 9,
+    "pages": 0,
+    "files": 0,
+    "subcats": 9,
+    "hidden": false
+   },
+   "Category:Kid-friendly recipes": {
+    "size": 65,
+    "pages": 65,
+    "files": 0,
+    "subcats": 0,
+    "hidden": false
+   }
+  }
+ },
+ "Category:Cookbook": {
+  "n": 15,
+  "info": {
+   "Category:Ingredients": {
+    "size": 753,
+    "pages": 747,
+    "files": 0,
+    "subcats": 6,
+    "hidden": false
+   },
+   "Category:Recipes": {
+    "size": 3846,
+    "pages": 3831,
+    "files": 0,
+    "subcats": 15,
+    "hidden": false
+   },
+   "Category:Cooking techniques": {
+    "size": 81,
+    "pages": 81,
+    "files": 0,
+    "subcats": 0,
+    "hidden": false
+   },
+   "Category:Cookbook utility categories": {
+    "size": 13,
+    "pages": 0,
+    "files": 0,
+    "subcats": 13,
+    "hidden": false
+   },
+   "Category:Diets": {
+    "size": 21,
+    "pages": 21,
+    "files": 0,
+    "subcats": 0,
+    "hidden": false
+   },
+   "Category:Cookbook disambiguation pages": {
+    "size": 137,
+    "pages": 137,
+    "files": 0,
+    "subcats": 0,
+    "hidden": true
+   },
+   "Category:Meals and courses": {
+    "size": 8,
+    "pages": 8,
+    "files": 0,
+    "subcats": 0,
+    "hidden": false
+   },
+   "Category:Cuisines": {
+    "size": 159,
+    "pages": 157,
+    "files": 0,
+    "subcats": 2,
+    "hidden": false
+   },
+   "Category:Confectionery": {
+    "size": 5,
+    "pages": 5,
+    "files": 0,
+    "subcats": 0,
+    "hidden": false
+   },
+   "Category:Cookbook units": {
+    "size": 32,
+    "pages": 32,
+    "files": 0,
+    "subcats": 0,
+    "hidden": false
+   },
+   "Category:Assemblages": {
+    "size": 6,
+    "pages": 6,
+    "files": 0,
+    "subcats": 0,
+    "hidden": false
+   },
+   "Category:Menus": {
+    "size": 8,
+    "pages": 8,
+    "files": 0,
+    "subcats": 0,
+    "hidden": false
+   },
+   "Category:Cookbook equipment": {
+    "size": 133,
+    "pages": 130,
+    "files": 0,
+    "subcats": 3,
+    "hidden": false
+   },
+   "Category:Cookbook help pages": {
+    "size": 11,
+    "pages": 11,
+    "files": 0,
+    "subcats": 0,
+    "hidden": false
+   },
+   "Category:Cookbook special pages": {
+    "size": 5,
+    "pages": 5,
+    "files": 0,
+    "subcats": 0,
+    "hidden": false
+   }
+  }
+ },
+ "Category:Recipes by region": {
+  "n": 0,
+  "info": {}
+ }
+}
