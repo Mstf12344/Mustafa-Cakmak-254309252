@@ -49,8 +49,10 @@ function clean(s){
 }
 const UNITS=new Set(["cup","tablespoon","teaspoon","gram","kilogram","pound","ounce","milliliter","millilitre","liter","litre","pint","quart","gallon","inch","centimeter","pinch","dash","fluid ounce","mililiter","deciliter","clove","stick","can","slice","bunch","handful","sprig","piece","fahrenheit","celsius","oven","bowl","pan","saucepan","knife","whisk","food processor","blender","wok","skillet","frying pan","dice","chop","mince","slice","julienne","grate","boil","fry","bake","simmer","sauté","saute","roast","grill","steam","whip","mix","beat","fold","knead","marinate","blanch","peel","zest","juice","grater","mortar and pestle","baking sheet","oven"]);
 function keysOf(wikiLine){
-  const ks=[];const re=/\[\[Cookbook:([^|\]#]+)/g;let m;
-  while((m=re.exec(wikiLine))){const k=m[1].trim().toLowerCase().replace(/_/g," ");if(!UNITS.has(k)&&!UNITS.has(k.replace(/s$/,"")))ks.push(k)}
+  // bağlantının hedefi birim/teknik değilse, görünen metni (ör. "rice noodles") malzeme adı olarak al
+  const ks=[];const re=/\[\[Cookbook:([^|\]#]+)(?:#[^|\]]*)?(?:\|([^\]]*))?\]\]/g;let m;
+  while((m=re.exec(wikiLine))){const k=m[1].trim().toLowerCase().replace(/_/g," ");if(UNITS.has(k)||UNITS.has(k.replace(/s$/,"")))continue;
+    const shown=clean(m[2]||"").toLowerCase();ks.push(shown&&shown.length<40?shown:k)}
   return ks;
 }
 function summary(txt){
