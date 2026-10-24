@@ -3081,7 +3081,7 @@ function renderPantryResults(keep){
     const ok=need.filter(req=>Array.isArray(req)?req.some(x=>pantrySel.has(x)):pantrySel.has(req));
     const miss=need.filter(req=>!ok.includes(req));
     return {r,have:ok.length,total:need.length,miss};
-  }).filter(x=>x.have>0).sort((a,b)=>(b.have/b.total)-(a.have/a.total)||a.miss.length-b.miss.length||b.have-a.have);
+  }).filter(x=>x.have>0).sort((a,b)=>(b.have/(b.total+2))-(a.have/(a.total+2))||a.miss.length-b.miss.length||b.have-a.have);  // +2: tek malzemeli kısa tarifler en üste çıkmasın
   if(!res.length){box.innerHTML=`<p class="p-empty">${t("pNone")}</p>`;return}
   const allRes=res;res=res.slice(0,pantryShow);
   box.innerHTML=`<h3 class="p-rtitle">${t("pResTitle",allRes.length)}</h3><div class="p-grid">${res.map(x=>{
