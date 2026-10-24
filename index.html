@@ -965,6 +965,7 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px;paddin
 .au-btn:hover{filter:brightness(1.06)}.au-btn:active{transform:translateY(3px);box-shadow:0 1px 0 #8e2119}.au-btn:disabled{opacity:.6;cursor:not-allowed}
 .au-q{margin:0;padding:12px 14px;border-radius:12px;background:#fbf2e6;border:1px dashed #e0c7ab;font-weight:700;font-size:14px;color:#5a3426}
 .au-or{display:flex;align-items:center;gap:12px;margin:20px 0 12px;color:#b29a8a;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em}.au-or::before,.au-or::after{content:"";flex:1;border-top:1.5px dashed #e3d0bd}
+.au-google{width:100%;height:46px;margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:10px;border-radius:14px;border:1.5px solid #e0cbb6;background:#fff;color:#3c2a22;font:inherit;font-weight:800;cursor:pointer}.au-google:hover{background:#fbf2e6}.au-google:disabled{opacity:.6;cursor:wait}.au-google[hidden]{display:none}
 .au-ghost{width:100%;height:46px;border-radius:14px;border:1.5px solid #e0cbb6;background:transparent;color:#5a3426;font:inherit;font-weight:800;cursor:pointer}.au-ghost:hover{background:#fbf2e6}
 .au-users{display:flex;flex-wrap:wrap;gap:8px}.au-users:empty{display:none}
 .au-users button{display:flex;align-items:center;gap:8px;border:1.5px solid #e6d5c3;background:#fbf6ef;color:#3b1a10;border-radius:999px;padding:4px 12px 4px 4px;font:inherit;font-size:13.5px;font-weight:700;cursor:pointer}
@@ -995,7 +996,7 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px;paddin
 .au-2col{gap:8px}
 .au-avs button{width:32px;height:32px;font-size:16px}
 .au-btn{height:42px;font-size:15px;border-radius:12px}
-.au-ghost{height:38px;font-size:14px;border-radius:12px}
+.au-ghost,.au-google{height:38px;font-size:14px;border-radius:12px}
 .au-or{margin:14px 0 10px;font-size:11px}
 .au-hint,.au-caps{font-size:11px}
 .au-tab{top:-13px;font-size:10px;padding:4px 10px}
@@ -1326,6 +1327,7 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px;paddin
           </form>
 
           <div class="au-or"><span id="auOr"></span></div>
+          <button type="button" class="au-google" id="auGoogle"><svg viewBox="0 0 48 48" width="20" height="20" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><span id="auGoogleL">Google ile giriş yap</span></button>
           <button type="button" class="au-ghost" id="auGuest"></button>
         </div>
       </div>
@@ -3322,7 +3324,7 @@ function auStatic(){
 
   $("fUserL").textContent=T.user;$("fAL").textContent=T.a;$("fPassL").textContent=T.newPass;$("fBack").textContent=T.fBack;
   $("fSubmit").textContent=auForgotUser?T.fReset:T.fNext;
-  $("auOr").textContent=T.or;$("auGuest").textContent=T.guest;$("auFoot").textContent=T.foot;$("auBackLbl").textContent=T.back;
+  $("auOr").textContent=T.or;$("auGuest").textContent=T.guest;$("auGoogleL").textContent=LANG==="en"?"Continue with Google":"Google ile giriş yap";$("auFoot").textContent=T.foot;$("auBackLbl").textContent=T.back;
   $("auLang").textContent=LANG==="en"?"TR":"EN";
   document.querySelectorAll(".au-eye").forEach(b=>{b.setAttribute("aria-label",T.tg);b.title=T.tg});
   $("rAvs").innerHTML=AU_AV.map(a=>`<button type="button" data-av="${a}" aria-pressed="${a===auAv}">${a}</button>`).join("");
@@ -3375,6 +3377,54 @@ function auSignIn(name,remember,toastMsg){
   try{sessionStorage.removeItem("bm-guest");if(remember){store.set("bm-session",name);sessionStorage.removeItem("bm-session")}else{store.set("bm-session",null);sessionStorage.setItem("bm-session",JSON.stringify(name))}}catch(e){}
   loadProfileData();closeAuth();toast(toastMsg);
 }
+/* ---------- Google ile giriş (Firebase Authentication) ----------
+   Firebase konsolu → Proje ayarları → "Web uygulaması" yapılandırmasını buraya yaz.
+   Bu bilgiler gizli değildir; erişimi Firebase'deki "Yetkili alan adları" listesi sınırlar. */
+const FIREBASE_CONFIG=null;
+const FB_VER="10.12.2";
+let fbAuth=null,fbMod=null;
+async function fbInit(){
+  if(!FIREBASE_CONFIG)return null;if(fbAuth)return fbAuth;
+  const app=await import(`https://www.gstatic.com/firebasejs/${FB_VER}/firebase-app.js`);
+  fbMod=await import(`https://www.gstatic.com/firebasejs/${FB_VER}/firebase-auth.js`);
+  fbAuth=fbMod.getAuth(app.initializeApp(FIREBASE_CONFIG));fbAuth.languageCode=LANG==="en"?"en":"tr";
+  return fbAuth;
+}
+function fbSignOut(){if(!FIREBASE_CONFIG||location.protocol==="file:")return;fbInit().then(a=>{if(a)return fbMod.signOut(a)}).catch(()=>{})}
+/* Google hesabını sitedeki profile bağlar: aynı e-posta her zaman aynı profile girer */
+function auGoogleUser(u){
+  const T=aut(),email=String(u&&u.email||"").toLowerCase();
+  if(!email){auErr(LANG==="en"?"Google did not share an e-mail address.":"Google e-posta adresini paylaşmadı.");return}
+  const users=auUsers();let rec=Object.values(users).find(x=>x.google&&x.email===email);
+  if(!rec){
+    let base=String(u.displayName||email.split("@")[0]).normalize("NFC").replace(/[^\p{L}\p{N}_. ]+/gu," ").replace(/\s+/g," ").trim().slice(0,20).trim();
+    if(base.length<3)base=("Şef "+base).trim();
+    let name=base,i=2;while(users[auKey(name)]){name=base.slice(0,17).trim()+" "+i;i++}
+    rec={name,google:true,email,uid:u.uid,av:auAv,created:Date.now(),fails:0,lock:0};
+    users[auKey(name)]=rec;auSave(users);
+  }
+  auSignIn(rec.name,true,T.ok.login(rec.name));
+}
+async function auGoogle(){
+  const en=LANG==="en";auMsg("");
+  if(!FIREBASE_CONFIG){auErr(en?"Google sign-in is not set up yet (Firebase settings are missing).":"Google ile giriş henüz ayarlanmadı (Firebase bilgileri eksik).");return}
+  if(location.protocol==="file:"){auErr(en?"Google sign-in works on the published site (dunya-mutfagi.vercel.app), not in a downloaded file.":"Google ile giriş yayındaki sitede (dunya-mutfagi.vercel.app) çalışır, indirilmiş dosyada çalışmaz.");return}
+  const btn=$("auGoogle");btn.disabled=true;let auth,prov;
+  try{
+    auth=await fbInit();prov=new fbMod.GoogleAuthProvider();prov.setCustomParameters({prompt:"select_account"});
+    const res=await fbMod.signInWithPopup(auth,prov);auGoogleUser(res.user);
+  }catch(err){
+    const c=err&&err.code||"";
+    if((c==="auth/popup-blocked"||c==="auth/operation-not-supported-in-this-environment")&&auth){try{await fbMod.signInWithRedirect(auth,prov);return}catch(e){}}
+    if(c==="auth/popup-closed-by-user"||c==="auth/cancelled-popup-request")auMsg("");
+    else if(c==="auth/unauthorized-domain")auErr(en?"This address is not in Firebase’s authorised domains list.":"Bu adres Firebase’deki “Yetkili alan adları” listesinde yok.");
+    else if(c==="auth/network-request-failed")auErr(en?"No connection to Google. Check your internet.":"Google’a bağlanılamadı. İnternet bağlantını kontrol et.");
+    else{console.error(err);auErr((en?"Google sign-in failed: ":"Google ile giriş yapılamadı: ")+(c||err&&err.message||err))}
+  }finally{btn.disabled=false}
+}
+$("auGoogle").onclick=auGoogle;$("auGoogle").hidden=!FIREBASE_CONFIG;  // ayarlanana kadar düğme gizli
+/* telefonda açılır pencere engellenip yönlendirmeyle girildiyse, dönüşte oturumu aç */
+if(FIREBASE_CONFIG&&location.protocol!=="file:")fbInit().then(a=>a&&fbMod.getRedirectResult(a)).then(r=>{if(r&&r.user)auGoogleUser(r.user)}).catch(e=>console.warn(e));
 // Giriş
 $("auLogin").onsubmit=async e=>{
   e.preventDefault();const T=aut();auMsg("");
@@ -3383,6 +3433,7 @@ $("auLogin").onsubmit=async e=>{
     if(!name||!pass){auErr(T.e.empty,!name?$("lUser"):$("lPass"));return}
     const users=auUsers(),k=auKey(name),u=users[k];
     if(!u){auErr(T.e.nouser,$("lUser"));return}
+    if(u.google&&!u.hash){auErr(LANG==="en"?"This account was created with Google: use “Continue with Google”.":"Bu hesap Google ile açıldı: “Google ile giriş yap” düğmesini kullan.");return}
     if(u.lock&&u.lock>Date.now()){auErr(T.e.locked(Math.ceil((u.lock-Date.now())/1000)));return}
     $("lSubmit").disabled=true;
     const h=await auHash(pass,u.salt);$("lSubmit").disabled=false;
@@ -3511,7 +3562,7 @@ Object.assign(GT.en,{pmSince:d=>`Profile created: ${d}`,pmGuest:"You're browsing
  pmPin:"Enter your PIN to confirm",pmCancel:"Cancel",pmYes:"Yes, delete profile",pmDeleted:n=>`${n} profile deleted`,pmBadPin:"Wrong PIN.",pmClose:"Close"});
 function closeProfile(){$("pm").hidden=true;$("pmScrim").hidden=true;if(typeof mnavUpdate==="function")mnavUpdate()}
 function doLogout(){
-  PROFILE=null;try{store.set("bm-session",null);sessionStorage.removeItem("bm-session");sessionStorage.removeItem("bm-guest")}catch(e){}
+  fbSignOut();PROFILE=null;try{store.set("bm-session",null);sessionStorage.removeItem("bm-session");sessionStorage.removeItem("bm-guest")}catch(e){}
   closeProfile();toast(gt("bye"));openGate();
 }
 $("userBtn").onclick=openProfile;
@@ -3521,7 +3572,7 @@ $("pmLogout").onclick=doLogout;
 $("pmDelete").onclick=()=>{
   const p=getProfiles()[PROFILE];if(!p)return;
   $("pmWarnTitle").textContent=gt("pmWarnTitle",PROFILE);$("pmWarn").textContent=gt("pmWarn");
-  const hasAcc=!!auFind(PROFILE);
+  const acc=auFind(PROFILE),hasAcc=!!acc&&!(acc.google&&!acc.hash);
   $("pmPinLbl").textContent=hasAcc?(LANG==="en"?"Enter your password to confirm":"Onaylamak için şifreni gir"):gt("pmPin");$("pmPinWrap").hidden=!(p.pin||hasAcc);$("pmPin").value="";$("pmErr").textContent="";
   if(hasAcc){const i=$("pmPin");i.removeAttribute("maxlength");i.removeAttribute("inputmode");i.oninput=null}
   $("pmCancel").textContent=gt("pmCancel");$("pmYes").textContent=gt("pmYes");
@@ -3798,7 +3849,9 @@ $("pmCancel").onclick=()=>{$("pmMain").hidden=false;$("pmConfirm").hidden=true};
 $("pmPin").oninput=e=>{e.target.value=e.target.value.replace(/\D/g,"").slice(0,4)};
 $("pmYes").onclick=async()=>{
   const name=PROFILE,profs=getProfiles(),p=profs[name];if(!p)return;
-  if(auFind(name)){if(!(await authVerify(name,$("pmPin").value))){$("pmErr").textContent=LANG==="en"?"Wrong password.":"Şifre yanlış.";$("pmPin").value="";return}authDelete(name)}
+  const ac=auFind(name);
+  if(ac&&ac.google&&!ac.hash){authDelete(name);fbSignOut()}
+  else if(ac){if(!(await authVerify(name,$("pmPin").value))){$("pmErr").textContent=LANG==="en"?"Wrong password.":"Şifre yanlış.";$("pmPin").value="";return}authDelete(name)}
   else if(p.pin&&p.pin!==await hashPin($("pmPin").value.trim(),name)){$("pmErr").textContent=gt("pmBadPin");$("pmPin").value="";return}
   delete profs[name];store.set("bm-profiles",profs);
   try{Object.keys(localStorage).filter(k=>k.endsWith("@"+name)).forEach(k=>localStorage.removeItem(k))}catch(e){}
