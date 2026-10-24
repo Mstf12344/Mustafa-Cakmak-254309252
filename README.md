@@ -10,7 +10,7 @@ Mustafa Çakmak (254309252) – Mesleki Çözümleme I dönem projesi.
 - Pişirme modu, zamanlayıcı, sesli okuma
 - Şef: soru-cevap ve sesli sohbet asistanı (15 dilde ses)
 - İki aşamalı yemek çarkı, arama önerileri, "Elimde ne var?"
-- Hesap sistemi, favoriler, notlar, rozetler
+- Hesap sistemi: kullanıcı adıyla (bu tarayıcıda) ya da e-postayla (Supabase; favoriler, notlar ve ayarlar her cihazda eşitlenir), favoriler, notlar, rozetler
 - 19 tema, Türkçe/İngilizce
 
 ## Dosyalar
@@ -23,6 +23,9 @@ Mustafa Çakmak (254309252) – Mesleki Çözümleme I dönem projesi.
 ## Yayına alma (Vercel)
 Depo Vercel'deki **dunya-mutfagi** projesine bağlıdır; `main` dalına yapılan her gönderim siteyi otomatik günceller: https://dunya-mutfagi.vercel.app
 Site derleme gerektirmez; Vercel `index.html` dosyasını olduğu gibi yayınlar.
+
+## E-postayla giriş (Supabase)
+E-posta hesapları [Supabase Auth](https://supabase.com/docs/guides/auth) ile tutulur (proje: `dunya-mutfagi`, bölge eu-central-1). Her kullanıcının site verileri `profil_verisi` tablosunda tek satır JSON olarak saklanır; RLS kuralları sayesinde herkes yalnızca kendi satırını okuyup yazabilir. `index.html`'deki `SUPA_KEY` herkese açık "anon" anahtarıdır. Google ile giriş için Supabase'de Google sağlayıcısı açılıp `SUPA_GOOGLE` true yapılmalıdır.
 
 ## Wikibooks tarifleri
 Tarifler `index.html` içindeki `WB_DATA` alanına gömülüdür; site internetten tarif çekmez (yalnızca fotoğraflar Wikimedia Commons'tan yüklenir).

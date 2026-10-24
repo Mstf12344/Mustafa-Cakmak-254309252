@@ -965,7 +965,7 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px;paddin
 .au-btn:hover{filter:brightness(1.06)}.au-btn:active{transform:translateY(3px);box-shadow:0 1px 0 #8e2119}.au-btn:disabled{opacity:.6;cursor:not-allowed}
 .au-q{margin:0;padding:12px 14px;border-radius:12px;background:#fbf2e6;border:1px dashed #e0c7ab;font-weight:700;font-size:14px;color:#5a3426}
 .au-or{display:flex;align-items:center;gap:12px;margin:20px 0 12px;color:#b29a8a;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em}.au-or::before,.au-or::after{content:"";flex:1;border-top:1.5px dashed #e3d0bd}
-.au-google{width:100%;height:46px;margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:10px;border-radius:14px;border:1.5px solid #e0cbb6;background:#fff;color:#3c2a22;font:inherit;font-weight:800;cursor:pointer}.au-google:hover{background:#fbf2e6}.au-google:disabled{opacity:.6;cursor:wait}.au-google[hidden]{display:none}
+.au-google{width:100%;height:46px;margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:10px;border-radius:14px;border:1.5px solid #e0cbb6;background:#fff;color:#3c2a22;font:inherit;font-weight:800;cursor:pointer}.au-google:hover{background:#fbf2e6}.au-google:disabled{opacity:.6;cursor:wait}.au-google[hidden]{display:none}.au-google span[aria-hidden]{font-size:18px}
 .au-ghost{width:100%;height:46px;border-radius:14px;border:1.5px solid #e0cbb6;background:transparent;color:#5a3426;font:inherit;font-weight:800;cursor:pointer}.au-ghost:hover{background:#fbf2e6}
 .au-users{display:flex;flex-wrap:wrap;gap:8px}.au-users:empty{display:none}
 .au-users button{display:flex;align-items:center;gap:8px;border:1.5px solid #e6d5c3;background:#fbf6ef;color:#3b1a10;border-radius:999px;padding:4px 12px 4px 4px;font:inherit;font-size:13.5px;font-weight:700;cursor:pointer}
@@ -1326,8 +1326,19 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px;paddin
             <button type="button" class="au-link au-center" id="fBack"></button>
           </form>
 
+          <form class="au-form" id="auEmail" data-view="email" autocomplete="on" novalidate hidden>
+            <label class="au-f" id="eNameW" hidden><span id="eNameL"></span><input id="eName" autocomplete="nickname" maxlength="20" spellcheck="false"><small class="au-hint" id="eNameH"></small></label>
+            <label class="au-f" id="eMailW"><span id="eMailL"></span><input id="eMail" type="email" autocomplete="email" maxlength="120" spellcheck="false"></label>
+            <label class="au-f au-pw" id="ePassW"><span id="ePassL"></span><input id="ePass" type="password" autocomplete="current-password" maxlength="72"><button type="button" class="au-eye" data-eye="ePass" aria-label="Şifreyi göster">👁</button></label>
+            <p class="au-fmsg" role="alert"></p>
+            <button class="au-btn" id="eSubmit" type="submit"></button>
+            <div class="au-row"><button type="button" class="au-link" id="eMode"></button><button type="button" class="au-link" id="eForgot"></button></div>
+            <button type="button" class="au-link au-center" id="eBack"></button>
+          </form>
+
           <div class="au-or"><span id="auOr"></span></div>
-          <button type="button" class="au-google" id="auGoogle"><svg viewBox="0 0 48 48" width="20" height="20" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><span id="auGoogleL">Google ile giriş yap</span></button>
+          <button type="button" class="au-google" id="auMailBtn"><span aria-hidden="true">📧</span><span id="auMailL">E-postayla giriş yap</span></button>
+          <button type="button" class="au-google" id="auGoogle" hidden>\1<span id="auGoogleL">Google ile giriş yap</span></button>
           <button type="button" class="au-ghost" id="auGuest"></button>
         </div>
       </div>
@@ -1636,7 +1647,8 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",
 const norm=s=>s.toLocaleLowerCase("tr").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/ı/g,"i");
 const store={
   get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},
-  set(k,v){try{if(/^bm-(favs|checks|pantry)$/.test(k)&&!PROFILE)return}catch(e){}try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+  set(k,v){try{if(/^bm-(favs|checks|pantry)$/.test(k)&&!PROFILE)return}catch(e){}try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}
+    try{if(PROFILE&&String(k).endsWith("@"+PROFILE)&&typeof sbSchedule==="function")sbSchedule()}catch(e){}}
 };
 
 /* ---- English content ---- */
@@ -3264,7 +3276,7 @@ const AU_T={
   user:"Kullanıcı adı",pass:"Şifre",pass2:"Şifre (tekrar)",remember:"Beni hatırla",forgot:"Şifremi unuttum",loginBtn:"Giriş yap",regBtn:"Hesabımı oluştur",
   q:"Güvenlik sorusu",a:"Cevabın",av:"Bir simge seç",userHint:"3–20 karakter: harf, rakam, boşluk, _ veya .",
   fNext:"Devam et",fReset:"Şifremi değiştir",fBack:"← Girişe dön",newPass:"Yeni şifre",or:"veya",guest:"Misafir olarak göz at",back:"Siteye dön",
-  foot:"Hesabın yalnızca bu cihazda saklanır. Misafirler tariflere bakabilir; favori, not, Şef ve pişirme modu için hesap gerekir.",
+  foot:"Kullanıcı adıyla açılan hesap bu cihazda saklanır; e-postayla açılan hesap her cihazda çalışır. Misafirler tariflere bakabilir; favori, not, Şef ve pişirme modu için hesap gerekir.",
   pitchH:"Bugün <em>ne pişiriyoruz?</em>",card:"MUTFAK KARTI",pitch:[["❤️","Favorilerini ve notlarını kaydet"],["👨‍🍳","Şef ile sohbet et, tarif önerisi al"],["🏅","Pişirdikçe rozet ve seviye kazan"]],
   qs:["İlk evcil hayvanının adı?","En sevdiğin yemek?","Doğduğun şehir?","İlkokul öğretmeninin adı?","En sevdiğin renk?"],
   str:["Çok zayıf","Zayıf","Orta","Güçlü","Çok güçlü"],
@@ -3278,7 +3290,7 @@ const AU_T={
   user:"Username",pass:"Password",pass2:"Password (again)",remember:"Remember me",forgot:"Forgot password",loginBtn:"Sign in",regBtn:"Create my account",
   q:"Security question",a:"Your answer",av:"Pick an icon",userHint:"3–20 characters: letters, digits, space, _ or .",
   fNext:"Continue",fReset:"Change my password",fBack:"← Back to sign in",newPass:"New password",or:"or",guest:"Browse as a guest",back:"Back to site",
-  foot:"Your account is stored only on this device. Guests can view recipes; favourites, notes, the Chef and cooking mode need an account.",
+  foot:"A username account stays on this device; an e-mail account works on every device. Guests can view recipes; favourites, notes, the Chef and cooking mode need an account.",
   pitchH:"What are we <em>cooking today?</em>",card:"KITCHEN CARD",pitch:[["❤️","Save your favourites and notes"],["👨‍🍳","Chat with the Chef for ideas"],["🏅","Earn badges as you cook"]],
   qs:["Your first pet's name?","Your favourite dish?","The city you were born in?","Your first teacher's name?","Your favourite colour?"],
   str:["Very weak","Weak","Fair","Strong","Very strong"],
@@ -3324,7 +3336,7 @@ function auStatic(){
 
   $("fUserL").textContent=T.user;$("fAL").textContent=T.a;$("fPassL").textContent=T.newPass;$("fBack").textContent=T.fBack;
   $("fSubmit").textContent=auForgotUser?T.fReset:T.fNext;
-  $("auOr").textContent=T.or;$("auGuest").textContent=T.guest;$("auGoogleL").textContent=LANG==="en"?"Continue with Google":"Google ile giriş yap";$("auFoot").textContent=T.foot;$("auBackLbl").textContent=T.back;
+  $("auOr").textContent=T.or;$("auGuest").textContent=T.guest;$("auGoogleL").textContent=LANG==="en"?"Continue with Google":"Google ile giriş yap";$("auMailL").textContent=LANG==="en"?"Continue with e-mail":"E-postayla giriş yap";if(typeof sbStatic==="function")sbStatic();$("auFoot").textContent=T.foot;$("auBackLbl").textContent=T.back;
   $("auLang").textContent=LANG==="en"?"TR":"EN";
   document.querySelectorAll(".au-eye").forEach(b=>{b.setAttribute("aria-label",T.tg);b.title=T.tg});
   $("rAvs").innerHTML=AU_AV.map(a=>`<button type="button" data-av="${a}" aria-pressed="${a===auAv}">${a}</button>`).join("");
@@ -3335,14 +3347,15 @@ function auSetView(v,keepMsg){
   auView=v;const T=aut();
   $("auTitle").textContent=v==="register"?T.regT:v==="forgot"?T.forgotT:T.loginT;
   $("auSub").textContent=v==="register"?T.regS:v==="forgot"?T.forgotS:T.loginS;
-  $("auLogin").hidden=v!=="login";$("auReg").hidden=v!=="register";$("auForgot").hidden=v!=="forgot";
-  $("auSeg").classList.toggle("reg",v==="register");$("auSeg").classList.toggle("hide",v==="forgot");
+  $("auLogin").hidden=v!=="login";$("auReg").hidden=v!=="register";$("auForgot").hidden=v!=="forgot";$("auEmail").hidden=v!=="email";
+  $("auSeg").classList.toggle("reg",v==="register");$("auSeg").classList.toggle("hide",v==="forgot"||v==="email");
+  $("auMailBtn").hidden=v==="email";if(v==="email"&&typeof sbStatic==="function")sbStatic();
   $("auTabLogin").setAttribute("aria-selected",v==="login");$("auTabReg").setAttribute("aria-selected",v==="register");auPill();
   if(!keepMsg)auMsg("");
   document.querySelectorAll(".au-f input").forEach(i=>i.classList.remove("bad","good"));
   if(v==="login")auRenderUsers();
   if(v==="forgot"&&!keepMsg){auForgotUser=null;$("fQ").hidden=true;$("fAW").hidden=true;$("fPW").hidden=true;$("fUser").disabled=false;$("fA").value="";$("fPass").value="";$("fSubmit").textContent=T.fNext}
-  setTimeout(()=>{const f=v==="register"?$("rUser"):v==="forgot"?(auForgotUser?$("fA"):$("fUser")):($("lUser").value?$("lPass"):$("lUser"));if(f&&!$("auth").hidden)f.focus({preventScroll:true})},40);
+  setTimeout(()=>{const f=v==="email"?(eMode==="newpass"?$("ePass"):$("eMail").value?$("ePass"):$("eMail")):v==="register"?$("rUser"):v==="forgot"?(auForgotUser?$("fA"):$("fUser")):($("lUser").value?$("lPass"):$("lUser"));if(f&&!$("auth").hidden)f.focus({preventScroll:true})},40);
 }
 function auPill(){const t=auView==="register"?$("auTabReg"):$("auTabLogin"),pl=document.querySelector(".au-seg-pill");if(!pl||!t)return;requestAnimationFrame(()=>{pl.style.left=t.offsetLeft+"px";pl.style.width=t.offsetWidth+"px"})}
 function auRenderUsers(){
@@ -3377,54 +3390,142 @@ function auSignIn(name,remember,toastMsg){
   try{sessionStorage.removeItem("bm-guest");if(remember){store.set("bm-session",name);sessionStorage.removeItem("bm-session")}else{store.set("bm-session",null);sessionStorage.setItem("bm-session",JSON.stringify(name))}}catch(e){}
   loadProfileData();closeAuth();toast(toastMsg);
 }
-/* ---------- Google ile giriş (Firebase Authentication) ----------
-   Firebase konsolu → Proje ayarları → "Web uygulaması" yapılandırmasını buraya yaz.
-   Bu bilgiler gizli değildir; erişimi Firebase'deki "Yetkili alan adları" listesi sınırlar. */
-const FIREBASE_CONFIG=null;
-const FB_VER="10.12.2";
-let fbAuth=null,fbMod=null;
-async function fbInit(){
-  if(!FIREBASE_CONFIG)return null;if(fbAuth)return fbAuth;
-  const app=await import(`https://www.gstatic.com/firebasejs/${FB_VER}/firebase-app.js`);
-  fbMod=await import(`https://www.gstatic.com/firebasejs/${FB_VER}/firebase-auth.js`);
-  fbAuth=fbMod.getAuth(app.initializeApp(FIREBASE_CONFIG));fbAuth.languageCode=LANG==="en"?"en":"tr";
-  return fbAuth;
+/* ---------- E-posta (ve Google) ile giriş: Supabase Auth ----------
+   Hesaplar Supabase'de tutulur. Favoriler, notlar, işaretli malzemeler ve ayarlar "profil_verisi" tablosunda
+   saklanır; aynı e-postayla hangi cihazdan girilirse girilsin aynı veriler gelir. */
+const SUPA_URL="https://zaaqcndfftcoavqponua.supabase.co";
+const SUPA_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InphYXFjbmRmZnRjb2F2cXBvbnVhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI4Mjg3OTUsImV4cCI6MjEwODQwNDc5NX0.1hNMHm_L3v7gEAYsNCVoDBwbBamrdBaq6QxA21FJFzQ"; // herkese açık "anon" anahtarı; tabloya erişimi RLS kuralları sınırlar
+const SUPA_GOOGLE=false;   // Supabase'de Google sağlayıcısı açılınca true yap
+const SUPA_LS="sb-zaaqcndfftcoavqponua-auth-token";
+var sb=null,sbUser=null,sbPushT=null,eMode="login";
+async function sbInit(){
+  if(sb)return sb;
+  const m=await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/+esm");
+  sb=m.createClient(SUPA_URL,SUPA_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
+  sb.auth.onAuthStateChange((ev,session)=>{
+    if(ev==="PASSWORD_RECOVERY"){sbUser=session&&session.user||sbUser;eMode="newpass";openAuth({view:"email"});return}
+    if(ev==="SIGNED_IN"&&session)setTimeout(()=>{if(!sbBusy&&(!sbUser||sbUser.id!==session.user.id))sbFinish(session.user)},0);
+    if(ev==="SIGNED_OUT")sbUser=null;
+  });
+  return sb;
 }
-function fbSignOut(){if(!FIREBASE_CONFIG||location.protocol==="file:")return;fbInit().then(a=>{if(a)return fbMod.signOut(a)}).catch(()=>{})}
-/* Google hesabını sitedeki profile bağlar: aynı e-posta her zaman aynı profile girer */
-function auGoogleUser(u){
-  const T=aut(),email=String(u&&u.email||"").toLowerCase();
-  if(!email){auErr(LANG==="en"?"Google did not share an e-mail address.":"Google e-posta adresini paylaşmadı.");return}
-  const users=auUsers();let rec=Object.values(users).find(x=>x.google&&x.email===email);
-  if(!rec){
-    let base=String(u.displayName||email.split("@")[0]).normalize("NFC").replace(/[^\p{L}\p{N}_. ]+/gu," ").replace(/\s+/g," ").trim().slice(0,20).trim();
-    if(base.length<3)base=("Şef "+base).trim();
-    let name=base,i=2;while(users[auKey(name)]){name=base.slice(0,17).trim()+" "+i;i++}
-    rec={name,google:true,email,uid:u.uid,av:auAv,created:Date.now(),fails:0,lock:0};
-    users[auKey(name)]=rec;auSave(users);
-  }
-  auSignIn(rec.name,true,T.ok.login(rec.name));
+var sbBusy=false;
+const sbEn=()=>LANG==="en";
+const sbRedirect=()=>location.origin+location.pathname;
+function sbLinked(name){const u=auFind(name||PROFILE);return !!(u&&u.cloud)}
+const sbTsKey=n=>"bm-cloudts:"+n;
+function sbCollect(name){const out={},suf="@"+name;try{for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&k.endsWith(suf))out[k.slice(0,-suf.length)]=localStorage.getItem(k)}}catch(e){}return out}
+function sbApply(name,veri){
+  const suf="@"+name;
+  try{Object.keys(localStorage).filter(k=>k.endsWith(suf)).forEach(k=>localStorage.removeItem(k));
+    Object.entries(veri||{}).forEach(([k,v])=>{if(typeof v==="string"&&/^bm-[\w-]+$/.test(k))localStorage.setItem(k+suf,v)})}catch(e){}
 }
-async function auGoogle(){
-  const en=LANG==="en";auMsg("");
-  if(!FIREBASE_CONFIG){auErr(en?"Google sign-in is not set up yet (Firebase settings are missing).":"Google ile giriş henüz ayarlanmadı (Firebase bilgileri eksik).");return}
-  if(location.protocol==="file:"){auErr(en?"Google sign-in works on the published site (dunya-mutfagi.vercel.app), not in a downloaded file.":"Google ile giriş yayındaki sitede (dunya-mutfagi.vercel.app) çalışır, indirilmiş dosyada çalışmaz.");return}
-  const btn=$("auGoogle");btn.disabled=true;let auth,prov;
+async function sbPush(name){
+  name=name||PROFILE;if(!sb||!sbUser||!name||!sbLinked(name))return;
+  const ts=new Date().toISOString();
+  const {error}=await sb.from("profil_verisi").upsert({kullanici_id:sbUser.id,profil_adi:name,veri:sbCollect(name),guncelleme:ts});
+  if(error)console.warn("Supabase kayıt:",error.message);else try{localStorage.setItem(sbTsKey(name),ts)}catch(e){}
+}
+function sbSchedule(){if(!sbUser||!sbLinked())return;clearTimeout(sbPushT);sbPushT=setTimeout(()=>sbPush(),1500)}
+async function sbPull(){
+  if(!sb||!sbUser||!PROFILE)return;
+  const {data,error}=await sb.from("profil_verisi").select("veri,guncelleme").eq("kullanici_id",sbUser.id).maybeSingle();
+  if(error){console.warn("Supabase okuma:",error.message);return}
+  const local=Date.parse(localStorage.getItem(sbTsKey(PROFILE))||"")||0,remote=data?Date.parse(data.guncelleme)||0:0;
+  if(data&&remote>local){sbApply(PROFILE,data.veri);try{localStorage.setItem(sbTsKey(PROFILE),data.guncelleme)}catch(e){}loadProfileData()}
+  else await sbPush();
+}
+/* Supabase oturumunu sitedeki profile bağlar: aynı hesap her zaman aynı profile girer */
+async function sbFinish(user){
+  if(!user)return;sbBusy=true;
   try{
-    auth=await fbInit();prov=new fbMod.GoogleAuthProvider();prov.setCustomParameters({prompt:"select_account"});
-    const res=await fbMod.signInWithPopup(auth,prov);auGoogleUser(res.user);
-  }catch(err){
-    const c=err&&err.code||"";
-    if((c==="auth/popup-blocked"||c==="auth/operation-not-supported-in-this-environment")&&auth){try{await fbMod.signInWithRedirect(auth,prov);return}catch(e){}}
-    if(c==="auth/popup-closed-by-user"||c==="auth/cancelled-popup-request")auMsg("");
-    else if(c==="auth/unauthorized-domain")auErr(en?"This address is not in Firebase’s authorised domains list.":"Bu adres Firebase’deki “Yetkili alan adları” listesinde yok.");
-    else if(c==="auth/network-request-failed")auErr(en?"No connection to Google. Check your internet.":"Google’a bağlanılamadı. İnternet bağlantını kontrol et.");
-    else{console.error(err);auErr((en?"Google sign-in failed: ":"Google ile giriş yapılamadı: ")+(c||err&&err.message||err))}
-  }finally{btn.disabled=false}
+    sbUser=user;const T=aut(),email=String(user.email||"").toLowerCase(),md=user.user_metadata||{};
+    const users=auUsers();let rec=Object.values(users).find(x=>x.cloud&&x.uid===user.id);
+    if(!rec){
+      let base=String(md.ad||md.full_name||md.name||email.split("@")[0]).normalize("NFC").replace(/[^\p{L}\p{N}_. ]+/gu," ").replace(/\s+/g," ").trim().slice(0,20).trim();
+      if(base.length<3)base=("Şef "+base).trim();
+      let name=base,i=2;while(users[auKey(name)]){name=base.slice(0,17).trim()+" "+i;i++}
+      rec={name,cloud:true,email,uid:user.id,av:auAv,created:Date.now(),fails:0,lock:0};users[auKey(name)]=rec;auSave(users);
+    }
+    if(PROFILE!==rec.name)auSignIn(rec.name,true,T.ok.login(rec.name));
+    await sbPull();
+    if(/access_token=|type=signup|type=recovery|error_description=/.test(location.hash))history.replaceState(null,"",location.pathname+location.search);
+  }catch(e){console.warn(e)}finally{sbBusy=false}
 }
-$("auGoogle").onclick=auGoogle;$("auGoogle").hidden=!FIREBASE_CONFIG;  // ayarlanana kadar düğme gizli
-/* telefonda açılır pencere engellenip yönlendirmeyle girildiyse, dönüşte oturumu aç */
-if(FIREBASE_CONFIG&&location.protocol!=="file:")fbInit().then(a=>a&&fbMod.getRedirectResult(a)).then(r=>{if(r&&r.user)auGoogleUser(r.user)}).catch(e=>console.warn(e));
+function sbSignOut(name){
+  if(!sb&&!localStorage.getItem(SUPA_LS))return;
+  clearTimeout(sbPushT);
+  sbInit().then(async c=>{try{if(name&&sbUser)await sbPush(name)}catch(e){}sbUser=null;return c.auth.signOut()}).catch(()=>{});
+}
+function sbErrText(err){
+  const en=sbEn(),m=String(err&&(err.message||err.error_description)||err||"");
+  if(/Invalid login credentials/i.test(m))return en?"Wrong e-mail or password.":"E-posta ya da şifre yanlış.";
+  if(/Email not confirmed/i.test(m))return en?"You haven’t confirmed your e-mail yet: check your inbox.":"E-postanı henüz doğrulamadın: gelen kutunu kontrol et.";
+  if(/already registered|already been registered/i.test(m))return en?"An account with this e-mail already exists: sign in instead.":"Bu e-postayla zaten bir hesap var: giriş yap.";
+  if(/rate limit|too many/i.test(m))return en?"Too many attempts. Try again a little later.":"Çok fazla deneme yapıldı. Biraz sonra tekrar dene.";
+  if(/not authorized|sending .*email|Error sending/i.test(m))return en?"The e-mail couldn’t be sent (the site’s mail service isn’t set up for this address yet).":"E-posta gönderilemedi (sitenin e-posta servisi bu adres için henüz ayarlanmadı).";
+  if(/Password should be|weak/i.test(m))return en?"Password must be at least 6 characters.":"Şifre en az 6 karakter olmalı.";
+  if(/fetch|network|import|Load failed/i.test(m))return en?"Couldn’t connect. Check your internet connection.":"Bağlanılamadı. İnternet bağlantını kontrol et.";
+  return (en?"Something went wrong: ":"Bir sorun oldu: ")+m;
+}
+function sbStatic(){
+  const en=sbEn(),reg=eMode==="register",np=eMode==="newpass";
+  $("eNameL").textContent=en?"Your name (shown on the site)":"Adın (sitede görünür)";$("eNameH").textContent=en?"Optional · 3–20 characters":"İsteğe bağlı · 3–20 karakter";
+  $("eMailL").textContent=en?"E-mail":"E-posta";$("ePassL").textContent=np?(en?"New password":"Yeni şifre"):(en?"Password":"Şifre");
+  $("eNameW").hidden=!reg;$("eMailW").hidden=np;
+  $("ePass").autocomplete=reg||np?"new-password":"current-password";
+  $("eSubmit").textContent=np?(en?"Save new password":"Yeni şifreyi kaydet"):reg?(en?"Create account":"Hesap oluştur"):(en?"Sign in":"Giriş yap");
+  $("eMode").textContent=reg?(en?"Have an account? Sign in":"Hesabın var mı? Giriş yap"):(en?"No account? Sign up":"Hesabın yok mu? Kayıt ol");
+  $("eMode").hidden=np;$("eForgot").hidden=reg||np;$("eForgot").textContent=en?"Forgot password":"Şifremi unuttum";
+  $("eBack").textContent=en?"← Sign in with a username":"← Kullanıcı adıyla giriş";
+  if(auView==="email"){$("auTitle").textContent=np?(en?"Set a new password":"Yeni şifre belirle"):reg?(en?"Sign up with e-mail":"E-postayla kayıt ol"):(en?"Sign in with e-mail":"E-postayla giriş");
+    $("auSub").textContent=en?"Your favourites, notes and settings follow you to every device.":"Favorilerin, notların ve ayarların her cihazda seninle gelir."}
+}
+$("auEmail").onsubmit=async e=>{
+  e.preventDefault();const en=sbEn(),T=aut();auMsg("");
+  const email=$("eMail").value.trim(),pass=$("ePass").value,name=$("eName").value.trim().replace(/\s+/g," ");
+  if(eMode!=="newpass"&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){auErr(en?"Enter a valid e-mail address.":"Geçerli bir e-posta adresi yaz.",$("eMail"));return}
+  if(pass.length<6){auErr(en?"Password must be at least 6 characters.":"Şifre en az 6 karakter olmalı.",$("ePass"));return}
+  if(eMode==="register"&&name&&!auNameOk(name)){auErr(T.e.user,$("eName"));return}
+  const btn=$("eSubmit");btn.disabled=true;
+  try{
+    const c=await sbInit();
+    if(eMode==="newpass"){const {error}=await c.auth.updateUser({password:pass});if(error)throw error;eMode="login";$("ePass").value="";auMsg(en?"Password updated.":"Şifren güncellendi.","ok");const {data}=await c.auth.getUser();if(data&&data.user)await sbFinish(data.user);return}
+    if(eMode==="register"){
+      const {data,error}=await c.auth.signUp({email,password:pass,options:{data:{ad:name||null},emailRedirectTo:sbRedirect()}});
+      if(error)throw error;
+      if(data.session){await sbFinish(data.session.user);return}
+      if(data.user&&Array.isArray(data.user.identities)&&!data.user.identities.length){auErr(sbErrText("already registered"),$("eMail"));return}
+      eMode="login";sbStatic();$("ePass").value="";auMsg(en?"We sent a confirmation link to "+email+". Click it, then sign in here.":email+" adresine doğrulama bağlantısı gönderdik. Bağlantıya tıkla, sonra buradan giriş yap.","ok");return;
+    }
+    const {data,error}=await c.auth.signInWithPassword({email,password:pass});if(error)throw error;
+    await sbFinish(data.user);
+  }catch(err){console.warn(err);auErr(sbErrText(err))}
+  finally{btn.disabled=false}
+};
+$("auMailBtn").onclick=()=>{if(eMode==="newpass")eMode="login";auSetView("email")};
+$("eMode").onclick=()=>{eMode=eMode==="register"?"login":"register";auMsg("");sbStatic()};
+$("eBack").onclick=()=>{eMode="login";auSetView("login")};
+$("eForgot").onclick=async()=>{
+  const en=sbEn(),email=$("eMail").value.trim();auMsg("");
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){auErr(en?"Type your e-mail first.":"Önce e-posta adresini yaz.",$("eMail"));return}
+  try{const c=await sbInit();const {error}=await c.auth.resetPasswordForEmail(email,{redirectTo:sbRedirect()});if(error)throw error;
+    auMsg(en?"We sent a password reset link to "+email+".":email+" adresine şifre sıfırlama bağlantısı gönderdik.","ok")}catch(err){auErr(sbErrText(err))}
+};
+$("auGoogle").hidden=!SUPA_GOOGLE;
+$("auGoogle").onclick=async()=>{
+  try{const c=await sbInit();const {error}=await c.auth.signInWithOAuth({provider:"google",options:{redirectTo:sbRedirect()}});if(error)throw error}
+  catch(err){auErr(sbErrText(err))}
+};
+/* Açılışta: kayıtlı Supabase oturumu varsa ya da e-posta bağlantısından dönüldüyse oturumu bağla ve verileri eşitle */
+if(location.protocol!=="file:"&&(localStorage.getItem(SUPA_LS)||/access_token=|type=recovery|error_description=/.test(location.hash)||/[?&]code=/.test(location.search))){
+  sbInit().then(c=>c.auth.getSession()).then(({data})=>{
+    const ses=data&&data.session;if(!ses)return;
+    const rec=Object.values(auUsers()).find(x=>x.cloud&&x.uid===ses.user.id);
+    if(rec&&PROFILE===rec.name){sbUser=ses.user;sbPull()}
+    else if(!PROFILE||!rec)sbFinish(ses.user);
+  }).catch(e=>console.warn(e));
+}
 // Giriş
 $("auLogin").onsubmit=async e=>{
   e.preventDefault();const T=aut();auMsg("");
@@ -3433,7 +3534,7 @@ $("auLogin").onsubmit=async e=>{
     if(!name||!pass){auErr(T.e.empty,!name?$("lUser"):$("lPass"));return}
     const users=auUsers(),k=auKey(name),u=users[k];
     if(!u){auErr(T.e.nouser,$("lUser"));return}
-    if(u.google&&!u.hash){auErr(LANG==="en"?"This account was created with Google: use “Continue with Google”.":"Bu hesap Google ile açıldı: “Google ile giriş yap” düğmesini kullan.");return}
+    if(u.cloud&&!u.hash){auErr(LANG==="en"?"This account uses e-mail sign-in: use “Continue with e-mail”.":"Bu hesap e-postayla açıldı: “E-postayla giriş yap” düğmesini kullan.");return}
     if(u.lock&&u.lock>Date.now()){auErr(T.e.locked(Math.ceil((u.lock-Date.now())/1000)));return}
     $("lSubmit").disabled=true;
     const h=await auHash(pass,u.salt);$("lSubmit").disabled=false;
@@ -3562,7 +3663,7 @@ Object.assign(GT.en,{pmSince:d=>`Profile created: ${d}`,pmGuest:"You're browsing
  pmPin:"Enter your PIN to confirm",pmCancel:"Cancel",pmYes:"Yes, delete profile",pmDeleted:n=>`${n} profile deleted`,pmBadPin:"Wrong PIN.",pmClose:"Close"});
 function closeProfile(){$("pm").hidden=true;$("pmScrim").hidden=true;if(typeof mnavUpdate==="function")mnavUpdate()}
 function doLogout(){
-  fbSignOut();PROFILE=null;try{store.set("bm-session",null);sessionStorage.removeItem("bm-session");sessionStorage.removeItem("bm-guest")}catch(e){}
+  sbSignOut(PROFILE);PROFILE=null;try{store.set("bm-session",null);sessionStorage.removeItem("bm-session");sessionStorage.removeItem("bm-guest")}catch(e){}
   closeProfile();toast(gt("bye"));openGate();
 }
 $("userBtn").onclick=openProfile;
@@ -3572,7 +3673,7 @@ $("pmLogout").onclick=doLogout;
 $("pmDelete").onclick=()=>{
   const p=getProfiles()[PROFILE];if(!p)return;
   $("pmWarnTitle").textContent=gt("pmWarnTitle",PROFILE);$("pmWarn").textContent=gt("pmWarn");
-  const acc=auFind(PROFILE),hasAcc=!!acc&&!(acc.google&&!acc.hash);
+  const acc=auFind(PROFILE),hasAcc=!!acc&&!(acc.cloud&&!acc.hash);
   $("pmPinLbl").textContent=hasAcc?(LANG==="en"?"Enter your password to confirm":"Onaylamak için şifreni gir"):gt("pmPin");$("pmPinWrap").hidden=!(p.pin||hasAcc);$("pmPin").value="";$("pmErr").textContent="";
   if(hasAcc){const i=$("pmPin");i.removeAttribute("maxlength");i.removeAttribute("inputmode");i.oninput=null}
   $("pmCancel").textContent=gt("pmCancel");$("pmYes").textContent=gt("pmYes");
@@ -3850,7 +3951,7 @@ $("pmPin").oninput=e=>{e.target.value=e.target.value.replace(/\D/g,"").slice(0,4
 $("pmYes").onclick=async()=>{
   const name=PROFILE,profs=getProfiles(),p=profs[name];if(!p)return;
   const ac=auFind(name);
-  if(ac&&ac.google&&!ac.hash){authDelete(name);fbSignOut()}
+  if(ac&&ac.cloud&&!ac.hash){authDelete(name);if(sbUser){try{await sb.from("profil_verisi").delete().eq("kullanici_id",sbUser.id)}catch(e){}}sbSignOut()}
   else if(ac){if(!(await authVerify(name,$("pmPin").value))){$("pmErr").textContent=LANG==="en"?"Wrong password.":"Şifre yanlış.";$("pmPin").value="";return}authDelete(name)}
   else if(p.pin&&p.pin!==await hashPin($("pmPin").value.trim(),name)){$("pmErr").textContent=gt("pmBadPin");$("pmPin").value="";return}
   delete profs[name];store.set("bm-profiles",profs);
