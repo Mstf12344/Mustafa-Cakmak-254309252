@@ -1338,7 +1338,7 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px;paddin
 
           <div class="au-or"><span id="auOr"></span></div>
           <button type="button" class="au-google" id="auMailBtn"><span aria-hidden="true">📧</span><span id="auMailL">E-postayla giriş yap</span></button>
-          <button type="button" class="au-google" id="auGoogle" hidden>\1<span id="auGoogleL">Google ile giriş yap</span></button>
+          <button type="button" class="au-google" id="auGoogle" hidden><svg viewBox="0 0 48 48" width="20" height="20" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><span id="auGoogleL">Google ile giriş yap</span></button>
           <button type="button" class="au-ghost" id="auGuest"></button>
         </div>
       </div>
@@ -3361,7 +3361,10 @@ function auPill(){const t=auView==="register"?$("auTabReg"):$("auTabLogin"),pl=d
 function auRenderUsers(){
   const u=Object.values(auUsers()).sort((a,b)=>(b.last||0)-(a.last||0)).slice(0,4);
   $("auUsers").innerHTML=u.map(x=>`<button type="button" data-n="${esc(x.name)}" aria-pressed="${auKey($("lUser").value)===auKey(x.name)}"><span>${esc(x.av||x.name[0].toLocaleUpperCase("tr"))}</span>${esc(x.name)}</button>`).join("");
-  $("auUsers").querySelectorAll("button").forEach(b=>b.onclick=()=>{$("lUser").value=b.dataset.n;auRenderUsers();$("lPass").focus()});
+  $("auUsers").querySelectorAll("button").forEach(b=>b.onclick=()=>{
+    const r=auFind(b.dataset.n);
+    if(r&&r.cloud){if(r.prov==="google"){$("auGoogle").click();return}eMode="login";$("eMail").value=r.email||"";auSetView("email");return}
+    $("lUser").value=b.dataset.n;auRenderUsers();$("lPass").focus()});
 }
 function auSlides(){
   const imgs=Object.values(EMBED);if(!imgs.length)return;
@@ -3377,7 +3380,7 @@ function auSlides(){
 function openAuth(opts={}){
   auBack=!!opts.back;$("auBack").hidden=!auBack;
   $("lPass").value="";$("rPass").value="";$("rPass2").value="";$("rUser").value="";
-  if(!$("lUser").value){const last=Object.values(auUsers()).sort((a,b)=>(b.last||0)-(a.last||0))[0];if(last)$("lUser").value=last.name}
+  if(!$("lUser").value){const last=Object.values(auUsers()).filter(x=>!x.cloud).sort((a,b)=>(b.last||0)-(a.last||0))[0];if(last)$("lUser").value=last.name}
   auView=opts.view||(Object.keys(auUsers()).length?"login":"register");
   auStatic();auMsg(opts.msg||"",opts.msg?"info":"");auSlides();
   $("auth").hidden=false;document.body.style.overflow="hidden";auPill();document.querySelector(".au-shell").scrollTop=0;
@@ -3395,7 +3398,7 @@ function auSignIn(name,remember,toastMsg){
    saklanır; aynı e-postayla hangi cihazdan girilirse girilsin aynı veriler gelir. */
 const SUPA_URL="https://zaaqcndfftcoavqponua.supabase.co";
 const SUPA_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InphYXFjbmRmZnRjb2F2cXBvbnVhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI4Mjg3OTUsImV4cCI6MjEwODQwNDc5NX0.1hNMHm_L3v7gEAYsNCVoDBwbBamrdBaq6QxA21FJFzQ"; // herkese açık "anon" anahtarı; tabloya erişimi RLS kuralları sınırlar
-const SUPA_GOOGLE=false;   // Supabase'de Google sağlayıcısı açılınca true yap
+const SUPA_GOOGLE=true;    // giriş ekranında "Google ile giriş yap" düğmesi
 const SUPA_LS="sb-zaaqcndfftcoavqponua-auth-token";
 var sb=null,sbUser=null,sbPushT=null,eMode="login";
 async function sbInit(){
@@ -3445,9 +3448,10 @@ async function sbFinish(user){
       let base=String(md.ad||md.full_name||md.name||email.split("@")[0]).normalize("NFC").replace(/[^\p{L}\p{N}_. ]+/gu," ").replace(/\s+/g," ").trim().slice(0,20).trim();
       if(base.length<3)base=("Şef "+base).trim();
       let name=base,i=2;while(users[auKey(name)]){name=base.slice(0,17).trim()+" "+i;i++}
-      rec={name,cloud:true,email,uid:user.id,av:auAv,created:Date.now(),fails:0,lock:0};users[auKey(name)]=rec;auSave(users);
+      rec={name,cloud:true,prov:(user.app_metadata&&user.app_metadata.provider)||"email",email,uid:user.id,av:auAv,created:Date.now(),fails:0,lock:0};users[auKey(name)]=rec;auSave(users);
     }
     if(PROFILE!==rec.name)auSignIn(rec.name,true,T.ok.login(rec.name));
+    if(typeof closeGate==="function")try{closeGate()}catch(e){}
     await sbPull();
     if(/access_token=|type=signup|type=recovery|error_description=/.test(location.hash))history.replaceState(null,"",location.pathname+location.search);
   }catch(e){console.warn(e)}finally{sbBusy=false}
@@ -3465,6 +3469,7 @@ function sbErrText(err){
   if(/rate limit|too many/i.test(m))return en?"Too many attempts. Try again a little later.":"Çok fazla deneme yapıldı. Biraz sonra tekrar dene.";
   if(/not authorized|sending .*email|Error sending/i.test(m))return en?"The e-mail couldn’t be sent (the site’s mail service isn’t set up for this address yet).":"E-posta gönderilemedi (sitenin e-posta servisi bu adres için henüz ayarlanmadı).";
   if(/Password should be|weak/i.test(m))return en?"Password must be at least 6 characters.":"Şifre en az 6 karakter olmalı.";
+  if(/provider is not enabled|Unsupported provider/i.test(m))return en?"Google sign-in isn’t switched on yet. Please use e-mail for now.":"Google ile giriş henüz açılmadı. Şimdilik e-postayla giriş yapabilirsin.";
   if(/fetch|network|import|Load failed/i.test(m))return en?"Couldn’t connect. Check your internet connection.":"Bağlanılamadı. İnternet bağlantını kontrol et.";
   return (en?"Something went wrong: ":"Bir sorun oldu: ")+m;
 }
