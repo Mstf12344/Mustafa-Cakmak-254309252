@@ -27,6 +27,9 @@ Site derleme gerektirmez; Vercel `index.html` dosyasını olduğu gibi yayınlar
 ## E-postayla giriş (Supabase)
 E-posta hesapları [Supabase Auth](https://supabase.com/docs/guides/auth) ile tutulur (proje: `dunya-mutfagi`, bölge eu-central-1). Her kullanıcının site verileri `profil_verisi` tablosunda tek satır JSON olarak saklanır; RLS kuralları sayesinde herkes yalnızca kendi satırını okuyup yazabilir. `index.html`'deki `SUPA_KEY` herkese açık "anon" anahtarıdır. Kayıt, `kayit` adlı Edge Function ile yapılır: hesap doğrulama e-postası beklemeden açılır (Supabase'in ücretsiz e-posta servisi yalnızca proje ekibine mail gönderdiği için). Google ile giriş için Supabase'de Google sağlayıcısı açılıp `SUPA_GOOGLE` true yapılmalıdır.
 
+### Hoş geldin e-postası
+Yeni bir hesap açıldığında (e-posta ya da Google) `auth.users` üzerindeki tetikleyici `hosgeldin` Edge Function'ını çağırır; fonksiyon kişiye Gmail üzerinden bir kez "hoş geldin" e-postası gönderir. Çalışması için Supabase'de **Edge Functions → Secrets** altında `GMAIL_USER` (gönderen Gmail adresi) ve `GMAIL_APP_PASSWORD` (Google hesabından alınan uygulama şifresi) tanımlı olmalıdır. Kod ve veritabanı değişiklikleri `supabase/` klasöründedir.
+
 ## Wikibooks tarifleri
 Tarifler `index.html` içindeki `WB_DATA` alanına gömülüdür; site internetten tarif çekmez (yalnızca fotoğraflar Wikimedia Commons'tan yüklenir).
 
