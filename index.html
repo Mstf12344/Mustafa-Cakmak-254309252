@@ -3497,11 +3497,13 @@ $("auEmail").onsubmit=async e=>{
     const c=await sbInit();
     if(eMode==="newpass"){const {error}=await c.auth.updateUser({password:pass});if(error)throw error;eMode="login";$("ePass").value="";auMsg(en?"Password updated.":"Şifren güncellendi.","ok");const {data}=await c.auth.getUser();if(data&&data.user)await sbFinish(data.user);return}
     if(eMode==="register"){
-      const {data,error}=await c.auth.signUp({email,password:pass,options:{data:{ad:name||null},emailRedirectTo:sbRedirect()}});
-      if(error)throw error;
-      if(data.session){await sbFinish(data.session.user);return}
-      if(data.user&&Array.isArray(data.user.identities)&&!data.user.identities.length){auErr(sbErrText("already registered"),$("eMail"));return}
-      eMode="login";sbStatic();$("ePass").value="";auMsg(en?"We sent a confirmation link to "+email+". Click it, then sign in here.":email+" adresine doğrulama bağlantısı gönderdik. Bağlantıya tıkla, sonra buradan giriş yap.","ok");return;
+      // kayıt "kayit" Edge Function'ı ile: hesap doğrulama e-postası beklemeden açılır, ardından normal girişle oturum açılır
+      const r=await fetch(SUPA_URL+"/functions/v1/kayit",{method:"POST",headers:{"Content-Type":"application/json",apikey:SUPA_KEY,Authorization:"Bearer "+SUPA_KEY},body:JSON.stringify({email,password:pass,ad:name})});
+      const j=await r.json().catch(()=>({}));
+      if(!r.ok){if(j.error==="exists"){auErr(sbErrText("already registered"),$("eMail"));return}
+        if(j.error==="name"){auErr(T.e.user,$("eName"));return}throw new Error(j.error||("HTTP "+r.status))}
+      const {data,error}=await c.auth.signInWithPassword({email,password:pass});if(error)throw error;
+      await sbFinish(data.user);return;
     }
     const {data,error}=await c.auth.signInWithPassword({email,password:pass});if(error)throw error;
     await sbFinish(data.user);

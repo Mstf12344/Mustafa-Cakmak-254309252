@@ -25,7 +25,7 @@ Depo Vercel'deki **dunya-mutfagi** projesine bağlıdır; `main` dalına yapıla
 Site derleme gerektirmez; Vercel `index.html` dosyasını olduğu gibi yayınlar.
 
 ## E-postayla giriş (Supabase)
-E-posta hesapları [Supabase Auth](https://supabase.com/docs/guides/auth) ile tutulur (proje: `dunya-mutfagi`, bölge eu-central-1). Her kullanıcının site verileri `profil_verisi` tablosunda tek satır JSON olarak saklanır; RLS kuralları sayesinde herkes yalnızca kendi satırını okuyup yazabilir. `index.html`'deki `SUPA_KEY` herkese açık "anon" anahtarıdır. Google ile giriş için Supabase'de Google sağlayıcısı açılıp `SUPA_GOOGLE` true yapılmalıdır.
+E-posta hesapları [Supabase Auth](https://supabase.com/docs/guides/auth) ile tutulur (proje: `dunya-mutfagi`, bölge eu-central-1). Her kullanıcının site verileri `profil_verisi` tablosunda tek satır JSON olarak saklanır; RLS kuralları sayesinde herkes yalnızca kendi satırını okuyup yazabilir. `index.html`'deki `SUPA_KEY` herkese açık "anon" anahtarıdır. Kayıt, `kayit` adlı Edge Function ile yapılır: hesap doğrulama e-postası beklemeden açılır (Supabase'in ücretsiz e-posta servisi yalnızca proje ekibine mail gönderdiği için). Google ile giriş için Supabase'de Google sağlayıcısı açılıp `SUPA_GOOGLE` true yapılmalıdır.
 
 ## Wikibooks tarifleri
 Tarifler `index.html` içindeki `WB_DATA` alanına gömülüdür; site internetten tarif çekmez (yalnızca fotoğraflar Wikimedia Commons'tan yüklenir).
