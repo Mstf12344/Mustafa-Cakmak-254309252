@@ -30,6 +30,11 @@ E-posta hesapları [Supabase Auth](https://supabase.com/docs/guides/auth) ile tu
 ### Hoş geldin e-postası
 Yeni bir hesap açıldığında (e-posta ya da Google) `auth.users` üzerindeki tetikleyici `hosgeldin` Edge Function'ını çağırır; fonksiyon kişiye Gmail üzerinden bir kez "hoş geldin" e-postası gönderir. Çalışması için Supabase'de **Edge Functions → Secrets** altında `GMAIL_USER` (gönderen Gmail adresi) ve `GMAIL_APP_PASSWORD` (Google hesabından alınan uygulama şifresi) tanımlı olmalıdır. Kod ve veritabanı değişiklikleri `supabase/` klasöründedir.
 
+### Ziyaret takibi ve yönetim paneli
+`ziyaret-takip.js` her sayfa açılışını, tarif açmayı ve pişirme modunu Supabase'deki `ziyaret_kaydet()` fonksiyonuna bildirir. Ad, e-posta veya IP gönderilmez; tarayıcıda rastgele bir ziyaretçi kimliği tutulur, giriş yapılmışsa kayıt hesapla eşleşir. Kayıtlar API'den doğrudan erişilemeyen `private.ziyaret` tablosundadır.
+
+`yonetim.html` (sitede `/yonetim.html`) yönetici hesabıyla açılınca ziyaretçi ve sayfa sayılarını, günlük grafiği, en çok bakılan tarifleri, gelinen siteleri, cihaz, tarayıcı ve bölge dağılımını, kayıtlı kullanıcıları ve son hareketleri gösterir. Veriler `yonetim_ozet()` fonksiyonundan gelir; bu fonksiyon yalnızca `private.yonetici` tablosundaki hesaplara cevap verir. `?ornek` eklenerek açılırsa örnek veriyle çalışır. Veritabanı değişikliği: `supabase/migrations/003_ziyaret_takibi.sql`.
+
 ## Wikibooks tarifleri
 Tarifler `index.html` içindeki `WB_DATA` alanına gömülüdür; site internetten tarif çekmez (yalnızca fotoğraflar Wikimedia Commons'tan yüklenir).
 
