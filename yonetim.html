@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Dünya Mutfağı — Yönetim</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Yönetim paneli: Dünya Mutfağı sitesiyle aynı renkler ve yazı tipleri.
+   Düzen: üst çubuk → özet sayılar → günlük grafik → dağılımlar → kullanıcılar → son hareketler */
+:root{
+  --bg:#F6F7F9; --surface:#FFFFFF; --surface-2:#EEF1F4; --ink:#172026; --muted:#5E6B74; --line:#E1E6EA;
+  --glass:rgba(246,247,249,.82); --accent:#3B5BDB; --on-accent:#fff; --accent-2:#9AAEF0;
+  --ok:#15803D; --warn:#B45309; --bad:#B42318; --bad-bg:#FDE8E6;
+  --shadow:0 1px 2px rgba(23,32,38,.06),0 8px 24px -12px rgba(23,32,38,.16);
+  --display:"Bricolage Grotesque","Figtree",system-ui,sans-serif;
+  --sans:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --r-lg:20px; --r-md:14px; --r-sm:10px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#3B070B; --surface:#521019; --surface-2:#651822; --ink:#FFF3F1; --muted:#F2BDBD; --line:#6D2029;
+  --glass:rgba(59,7,11,.86); --accent:#FFC98A; --on-accent:#3B070B; --accent-2:#B5735A;
+  --ok:#86EFAC; --warn:#FCD34D; --bad:#FFC2BA; --bad-bg:#5A1A16;
+  --shadow:0 1px 2px rgba(0,0,0,.25),0 10px 30px -12px rgba(0,0,0,.5);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#3B070B; --surface:#521019; --surface-2:#651822; --ink:#FFF3F1; --muted:#F2BDBD; --line:#6D2029;
+  --glass:rgba(59,7,11,.86); --accent:#FFC98A; --on-accent:#3B070B; --accent-2:#B5735A;
+  --ok:#86EFAC; --warn:#FCD34D; --bad:#FFC2BA; --bad-bg:#5A1A16;
+  --shadow:0 1px 2px rgba(0,0,0,.25),0 10px 30px -12px rgba(0,0,0,.5);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 var(--sans);-webkit-font-smoothing:antialiased;min-height:100vh}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+[hidden]{display:none!important}
+button,select{font:inherit}
+button:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* üst çubuk */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding-block:12px}
+.logo{display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none;margin-right:auto}
+.logo-m{width:38px;height:38px;border-radius:var(--r-sm);background:var(--surface-2);display:grid;place-items:center;font-size:1.25rem}
+.logo b{display:block;font-family:var(--display);font-weight:800;font-size:1.08rem;letter-spacing:-.02em;line-height:1.1}
+.logo small{display:block;color:var(--muted);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em}
+.seg{display:flex;gap:3px;background:var(--surface-2);padding:4px;border-radius:999px}
+.seg button{border:0;background:none;color:var(--muted);font-weight:600;font-size:.86rem;padding:6px 13px;border-radius:999px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);font-weight:600;font-size:.86rem;padding:7px 14px;border-radius:999px;cursor:pointer}
+.btn:hover{border-color:var(--muted)}
+.btn.ana{background:var(--accent);color:var(--on-accent);border-color:transparent;font-weight:700;padding:11px 20px;font-size:.95rem}
+.kim{font-size:.82rem;color:var(--muted);font-weight:600}
+
+/* durum ekranları */
+.ekran{min-height:70vh;display:grid;place-items:center;padding-block:40px}
+.kutu{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:32px;max-width:440px;width:100%;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:14px}
+.kutu h1{font-family:var(--display);font-size:1.7rem;font-weight:800;letter-spacing:-.03em;line-height:1.1;margin:0;text-wrap:balance}
+.kutu p{margin:0;color:var(--muted)}
+.hata{background:var(--bad-bg);color:var(--bad);border-radius:var(--r-sm);padding:10px 14px;font-weight:600;font-size:.9rem}
+.ornek{background:var(--surface-2);color:var(--muted);font-size:.8rem;font-weight:600}
+.ornek .wrap{padding-block:7px}
+
+/* panel */
+main{padding-block:28px 60px;display:flex;flex-direction:column;gap:18px}
+.baslik{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.baslik h1{font-family:var(--display);font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;letter-spacing:-.035em;line-height:1.05;margin:0}
+.baslik p{margin:4px 0 0;color:var(--muted)}
+.canli{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.9rem;background:var(--surface);border:1px solid var(--line);padding:7px 14px;border-radius:999px}
+.canli i{width:9px;height:9px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 var(--ok);animation:nabiz 2s infinite}
+.canli.sifir i{background:var(--muted);animation:none}
+@keyframes nabiz{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--ok) 60%,transparent)}70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+
+.kpi{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.k{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:16px 18px;min-width:0}
+.k span{display:block;color:var(--muted);font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em}
+.k b{display:block;font-family:var(--display);font-size:2.3rem;font-weight:800;letter-spacing:-.04em;line-height:1.1;margin-top:4px;font-variant-numeric:tabular-nums}
+.k small{display:block;color:var(--muted);font-size:.82rem;margin-top:2px}
+
+.kart{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px;min-width:0}
+.kart h2{font-family:var(--display);font-size:1.12rem;font-weight:700;letter-spacing:-.015em;margin:0 0 12px;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.kart h2 small{font-family:var(--sans);font-size:.78rem;color:var(--muted);font-weight:600}
+.iki{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:18px}
+.dort{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+
+.grafik-kap{overflow-x:auto;margin:0 -18px;padding:0 18px}
+.grafik{width:100%;min-width:620px;height:auto;display:block}
+.grafik text{fill:var(--muted);font:600 11px var(--sans)}
+.lejant{display:flex;gap:16px;font-size:.8rem;color:var(--muted);font-weight:600;margin-top:6px}
+.lejant i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+
+.cubuk{display:flex;flex-direction:column;gap:9px;list-style:none;margin:0;padding:0}
+.cubuk li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;font-size:.9rem}
+.cubuk .ad{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}
+.cubuk .n{font-variant-numeric:tabular-nums;font-weight:700}
+.cubuk .iz{grid-column:1/-1;height:6px;border-radius:999px;background:var(--surface-2);overflow:hidden}
+.cubuk .iz i{display:block;height:100%;border-radius:999px;background:var(--accent)}
+.bos{color:var(--muted);font-size:.9rem;padding:8px 0}
+
+.tablo{overflow-x:auto;margin:0 -18px;padding:0 18px}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:.88rem}
+th{text-align:left;color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.07em;font-weight:700;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:10px;border-bottom:1px solid var(--line);vertical-align:middle}
+tr:last-child td{border-bottom:0}
+td.sayi,th.sayi{text-align:right;font-variant-numeric:tabular-nums}
+.kisi{display:flex;align-items:center;gap:10px;min-width:0}
+.av{width:32px;height:32px;border-radius:50%;flex:none;display:grid;place-items:center;font-weight:800;font-size:.82rem;background:var(--surface-2);color:var(--ink)}
+.kisi b{display:block;font-weight:700}
+.kisi small{display:block;color:var(--muted);font-size:.8rem}
+.etiket{display:inline-block;font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--surface-2);color:var(--muted);white-space:nowrap}
+.etiket.yon{background:var(--accent);color:var(--on-accent)}
+.durum{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.durum i{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+.durum.aktif i{background:var(--ok)}
+
+.akis{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.akis li{display:grid;grid-template-columns:68px minmax(0,1fr) auto;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:.88rem}
+.akis li:last-child{border-bottom:0}
+.akis time{color:var(--muted);font-variant-numeric:tabular-nums;font-size:.82rem}
+.akis .ne{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.akis .ne b{font-weight:700}
+.akis .ek{color:var(--muted);font-size:.8rem;white-space:nowrap}
+.not{color:var(--muted);font-size:.8rem;margin:0}
+
+@media (max-width:900px){.kpi{grid-template-columns:repeat(2,minmax(0,1fr))}.iki{grid-template-columns:minmax(0,1fr)}.dort{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.dort{grid-template-columns:minmax(0,1fr)}.logo small{display:none}.akis li{grid-template-columns:52px minmax(0,1fr)}.akis .ek{grid-column:2}.k b{font-size:1.9rem}}
+@media (prefers-reduced-motion:reduce){.canli i{animation:none}}
+</style>
+</head>
+<body>
+
+<div id="ornekBant" class="ornek" hidden><div class="wrap">Örnek veri gösteriliyor. Gerçek istatistikler için bu sayfayı sitenin kendi adresinde, yönetici hesabıyla aç.</div></div>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="logo" href="./"><span class="logo-m">🌍</span><span><b>Dünya Mutfağı</b><small>Yönetim paneli</small></span></a>
+    <div class="seg" id="aralik" role="group" aria-label="Zaman aralığı" hidden>
+      <button type="button" data-gun="1">Bugün</button>
+      <button type="button" data-gun="7">7 gün</button>
+      <button type="button" data-gun="30" aria-pressed="true">30 gün</button>
+      <button type="button" data-gun="90">90 gün</button>
+    </div>
+    <span class="kim" id="kim" hidden></span>
+    <button class="btn" id="yenile" type="button" hidden>Yenile</button>
+    <button class="btn" id="cikis" type="button" hidden>Çıkış</button>
+  </div>
+</header>
+
+<!-- Giriş ekranı -->
+<section class="ekran wrap" id="girisEkrani" hidden>
+  <div class="kutu">
+    <h1>Yönetim paneline giriş</h1>
+    <p>Ziyaretçi istatistiklerini yalnızca site yöneticisi görebilir. Sitede kullandığın Google hesabınla giriş yap.</p>
+    <div class="hata" id="girisHata" hidden></div>
+    <button class="btn ana" id="googleGiris" type="button">Google ile giriş yap</button>
+    <p class="not">Sitede zaten giriş yaptıysan bu sayfa oturumunu otomatik tanır.</p>
+  </div>
+</section>
+
+<!-- Yükleniyor -->
+<section class="ekran wrap" id="yukleniyor"><p class="not">Yükleniyor…</p></section>
+
+<!-- Panel -->
+<main class="wrap" id="panel" hidden>
+  <div class="baslik">
+    <div>
+      <h1>Site istatistikleri</h1>
+      <p id="aralikMetni">Son 30 gün</p>
+    </div>
+    <span class="canli" id="canli"><i></i><span id="canliMetni">Şu an sitede 0 kişi</span></span>
+  </div>
+
+  <section class="kpi">
+    <div class="k"><span>Ziyaretçi</span><b id="kTekil">0</b><small id="kOturum">0 ziyaret</small></div>
+    <div class="k"><span>Sayfa açılışı</span><b id="kGor">0</b><small id="kGorOrt">kişi başı 0</small></div>
+    <div class="k"><span>Tarif açılışı</span><b id="kTarif">0</b><small id="kPisir">0 kez pişirme modu</small></div>
+    <div class="k"><span>Kayıtlı kullanıcı</span><b id="kKayit">0</b><small id="kYeni">bu dönemde 0 yeni</small></div>
+  </section>
+
+  <section class="kart">
+    <h2>Günlük ziyaret <small id="grafikNot"></small></h2>
+    <div class="grafik-kap" id="grafik"></div>
+    <div class="lejant"><span><i style="background:var(--accent)"></i>Ziyaretçi</span><span><i style="background:var(--accent-2)"></i>Sayfa açılışı</span></div>
+  </section>
+
+  <section class="iki">
+    <div class="kart"><h2>En çok bakılan tarifler <small>açılma</small></h2><ul class="cubuk" id="lTarif"></ul></div>
+    <div class="kart"><h2>Nereden geldiler <small>ziyaret</small></h2><ul class="cubuk" id="lYon"></ul></div>
+  </section>
+
+  <section class="dort">
+    <div class="kart"><h2>Cihaz <small>kişi</small></h2><ul class="cubuk" id="lCihaz"></ul></div>
+    <div class="kart"><h2>Tarayıcı <small>kişi</small></h2><ul class="cubuk" id="lTarayici"></ul></div>
+    <div class="kart"><h2>İşletim sistemi <small>kişi</small></h2><ul class="cubuk" id="lSistem"></ul></div>
+    <div class="kart"><h2>Bölge <small>saat dilimi</small></h2><ul class="cubuk" id="lBolge"></ul></div>
+  </section>
+
+  <section class="kart">
+    <h2>Kayıtlı kullanıcılar <small id="kulNot"></small></h2>
+    <div class="tablo">
+      <table>
+        <thead><tr><th>Kullanıcı</th><th>Giriş türü</th><th>Kayıt</th><th>Son görülme</th><th class="sayi">Ziyaret</th><th class="sayi">Tarif</th></tr></thead>
+        <tbody id="tKul"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="kart">
+    <h2>Son hareketler <small>son 30 kayıt</small></h2>
+    <ul class="akis" id="lAkis"></ul>
+  </section>
+
+  <p class="not">Ziyaretçi sayısı tarayıcı başına tutulan rastgele bir kimliğe göre hesaplanır. Aynı kişi farklı cihazdan gelirse iki kişi sayılır. Bölge, tarayıcının saat diliminden çıkarılır; IP adresi kaydedilmez. Sayfa her dakika kendini yeniler.</p>
+</main>
+
+<script type="module">
+const SUPA_URL = "https://zaaqcndfftcoavqponua.supabase.co";
+const SUPA_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InphYXFjbmRmZnRjb2F2cXBvbnVhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI4Mjg3OTUsImV4cCI6MjEwODQwNDc5NX0.1hNMHm_L3v7gEAYsNCVoDBwbBamrdBaq6QxA21FJFzQ";
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const sayi = n => Number(n || 0).toLocaleString("tr-TR");
+const goster = id => ["girisEkrani", "yukleniyor", "panel"].forEach(x => $(x).hidden = x !== id);
+
+const CIHAZ = { masaustu: "Masaüstü", mobil: "Mobil", tablet: "Tablet", bilinmiyor: "Bilinmiyor" };
+const OLAY = { sayfa: "siteyi açtı", tarif: "tarife baktı", pisirme: "pişirme modunu açtı" };
+const SEHIR = { "Europe/Istanbul": "Türkiye", "Asia/Istanbul": "Türkiye", "Europe/Berlin": "Almanya", "Europe/London": "İngiltere",
+  "Europe/Paris": "Fransa", "Europe/Amsterdam": "Hollanda", "Europe/Rome": "İtalya", "Europe/Madrid": "İspanya",
+  "Europe/Vienna": "Avusturya", "Europe/Brussels": "Belçika", "Asia/Baku": "Azerbaycan", "Asia/Nicosia": "Kıbrıs",
+  "Asia/Famagusta": "Kıbrıs", "America/New_York": "ABD (Doğu)", "America/Chicago": "ABD (Orta)", "America/Los_Angeles": "ABD (Batı)",
+  "Asia/Tokyo": "Japonya", "Asia/Seoul": "Kore", "Asia/Dubai": "BAE", "Asia/Riyadh": "Suudi Arabistan", "Europe/Moscow": "Rusya" };
+const bolgeAdi = tz => tz === "bilinmiyor" ? "Bilinmiyor" : (SEHIR[tz] || String(tz).split("/").pop().replace(/_/g, " "));
+const SAGLAYICI = { google: "Google", email: "E-posta" };
+
+const tarih = d => d ? new Date(d).toLocaleDateString("tr-TR", { day: "numeric", month: "short", year: "numeric" }) : "—";
+function once(d) {
+  if (!d) return "Hiç";
+  const s = (Date.now() - new Date(d)) / 1000;
+  if (s < 300) return "Şu an";
+  if (s < 3600) return Math.round(s / 60) + " dk önce";
+  if (s < 86400) return Math.round(s / 3600) + " sa önce";
+  if (s < 86400 * 7) return Math.round(s / 86400) + " gün önce";
+  return tarih(d);
+}
+const saat = d => new Date(d).toLocaleTimeString("tr-TR", { hour: "2-digit", minute: "2-digit" });
+const basHarf = ad => String(ad || "?").trim().split(/\s+/).slice(0, 2).map(w => w.charAt(0).toLocaleUpperCase("tr")).join("");
+
+let gun = 30;
+try { const g = +localStorage.getItem("dm-yonetim-gun"); if ([1, 7, 30, 90].includes(g)) gun = g; } catch (e) {}
+
+function cubukListe(el, liste, adFn = x => x) {
+  if (!liste || !liste.length) { el.innerHTML = '<li class="bos">Henüz veri yok</li>'; return; }
+  const max = Math.max(...liste.map(x => x.sayi), 1);
+  el.innerHTML = liste.map(x => `<li><span class="ad" title="${esc(adFn(x.ad))}">${esc(adFn(x.ad))}</span><span class="n">${sayi(x.sayi)}</span><span class="iz"><i style="width:${Math.max(3, x.sayi / max * 100)}%"></i></span></li>`).join("");
+}
+
+function grafikCiz(seri) {
+  const W = 1000, H = 240, sol = 34, alt = 24, ust = 10, sag = 6;
+  const n = seri.length, gw = (W - sol - sag) / n;
+  const enBuyuk = Math.max(1, ...seri.map(d => Math.max(d.goruntuleme, d.tekil)));
+  const adim = enBuyuk <= 4 ? 1 : Math.ceil(enBuyuk / 4 / (enBuyuk > 50 ? 10 : 1)) * (enBuyuk > 50 ? 10 : 1);
+  const tavan = Math.ceil(enBuyuk / adim) * adim;
+  const y = v => ust + (H - ust - alt) * (1 - v / tavan);
+  let s = `<svg class="grafik" viewBox="0 0 ${W} ${H}" role="img" aria-label="Günlük ziyaretçi ve sayfa açılışı">`;
+  for (let v = 0; v <= tavan; v += adim) {
+    s += `<line x1="${sol}" x2="${W - sag}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)" stroke-width="1"/>`;
+    s += `<text x="${sol - 8}" y="${y(v) + 4}" text-anchor="end">${v}</text>`;
+  }
+  const bw = Math.min(28, gw * 0.36);
+  const etiketAdim = Math.ceil(n / 10);
+  seri.forEach((d, i) => {
+    const cx = sol + gw * i + gw / 2;
+    const etiket = new Date(d.gun + "T12:00:00").toLocaleDateString("tr-TR", { day: "numeric", month: "short" });
+    s += `<g><title>${etiket}: ${d.tekil} ziyaretçi, ${d.goruntuleme} sayfa açılışı</title>`;
+    s += `<rect x="${cx - bw - 1}" y="${y(d.tekil)}" width="${bw}" height="${Math.max(0, y(0) - y(d.tekil))}" rx="3" fill="var(--accent)"/>`;
+    s += `<rect x="${cx + 1}" y="${y(d.goruntuleme)}" width="${bw}" height="${Math.max(0, y(0) - y(d.goruntuleme))}" rx="3" fill="var(--accent-2)"/>`;
+    s += `<rect x="${cx - gw / 2}" y="${ust}" width="${gw}" height="${H - ust - alt}" fill="transparent"/></g>`;
+    if (i % etiketAdim === 0 || n <= 10) s += `<text x="${cx}" y="${H - 6}" text-anchor="middle">${etiket}</text>`;
+  });
+  return s + "</svg>";
+}
+
+function ciz(v) {
+  const aralikAd = { 1: "Bugün", 7: "Son 7 gün", 30: "Son 30 gün", 90: "Son 90 gün" }[v.gun] || `Son ${v.gun} gün`;
+  $("aralikMetni").textContent = aralikAd + " · Türkiye saatiyle";
+  $("canliMetni").textContent = `Şu an sitede ${sayi(v.simdi)} kişi`;
+  $("canli").classList.toggle("sifir", !v.simdi);
+
+  $("kTekil").textContent = sayi(v.tekil);
+  $("kOturum").textContent = `${sayi(v.oturum)} ziyaret · ${sayi(v.giris_yapan)} giriş yapmış`;
+  $("kGor").textContent = sayi(v.goruntuleme);
+  $("kGorOrt").textContent = v.tekil ? `kişi başı ${(v.goruntuleme / v.tekil).toLocaleString("tr-TR", { maximumFractionDigits: 1 })}` : "kişi başı 0";
+  $("kTarif").textContent = sayi(v.tarif_acilma);
+  $("kPisir").textContent = `${sayi(v.pisirme)} kez pişirme modu`;
+  $("kKayit").textContent = sayi(v.kayitli);
+  $("kYeni").textContent = `bu dönemde ${sayi(v.yeni_kayit)} yeni`;
+
+  const toplam = v.gunluk.reduce((a, d) => a + d.tekil, 0);
+  $("grafikNot").textContent = v.gun === 1 ? "" : toplam ? "" : "henüz kayıt yok";
+  $("grafik").innerHTML = v.gun === 1
+    ? `<p class="bos">Bugün ${sayi(v.tekil)} ziyaretçi, ${sayi(v.goruntuleme)} sayfa açılışı. Günlük grafik için 7, 30 veya 90 gün seç.</p>`
+    : grafikCiz(v.gunluk);
+
+  cubukListe($("lTarif"), v.tarifler.map(t => ({ ad: t.ad || t.anahtar, sayi: t.sayi })));
+  cubukListe($("lYon"), v.yonlendiren);
+  cubukListe($("lCihaz"), v.cihaz, a => CIHAZ[a] || a);
+  cubukListe($("lTarayici"), v.tarayici);
+  cubukListe($("lSistem"), v.sistem);
+  cubukListe($("lBolge"), v.bolge, bolgeAdi);
+
+  $("kulNot").textContent = `${sayi(v.kullanicilar.length)} hesap`;
+  $("tKul").innerHTML = v.kullanicilar.length ? v.kullanicilar.map(k => {
+    const aktif = k.son_aktif && Date.now() - new Date(k.son_aktif) < 86400000;
+    return `<tr>
+      <td><div class="kisi"><span class="av">${esc(basHarf(k.ad))}</span><span><b>${esc(k.ad)} ${k.yonetici ? '<span class="etiket yon">Yönetici</span>' : ""}</b><small>${esc(k.eposta || "")}</small></span></div></td>
+      <td><span class="etiket">${esc(SAGLAYICI[k.saglayici] || k.saglayici)}</span></td>
+      <td>${tarih(k.kayit)}</td>
+      <td><span class="durum ${aktif ? "aktif" : ""}"><i></i>${once(k.son_aktif || k.son_giris)}</span></td>
+      <td class="sayi">${sayi(k.ziyaret)}</td>
+      <td class="sayi">${sayi(k.tarif)}</td></tr>`;
+  }).join("") : '<tr><td colspan="6" class="bos">Henüz kayıtlı kullanıcı yok</td></tr>';
+
+  $("lAkis").innerHTML = v.son.length ? v.son.map(r => {
+    const kim = r.kullanici ? `<b>${esc(r.kullanici)}</b>` : `Misafir <span class="etiket">#${esc(r.ziyaretci)}</span>`;
+    const ne = r.olay === "sayfa" ? OLAY.sayfa : `${OLAY[r.olay] || r.olay}: <b>${esc(r.tarif || "")}</b>`;
+    const ek = [CIHAZ[r.cihaz] || r.cihaz, r.tarayici, r.bolge && bolgeAdi(r.bolge)].filter(Boolean).map(esc).join(" · ");
+    return `<li><time datetime="${esc(r.zaman)}" title="${esc(new Date(r.zaman).toLocaleString("tr-TR"))}">${new Date(r.zaman).toDateString() === new Date().toDateString() ? saat(r.zaman) : tarih(r.zaman).replace(/ \d{4}$/, "")}</time><span class="ne">${kim} ${ne}</span><span class="ek">${ek}</span></li>`;
+  }).join("") : '<li class="bos">Henüz hareket yok. Takip kodu yayınlandıktan sonra ziyaretler burada görünür.</li>';
+}
+
+function aralikButonlari(yukle) {
+  $("aralik").querySelectorAll("button").forEach(b => {
+    b.setAttribute("aria-pressed", String(+b.dataset.gun === gun));
+    b.onclick = () => {
+      gun = +b.dataset.gun;
+      try { localStorage.setItem("dm-yonetim-gun", gun); } catch (e) {}
+      $("aralik").querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+      yukle();
+    };
+  });
+  $("aralik").hidden = false;
+}
+
+/* ---------- Örnek veri (sunum ve önizleme için) ---------- */
+function ornekVeri(g) {
+  const bugun = new Date(); const seri = [];
+  for (let i = g - 1; i >= 0; i--) {
+    const d = new Date(bugun); d.setDate(d.getDate() - i);
+    const t = Math.round(6 + 5 * Math.sin(i / 2.3) + (i % 7 === 1 || i % 7 === 2 ? 6 : 0) + (g - i) / 6);
+    seri.push({ gun: d.toISOString().slice(0, 10), tekil: t, goruntuleme: Math.round(t * 1.6) });
+  }
+  const tekil = seri.reduce((a, d) => a + d.tekil, 0), gor = seri.reduce((a, d) => a + d.goruntuleme, 0);
+  const dk = m => new Date(Date.now() - m * 60000).toISOString();
+  return {
+    gun: g, goruntuleme: gor, tekil, oturum: Math.round(tekil * 1.3), giris_yapan: 4, simdi: 2,
+    tarif_acilma: Math.round(gor * 1.4), pisirme: Math.round(gor * 0.12), kayitli: 6, yeni_kayit: 3, gunluk: seri,
+    tarifler: [["tr-0", "Mercimek Çorbası", 48], ["tr-1", "Karnıyarık", 37], ["it-0", "Spaghetti Carbonara", 31], ["tr-4", "Mantı", 26], ["kr-0", "Bibimbap", 19], ["jp-0", "Oyakodon", 14], ["mx-0", "Guacamole", 11]].map(([anahtar, ad, sayi]) => ({ anahtar, ad, sayi })),
+    yonlendiren: [{ ad: "Doğrudan", sayi: 92 }, { ad: "google.com", sayi: 41 }, { ad: "instagram.com", sayi: 17 }, { ad: "web.whatsapp.com", sayi: 9 }, { ad: "github.com", sayi: 5 }],
+    cihaz: [{ ad: "mobil", sayi: 88 }, { ad: "masaustu", sayi: 51 }, { ad: "tablet", sayi: 7 }],
+    tarayici: [{ ad: "Chrome", sayi: 79 }, { ad: "Safari", sayi: 46 }, { ad: "Samsung Internet", sayi: 12 }, { ad: "Edge", sayi: 6 }, { ad: "Firefox", sayi: 3 }],
+    sistem: [{ ad: "Android", sayi: 64 }, { ad: "Windows", sayi: 38 }, { ad: "iOS", sayi: 31 }, { ad: "macOS", sayi: 13 }],
+    bolge: [{ ad: "Europe/Istanbul", sayi: 131 }, { ad: "Europe/Berlin", sayi: 8 }, { ad: "Europe/Amsterdam", sayi: 4 }, { ad: "Asia/Baku", sayi: 3 }],
+    kullanicilar: [
+      { ad: "Örnek Yönetici", eposta: "yonetici@ornek.com", saglayici: "google", kayit: dk(60 * 24 * 4), son_aktif: dk(2), son_giris: dk(30), ziyaret: 64, tarif: 41, yonetici: true },
+      { ad: "Ayşe Yılmaz", eposta: "ayse@ornek.com", saglayici: "google", kayit: dk(60 * 24 * 2), son_aktif: dk(14), son_giris: dk(200), ziyaret: 23, tarif: 15, yonetici: false },
+      { ad: "Mehmet Kaya", eposta: "mehmet@ornek.com", saglayici: "email", kayit: dk(60 * 24 * 3), son_aktif: dk(60 * 5), son_giris: dk(60 * 26), ziyaret: 11, tarif: 7, yonetici: false },
+      { ad: "Zeynep Demir", eposta: "zeynep@ornek.com", saglayici: "google", kayit: dk(60 * 24 * 1), son_aktif: dk(60 * 30), son_giris: dk(60 * 30), ziyaret: 4, tarif: 3, yonetici: false },
+      { ad: "Can Öztürk", eposta: "can@ornek.com", saglayici: "email", kayit: dk(60 * 24 * 9), son_aktif: null, son_giris: dk(60 * 24 * 9), ziyaret: 0, tarif: 0, yonetici: false }
+    ],
+    son: [
+      { zaman: dk(1), olay: "tarif", tarif: "Mercimek Çorbası", cihaz: "mobil", tarayici: "Safari", bolge: "Europe/Istanbul", kullanici: null, ziyaretci: "a3f9c1" },
+      { zaman: dk(2), olay: "sayfa", cihaz: "mobil", tarayici: "Safari", bolge: "Europe/Istanbul", kullanici: null, ziyaretci: "a3f9c1" },
+      { zaman: dk(14), olay: "pisirme", tarif: "Karnıyarık", cihaz: "masaustu", tarayici: "Chrome", bolge: "Europe/Istanbul", kullanici: "Ayşe Yılmaz", ziyaretci: "77b2e0" },
+      { zaman: dk(15), olay: "tarif", tarif: "Karnıyarık", cihaz: "masaustu", tarayici: "Chrome", bolge: "Europe/Istanbul", kullanici: "Ayşe Yılmaz", ziyaretci: "77b2e0" },
+      { zaman: dk(41), olay: "tarif", tarif: "Bibimbap", cihaz: "mobil", tarayici: "Chrome", bolge: "Europe/Berlin", kullanici: null, ziyaretci: "c90d44" },
+      { zaman: dk(43), olay: "sayfa", cihaz: "mobil", tarayici: "Chrome", bolge: "Europe/Berlin", kullanici: null, ziyaretci: "c90d44" }
+    ]
+  };
+}
+
+/* ---------- Başlat ---------- */
+const ornekMod = new URLSearchParams(location.search).has("ornek") || location.hash === "#ornek"
+  || location.protocol === "file:" || !/dunya-mutfagi|worldcuisine|localhost|127\./.test(location.hostname);
+
+if (ornekMod) {
+  $("ornekBant").hidden = false;
+  const yukle = () => { ciz(ornekVeri(gun)); goster("panel"); };
+  aralikButonlari(yukle);
+  yukle();
+} else {
+  let sb, zamanlayici;
+  try {
+    const m = await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/+esm");
+    sb = m.createClient(SUPA_URL, SUPA_KEY, { auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true } });
+  } catch (e) {
+    goster("girisEkrani");
+    $("girisHata").textContent = "Bağlantı kurulamadı. İnternet bağlantını kontrol edip sayfayı yenile.";
+    $("girisHata").hidden = false;
+  }
+
+  async function yukle() {
+    const { data, error } = await sb.rpc("yonetim_ozet", { p_gun: gun });
+    if (error) {
+      clearInterval(zamanlayici);
+      goster("girisEkrani");
+      $("girisHata").textContent = error.code === "42501" || /yönetici/.test(error.message)
+        ? "Bu hesabın yönetim paneline erişimi yok. Yönetici hesabınla giriş yap."
+        : "İstatistikler alınamadı: " + error.message;
+      $("girisHata").hidden = false;
+      $("cikis").hidden = false;
+      return;
+    }
+    ciz(data);
+    goster("panel");
+  }
+
+  async function basla(session) {
+    if (!session) {
+      goster("girisEkrani");
+      ["aralik", "kim", "yenile", "cikis"].forEach(x => $(x).hidden = true);
+      return;
+    }
+    $("kim").textContent = session.user.email || "";
+    ["kim", "yenile", "cikis"].forEach(x => $(x).hidden = false);
+    aralikButonlari(yukle);
+    await yukle();
+    clearInterval(zamanlayici);
+    zamanlayici = setInterval(() => { if (!document.hidden) yukle(); }, 60000);
+  }
+
+  if (sb) {
+    $("googleGiris").onclick = async () => {
+      $("girisHata").hidden = true;
+      const { error } = await sb.auth.signInWithOAuth({ provider: "google", options: { redirectTo: location.origin + location.pathname } });
+      if (error) { $("girisHata").textContent = "Giriş başlatılamadı: " + error.message; $("girisHata").hidden = false; }
+    };
+    $("cikis").onclick = async () => { clearInterval(zamanlayici); await sb.auth.signOut(); basla(null); };
+    $("yenile").onclick = () => yukle();
+    sb.auth.onAuthStateChange((olay, session) => { if (olay === "SIGNED_IN") setTimeout(() => basla(session), 0); });
+    const { data } = await sb.auth.getSession();
+    basla(data.session);
+  }
+}
+</script>
+</body>
+</html>
