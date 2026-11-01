@@ -32,7 +32,14 @@ Deno.serve(async (req: Request) => {
   });
   if (error) {
     const m = error.message || "";
-    if (/already|registered|exists/i.test(m)) return json({ error: "exists" }, 409);
+    if (/already|registered|exists/i.test(m)) {
+      // bu e-posta yalnızca Google ile açıldıysa kullanıcıyı Google girişine yönlendir
+      const { data: list } = await admin.auth.admin.listUsers({ page: 1, perPage: 1000 });
+      const u = list?.users?.find((x) => (x.email || "").toLowerCase() === email);
+      const provs = (u?.identities || []).map((i) => i.provider);
+      if (u && provs.includes("google") && !provs.includes("email")) return json({ error: "google" }, 409);
+      return json({ error: "exists" }, 409);
+    }
     return json({ error: m }, 400);
   }
   return json({ ok: true, id: data.user?.id });

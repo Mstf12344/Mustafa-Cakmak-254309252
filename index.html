@@ -3463,7 +3463,7 @@ function sbSignOut(name){
 }
 function sbErrText(err){
   const en=sbEn(),m=String(err&&(err.message||err.error_description)||err||"");
-  if(/Invalid login credentials/i.test(m))return en?"Wrong e-mail or password.":"E-posta ya da şifre yanlış.";
+  if(/Invalid login credentials/i.test(m))return en?"Wrong e-mail or password. If you signed up with Google, use “Continue with Google”.":"E-posta ya da şifre yanlış. Google ile kaydolduysan “Google ile giriş yap” düğmesini kullan.";
   if(/Email not confirmed/i.test(m))return en?"You haven’t confirmed your e-mail yet: check your inbox.":"E-postanı henüz doğrulamadın: gelen kutunu kontrol et.";
   if(/already registered|already been registered/i.test(m))return en?"An account with this e-mail already exists: sign in instead.":"Bu e-postayla zaten bir hesap var: giriş yap.";
   if(/rate limit|too many/i.test(m))return en?"Too many attempts. Try again a little later.":"Çok fazla deneme yapıldı. Biraz sonra tekrar dene.";
@@ -3500,7 +3500,7 @@ $("auEmail").onsubmit=async e=>{
       // kayıt "kayit" Edge Function'ı ile: hesap doğrulama e-postası beklemeden açılır, ardından normal girişle oturum açılır
       const r=await fetch(SUPA_URL+"/functions/v1/kayit",{method:"POST",headers:{"Content-Type":"application/json",apikey:SUPA_KEY,Authorization:"Bearer "+SUPA_KEY},body:JSON.stringify({email,password:pass,ad:name})});
       const j=await r.json().catch(()=>({}));
-      if(!r.ok){if(j.error==="exists"){auErr(sbErrText("already registered"),$("eMail"));return}
+      if(!r.ok){if(j.error==="google"){auErr(en?"This e-mail is registered with Google: use “Continue with Google” below.":"Bu e-posta Google ile kayıtlı: aşağıdaki “Google ile giriş yap” düğmesini kullan.",$("eMail"));return}if(j.error==="exists"){auErr(sbErrText("already registered"),$("eMail"));return}
         if(j.error==="name"){auErr(T.e.user,$("eName"));return}throw new Error(j.error||("HTTP "+r.status))}
       const {data,error}=await c.auth.signInWithPassword({email,password:pass});if(error)throw error;
       await sbFinish(data.user);return;
