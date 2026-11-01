@@ -1,0 +1,32 @@
+name: Wikimedia fotoğrafları
+
+# Fotoğrafı olmayan tarifler için Wikimedia Commons'tan özgür lisanslı fotoğraf arar,
+# sonucu tools/wikibooks/fotolar.json olarak kaydeder.
+on:
+  push:
+    branches: [foto]
+    paths: ["tools/wikibooks/foto.js", ".github/workflows/foto.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  ara:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Fotoğrafları ara
+        run: node tools/wikibooks/foto.js
+      - name: Kaydet
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tools/wikibooks/fotolar.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Wikimedia fotoğrafları bulundu"
+          git push
