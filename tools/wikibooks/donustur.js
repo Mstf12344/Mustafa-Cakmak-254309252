@@ -57,7 +57,7 @@ for(const r of raw){
   if(r.in&&r.in.length>20)o.in=r.in.slice(0,400);
   if(r.sv)o.sv=r.sv.slice(0,30);if(r.tm)o.tm=r.tm.slice(0,60);if(/^[1-5]$/.test(r.df))o.df=+r.df;if(v)o.v=v;
   if(r.img&&r.img.u){o.p=r.img.u;if(r.img.a)o.pa=r.img.a;if(r.img.l)o.pl=r.img.l;if(r.img.p)o.pu=r.img.p}
-  else if(FOTO[r.i]){const f=FOTO[r.i];o.p=f.u;if(f.a)o.pa=f.a;if(f.l)o.pl=f.l;if(f.p)o.pu=f.p}
+  else if(FOTO[r.i]){const f=FOTO[r.i];o.p=f.u;if(f.a)o.pa=f.a;if(f.l)o.pl=f.l;if(f.p)o.pu=f.p;if(f.r)o.pr=1}
   out.push(o);stat[a]=(stat[a]||0)+1;
 }
 const regions={};Object.entries(REGION).forEach(([k,v])=>{if(!AREA[k]||!AREA[k][1])regions[k]=[v,""]});

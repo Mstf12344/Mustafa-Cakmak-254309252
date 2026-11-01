@@ -2526,7 +2526,7 @@ function mdbToRecipe(o){
     desc:`${c.name} · ${course[0]} · Wikibooks`,yt:o.n+" recipe",ing,steps,
     tip:(o.nt&&o.nt[0])||"Wikibooks tarifi; içerik İngilizcedir.",story:credit+(o.in?" Wikibooks’taki açıklama: “"+o.in+"”":""),
     legend:false,img:o.p||wbArt({title:o.n,wbCourse:o.c,country:c}),src:"wb",wbId:o.i,wbCourse:o.c||"",ytUrl:"",key,country:c,order:RECIPES.length,
-    wb:{url,drawn:!o.p,img:o.p?{a:o.pa||"",l:o.pl||"",u:o.pu||""}:null},
+    wb:{url,drawn:!o.p,img:o.p?{a:o.pa||"",l:o.pl||"",u:o.pu||"",r:!!o.pr}:null},
     en:{time:wm?wbFmt(wm,true):E.timeEn,serves:o.sv?"Serves "+o.sv:"—",desc:`${o.a==="Unknown"?"World":o.a} · ${course[1]} · Wikibooks`,
       story:creditEn+(o.in?" "+o.in:""),tip:(o.nt&&o.nt[0])||"Recipe from the Wikibooks Cookbook."}};
 }
@@ -2545,7 +2545,7 @@ function wbCredit(r){
   return `<div class="wb-credit"><b>📖 ${en?"Source":"Kaynak"}:</b> <a href="${r.wb.url}" target="_blank" rel="noopener">Wikibooks Cookbook – ${esc(r.title)}</a>
     · ${en?"Licence":"Lisans"}: <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.${en?"en":"tr"}" target="_blank" rel="noopener">CC BY-SA 4.0</a>
     · ${en?"Adapted for this site’s layout.":"Sitenin düzenine uyarlanmıştır."}
-    ${r.wb.drawn?`<br><b>🎨 ${en?"Image":"Görsel"}:</b> ${en?"Illustration drawn by Dünya Mutfağı (Wikibooks has no photo of this dish); not a photo of the actual recipe.":"Wikibooks’ta bu yemeğin fotoğrafı olmadığı için Dünya Mutfağı’nın kendi çizimidir; tarifin gerçek fotoğrafı değildir."}`:""}${im?`<br><b>📷 ${en?"Photo":"Fotoğraf"}:</b> ${esc(im.a||"Wikimedia Commons")}${im.l?` · ${esc(im.l)}`:""}${im.u?` · <a href="${im.u}" target="_blank" rel="noopener">Wikimedia Commons</a>`:""}`:""}</div>`;
+    ${r.wb.drawn?`<br><b>🎨 ${en?"Image":"Görsel"}:</b> ${en?"Illustration drawn by Dünya Mutfağı (Wikibooks has no photo of this dish); not a photo of the actual recipe.":"Wikibooks’ta bu yemeğin fotoğrafı olmadığı için Dünya Mutfağı’nın kendi çizimidir; tarifin gerçek fotoğrafı değildir."}`:""}${im?`<br><b>📷 ${im.r?(en?"Representative photo (a similar dish, not this exact recipe)":"Temsilî fotoğraf (benzer bir yemek, bu tarifin kendisi değil)"):(en?"Photo":"Fotoğraf")}:</b> ${esc(im.a||"Wikimedia Commons")}${im.l?` · ${esc(im.l)}`:""}${im.u?` · <a href="${im.u}" target="_blank" rel="noopener">Wikimedia Commons</a>`:""}`:""}</div>`;
 }
 
 /* ---------- Diyet etkileri ve alerjenler ----------
