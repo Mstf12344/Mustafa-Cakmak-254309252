@@ -3,9 +3,6 @@ name: Wikimedia fotoğrafları
 # Fotoğrafı olmayan tarifler için Wikimedia Commons'tan özgür lisanslı fotoğraf arar,
 # sonucu tools/wikibooks/fotolar.json olarak kaydeder.
 on:
-  push:
-    branches: [foto]
-    paths: ["tools/wikibooks/foto.js", ".github/workflows/foto.yml"]
   workflow_dispatch:
 
 permissions:

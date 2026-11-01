@@ -85,6 +85,27 @@ async function imageInfo(files){
   }
   return res;
 }
+/* ---- son eleme: ad tam tutmalı; menü, tabela, dükkân gibi fotoğraflar elenir ---- */
+const norm2=s=>String(s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/\(.*?\)/g," ").replace(/\.[a-z]{3,4}$/i,"").replace(/[^a-z0-9 ]+/g," ").replace(/\s+/g," ").trim();
+const STOP2=new Set(["a","an","the","and","with","of","in","on","style","recipe","i","ii","iii","iv","v","vi","basic","simple","easy","quick","homemade","traditional","classic","my","mom","s","grandma","vegan","vegetarian","version","de","la","le","el","al","con","y","au","aux","di","da","e","at","from","for","jpg","jpeg","png"]);
+const W2=s=>norm2(s).split(" ").filter(w=>w&&!STOP2.has(w)&&!/^\d+$/.test(w));
+const sing=w=>w;const eq=(a,b)=>a===b||a+"s"===b||b+"s"===a||a+"es"===b||b+"es"===a;const has=(arr,w)=>arr.some(x=>eq(x,w));
+const BADC=/menu|sign|poster|advert|logo|packag|label|book|cover|truck|storefront|store|shop|bottle|restaurant|street|market|stall|festival|sale|price|box|tin|can of|museum|statue|plate set|wiki ?cinema/i;
+function bases(t){const o=[];const np=t.replace(/\(.*?\)/g," ").replace(/\b(I|II|III|IV|V|VI)\b\s*$/,"").trim();if(np)o.push(np);const p=(t.match(/\(([^)]+)\)/)||[])[1];if(p)o.push(p);return o}
+function okWp(t,page){
+  for(const b of bases(t)){const bw=W2(b).map(sing),pw=W2(page).map(sing);if(!bw.length||!pw.length)continue;
+    const hit=bw.filter(w=>has(pw,w)).length,extra=pw.filter(w=>!has(bw,w)).length;
+    if(bw.length===1){if(pw.length===1&&hit===1)return true;continue}
+    if(hit/bw.length>=0.75&&extra<=1)return true}
+  return false}
+function okC(t,file){
+  if(BADC.test(file))return false;
+  for(const b of bases(t)){const bw=W2(b).map(sing),fw=W2(file).map(sing);if(!bw.length)continue;
+    const hit=bw.filter(w=>has(fw,w)).length,extra=fw.filter(w=>!has(bw,w)).length;
+    if(bw.length===1){if(hit===1&&extra<=2&&bw[0].length>=4)return true;continue}
+    if(hit/bw.length>=0.75&&extra<=3)return true}
+  return false}
+
 (async()=>{
   const html=fs.readFileSync(path.join(ROOT,"index.html"),"utf8");
   const data=JSON.parse(html.match(/const WB_DATA=(\[.*?\]);\/\*WB_DATA\*\//s)[1]);
@@ -108,7 +129,8 @@ async function imageInfo(files){
   const info=await imageInfo(files.map(f=>f.replace(/_/g," ")));
   const infoN={};Object.entries(info).forEach(([k,v])=>infoN[k.replace(/ /g,"_")]=v);
   const out={...prev};let ok=0;
-  for(const [id,f] of Object.entries(found)){const im=infoN[f.file.replace(/ /g,"_")];if(!im)continue;out[id]={...im,k:f.k,t:f.t};ok++}
+  for(const [id,f] of Object.entries(found)){const im=infoN[f.file.replace(/ /g,"_")];if(!im)continue;
+    if(!(f.k.startsWith("wp:")?okWp(f.t,f.k.slice(3)):okC(f.t,f.k.slice(2))))continue;out[id]={...im,k:f.k,t:f.t};ok++}
   fs.writeFileSync(OUT,JSON.stringify(out,null,0));
   console.log(`Wikimedia: ${ok} tarife fotoğraf bulundu (toplam kayıt ${Object.keys(out).length}).`);
 })().catch(e=>{console.error(e);process.exit(1)});
