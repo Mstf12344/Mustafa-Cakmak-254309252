@@ -3,3 +3,7 @@ veritabani/
 5. Hafta Rapor/
 tools/
 supabase/
+# ders teslim dosyaları ve proje notları sitede yayınlanmaz
+dunya-mutfagi*.html
+README.md
+.github/
