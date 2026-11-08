@@ -20,6 +20,27 @@ Mustafa Çakmak (254309252) – Mesleki Çözümleme I dönem projesi.
 - `5. Hafta Rapor/` – 5. hafta veri tabanı raporu (PDF, Word)
 - `veritabani/` – SQLite veritabanı: şema, kurulum betiği (`node seed.js`), örnek sorgular ve hazır `dunya_mutfagi.db`
 
+## PHP sürümü (`php/`)
+Sitenin tamamı PHP'ye çevrildi; `index.html` ile aynı arayüz ve özellikler, ama sunucu tarafında PHP ile sunulur. Vercel yayını (`index.html`) olduğu gibi kalır; `php/` klasörü Vercel'e gönderilmez.
+
+```bash
+cd php
+php -S localhost:8000      # sonra http://localhost:8000 adresini açın
+```
+PHP 7.4+ yeterlidir (ek eklenti gerekmez; `zlib` varsa veri dosyaları sıkıştırılır). Apache'de klasörü `htdocs`/`public_html` altına kopyalamak yeterlidir (`.htaccess` hazır).
+
+| Dosya | Görevi |
+|---|---|
+| `index.php` | Sayfa iskeleti: `partials/` parçalarını, ayarları ve betikleri birleştirir |
+| `config.php` | `SITE_URL`, `SUPA_URL`, `SUPA_KEY`, `SUPA_GOOGLE` (ortam değişkeniyle değiştirilebilir) ve yardımcı işlevler |
+| `data.php` | Büyük veri kümelerini (`?set=wb`, `flags`, `embed`) önbelleğe alınabilir, sıkıştırılmış JS olarak sunar |
+| `partials/head.php`, `partials/body.php` | `<head>` ve sayfa gövdesi |
+| `gizlilik.php`, `kosullar.php` | Gizlilik ve koşullar sayfaları |
+| `assets/css/`, `assets/js/app.js` | Stiller ve uygulama kodu (tek dosyadan ayrıldı) |
+| `data/*.json` | Wikibooks tarifleri, bayraklar, gömülü fotoğraflar |
+
+Not: `tools/wikibooks/donustur.js` hâlâ `index.html` içine gömer. PHP sürümünün tariflerini güncellemek için `php/data/wb_data.json` dosyasını aynı JSON ile değiştirmek gerekir.
+
 ## Yayına alma (Vercel)
 Depo Vercel'deki **dunya-mutfagi** projesine bağlıdır; `main` dalına yapılan her gönderim siteyi otomatik günceller: https://dunya-mutfagi.vercel.app
 Site derleme gerektirmez; Vercel `index.html` dosyasını olduğu gibi yayınlar.
