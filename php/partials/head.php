@@ -14,3 +14,4 @@
 <link rel="stylesheet" href="<?= asset('assets/css/main.css') ?>">
 <link rel="stylesheet" href="<?= asset('assets/css/tweaks.css') ?>">
 <link rel="stylesheet" id="authCss" href="<?= asset('assets/css/auth.css') ?>">
+<link rel="stylesheet" href="<?= asset('assets/css/motion.css') ?>">

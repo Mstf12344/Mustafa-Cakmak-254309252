@@ -24,5 +24,6 @@ window.APP_CONFIG = <?= json_encode([
 <script src="data.php?set=flags" defer></script>
 <script src="data.php?set=embed" defer></script>
 <script src="<?= asset('assets/js/app.js') ?>" defer></script>
+<script src="<?= asset('assets/js/motion.js') ?>" defer></script>
 </body>
 </html>
