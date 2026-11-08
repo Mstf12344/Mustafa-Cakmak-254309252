@@ -20,9 +20,9 @@ window.APP_CONFIG = <?= json_encode([
     'supaGoogle' => SUPA_GOOGLE,
 ], JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP) ?>;
 </script>
-<script src="data.php?set=wb"></script>
-<script src="data.php?set=flags"></script>
-<script src="data.php?set=embed"></script>
-<script src="<?= asset('assets/js/app.js') ?>"></script>
+<script src="data.php?set=wb" defer></script>
+<script src="data.php?set=flags" defer></script>
+<script src="data.php?set=embed" defer></script>
+<script src="<?= asset('assets/js/app.js') ?>" defer></script>
 </body>
 </html>
