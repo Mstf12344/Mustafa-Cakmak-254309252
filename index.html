@@ -1046,6 +1046,8 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px;paddin
 .hb-stage .ck-k{animation-delay:1.65s}.hb-stage .ck-p{animation-delay:2.5s}
 .hb-stage .ck-k .ck-s{height:clamp(84px,10.5vw,140px)}.hb-stage .ck-p .ck-s{height:clamp(80px,10vw,132px)}
 @media (prefers-reduced-motion:reduce){.hb-stage .ck-k{left:22%}.hb-stage .ck-p{left:10%}}
+.hb-stage .ck-s{filter:url(#ck3d) drop-shadow(5px 8px 5px rgba(0,0,0,.45))}
+.hb-stage .ck-c::after{height:12px;left:2%;right:2%;bottom:-9px;filter:blur(4px);background:rgba(0,0,0,.45)}
 </style>
 <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)}</script>
 <script defer src="/_vercel/insights/script.js"></script>
@@ -5299,6 +5301,7 @@ mdbStatic();
   function stage(){var m=document.querySelector(".hero .hb-main");if(!m||document.querySelector(".hb-stage"))return;
     var d=document.createElement("div");d.className="hb-stage";d.setAttribute("aria-hidden","true");
     d.innerHTML='<div class="hb-ground"></div>'+FRIES+BURGER+KETCH+PARSLEY;
+    d.insertAdjacentHTML("afterbegin","<svg width=\"0\" height=\"0\" style=\"position:absolute\" aria-hidden=\"true\"><filter id=\"ck3d\" x=\"-8%\" y=\"-8%\" width=\"116%\" height=\"116%\" color-interpolation-filters=\"sRGB\"><feGaussianBlur in=\"SourceAlpha\" stdDeviation=\"3.2\" result=\"b\"/><feDiffuseLighting in=\"b\" surfaceScale=\"7\" diffuseConstant=\"1.15\" lighting-color=\"#fff\" result=\"d\"><feDistantLight azimuth=\"235\" elevation=\"52\"/></feDiffuseLighting><feComposite in=\"SourceGraphic\" in2=\"d\" operator=\"arithmetic\" k1=\"1\" k2=\"0\" k3=\"0\" k4=\"0\" result=\"lit\"/><feSpecularLighting in=\"b\" surfaceScale=\"7\" specularConstant=\".5\" specularExponent=\"26\" lighting-color=\"#fff\" result=\"sp\"><feDistantLight azimuth=\"235\" elevation=\"52\"/></feSpecularLighting><feComposite in=\"sp\" in2=\"SourceAlpha\" operator=\"in\" result=\"sp2\"/><feComposite in=\"lit\" in2=\"sp2\" operator=\"arithmetic\" k1=\"0\" k2=\"1\" k3=\"1\" k4=\"0\"/></filter></svg>");
     m.insertAdjacentElement("afterend",d)}
   function go(){document.querySelectorAll(".au-brand,.logo").forEach(add);stage()}
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",go);else go();
