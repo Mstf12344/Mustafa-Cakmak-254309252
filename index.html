@@ -1027,6 +1027,22 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px;paddin
 @media (max-width:520px){.au-brand .ck{width:84px}}
 @media (max-width:400px){.au-brand .ck{display:none}}
 @media (prefers-reduced-motion:reduce){.ck-c,.ck-s,.ck-lg,.ck-ar{animation:none!important}}
+
+/* Hero: big burger-chases-fries scene */
+@keyframes ck-poke{0%,100%{transform:rotate(-96deg)}50%{transform:rotate(-80deg)}}
+.ck-ho{transform:rotate(-92deg);animation:ck-poke .4s ease-in-out infinite}
+.hb-stage{position:relative;height:clamp(120px,15vw,200px);margin:6px 0 8px;overflow:hidden}
+.hb-ground{position:absolute;left:0;right:0;bottom:12px;border-top:2px dashed rgba(255,255,255,.16)}
+.hb-stage .ck-c{bottom:16px;left:-30%;margin:0;animation:hb-run 7s linear infinite}
+.hb-stage .ck-b{animation-delay:.8s}
+.hb-stage .ck-s{height:clamp(96px,12vw,160px)}
+.hb-stage .ck-c::before{content:"";position:absolute;left:-44px;bottom:28%;width:36px;height:3px;border-radius:3px;background:rgba(255,255,255,.32);box-shadow:8px 15px 0 rgba(255,255,255,.22),2px 30px 0 rgba(255,255,255,.18);animation:hb-dash .3s linear infinite}
+.hb-stage .ck-c::after{content:"";position:absolute;left:8%;right:8%;bottom:-7px;height:9px;border-radius:50%;background:rgba(0,0,0,.3);filter:blur(2px);z-index:-1}
+.hb-em{position:absolute;top:-4px;right:-6px;font-style:normal;font-size:clamp(18px,2.4vw,32px);animation:hb-em .45s ease-in-out infinite alternate}
+@keyframes hb-run{from{left:-30%}to{left:104%}}
+@keyframes hb-dash{0%{opacity:.9;transform:translateX(0)}100%{opacity:0;transform:translateX(-10px)}}
+@keyframes hb-em{from{transform:translateY(0) rotate(-8deg)}to{transform:translateY(-5px) rotate(8deg)}}
+@media (prefers-reduced-motion:reduce){.hb-stage .ck-c{left:auto}.hb-stage .ck-f{left:64%}.hb-stage .ck-b{left:38%}.ck-ho,.hb-em,.hb-stage .ck-c::before{animation:none!important}.ck-ho{transform:rotate(-92deg)}}
 </style>
 <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)}</script>
 <script defer src="/_vercel/insights/script.js"></script>
@@ -5260,7 +5276,6 @@ mdbStatic();
    +'<path d="M13.8 22.6Q17.5 20.4 21 22.6M23 22.6Q26.5 20.4 30.2 22.6" fill="none" stroke="#2b2b2b" stroke-width="1"/><path d="M16.5 33.5Q22 38 27.5 33.5" fill="none" stroke="#2b2b2b" stroke-width="1.3"/></svg></span>';
   var BURGER='<span class="ck-c ck-b"><svg class="ck-s" viewBox="0 0 52 56" aria-hidden="true" stroke-linejoin="round" stroke-linecap="round">'
    +'<g class="ck-ar a" style="transform-origin:6px 26px"><rect x="4.5" y="26" width="3" height="13" rx="1.5" fill="#e8b878" stroke="#5a2e0e" stroke-width="1"/><circle cx="6" cy="40" r="2.6" fill="#e8b878" stroke="#5a2e0e" stroke-width="1"/></g>'
-   +'<g class="ck-ar b" style="transform-origin:46px 26px"><rect x="44.5" y="26" width="3" height="13" rx="1.5" fill="#e8b878" stroke="#5a2e0e" stroke-width="1"/><circle cx="46" cy="40" r="2.6" fill="#e8b878" stroke="#5a2e0e" stroke-width="1"/></g>'
    +'<g class="ck-lg a" style="transform-origin:20px 40px"><rect x="18.5" y="40" width="3" height="13" rx="1.5" fill="#e8b878" stroke="#5a2e0e" stroke-width="1"/><ellipse cx="21.5" cy="54" rx="4.4" ry="2.2" fill="#e8b878" stroke="#5a2e0e" stroke-width="1"/></g>'
    +'<g class="ck-lg b" style="transform-origin:32px 40px"><rect x="30.5" y="40" width="3" height="13" rx="1.5" fill="#e8b878" stroke="#5a2e0e" stroke-width="1"/><ellipse cx="33.5" cy="54" rx="4.4" ry="2.2" fill="#e8b878" stroke="#5a2e0e" stroke-width="1"/></g>'
    +'<path d="M7 35H45Q45 40.5 40 40.5H12Q7 40.5 7 35Z" fill="#d98a3a" stroke="#5a2e0e" stroke-width="1.1"/>'
@@ -5273,9 +5288,14 @@ mdbStatic();
    +'<path d="M5 17Q5 1.5 26 1.5Q47 1.5 47 17Z" fill="#e08f3b" stroke="#5a2e0e" stroke-width="1.2"/>'
    +'<g fill="#fff3cf"><ellipse cx="14" cy="6.2" rx="1" ry=".55" transform="rotate(-25 14 6.2)"/><ellipse cx="22" cy="3.6" rx="1" ry=".55"/><ellipse cx="31" cy="3.8" rx="1" ry=".55" transform="rotate(20 31 3.8)"/><ellipse cx="39" cy="7" rx="1" ry=".55" transform="rotate(35 39 7)"/><ellipse cx="9.5" cy="11.5" rx="1" ry=".55" transform="rotate(-50 9.5 11.5)"/><ellipse cx="42.5" cy="12" rx="1" ry=".55" transform="rotate(50 42.5 12)"/></g>'
    +'<circle cx="20" cy="10.6" r="3.3" fill="#fff" stroke="#2b2b2b" stroke-width=".9"/><circle cx="32" cy="10.6" r="3.3" fill="#fff" stroke="#2b2b2b" stroke-width=".9"/><circle cx="20.8" cy="10.9" r="1.7" fill="#4a2a14"/><circle cx="32.8" cy="10.9" r="1.7" fill="#4a2a14"/><circle cx="21.3" cy="10.3" r=".6" fill="#fff"/><circle cx="33.3" cy="10.3" r=".6" fill="#fff"/>'
-   +'<path d="M16.8 6.6Q20 4.6 23.2 6.6M28.8 6.6Q32 4.6 35.2 6.6" fill="none" stroke="#5a2e0e" stroke-width="1.1"/><path d="M22 14.6Q26 17.8 30 14.6" fill="none" stroke="#5a2e0e" stroke-width="1.3"/></svg></span>';
+   +'<path d="M16.8 6.6Q20 4.6 23.2 6.6M28.8 6.6Q32 4.6 35.2 6.6" fill="none" stroke="#5a2e0e" stroke-width="1.1"/><path d="M22 14.6Q26 17.8 30 14.6" fill="none" stroke="#5a2e0e" stroke-width="1.3"/>'
+   +'<g class="ck-ho" style="transform-origin:45px 25px"><rect x="43.5" y="25" width="3" height="14" rx="1.5" fill="#e8b878" stroke="#5a2e0e" stroke-width="1"/><rect x="43.7" y="37" width="2.6" height="17" rx=".5" fill="#f7e6a0" stroke="#6b4a12" stroke-width=".8"/><circle cx="45" cy="38" r="2.7" fill="#e8b878" stroke="#5a2e0e" stroke-width="1"/></g></svg></span>';
   function add(el){if(!el||el.querySelector(".ck"))return;var d=document.createElement("span");d.className="ck";d.setAttribute("aria-hidden","true");d.innerHTML=FRIES+BURGER;el.appendChild(d)}
-  function go(){document.querySelectorAll(".au-brand,.logo").forEach(add)}
+  function stage(){var m=document.querySelector(".hero .hb-main");if(!m||document.querySelector(".hb-stage"))return;
+    var d=document.createElement("div");d.className="hb-stage";d.setAttribute("aria-hidden","true");
+    d.innerHTML='<div class="hb-ground"></div>'+FRIES.replace('</svg></span>','</svg><i class="hb-em">\uD83D\uDE31</i></span>')+BURGER.replace('</svg></span>','</svg><i class="hb-em">\uD83D\uDE0B</i></span>');
+    m.insertAdjacentElement("afterend",d)}
+  function go(){document.querySelectorAll(".au-brand,.logo").forEach(add);stage()}
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",go);else go();
 })();
 </script>
